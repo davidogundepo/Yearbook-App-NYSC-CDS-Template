@@ -85,7 +85,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         gradient: LinearGradient(
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
-                            colors: [Colors.indigo, Colors.cyan]
+                            colors: [Color.fromRGBO(46, 137, 112, 1), Color.fromRGBO(46, 137, 112, 1)]
                         )
                     ),
                     child: Column(
@@ -101,22 +101,22 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                                 child: Material(
                                   color: Colors.transparent,
                                   child: InkWell(
-                                    splashColor: Colors.lightBlueAccent,
+                                    splashColor: Colors.greenAccent,
                                     onTap: () {},
                                     child: Padding(
-                                      padding: const EdgeInsets.only(bottom: 20, top: 120),
+                                      padding: const EdgeInsets.only(bottom: 20, top: 80),
                                       child: ListTile(
                                         title: Text(
-                                          "HALLEL COLLEGE",
+                                          "FINANCIAL INCLUSION CDS",
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 30,
+                                              fontSize: 25,
                                               fontWeight: FontWeight.w800),
                                         ),
                                         subtitle: Text(
-                                          "SS3 Graduates",
+                                          "Obia/Akpor LG CDS GROUP",
                                           style: TextStyle(
-                                            color: Colors.brown[200],
+                                            color: Color.fromRGBO(46, 137, 112, 1),
                                             fontWeight: FontWeight.w500,
                                             fontSize: 20,
                                           ),
@@ -128,19 +128,19 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                                 width: 400.0,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: new ExactAssetImage('assets/images/hallel_9.jpg'),
+                                    image: new ExactAssetImage('assets/images/fin_inc_17.jpg'),
                                     fit: BoxFit.cover,
                                   ),
                                   gradient: LinearGradient(
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
-                                    colors: [Colors.blue, Colors.lightBlueAccent.withAlpha(50)],
+                                    colors: [Colors.green, Colors.greenAccent.withAlpha(50)],
                                     stops: [0.3, 1],
 
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.blueAccent,
+                                      color: Color.fromRGBO(46, 137, 112, 1),
                                       blurRadius: 12,
                                       offset: Offset(3, 12),
                                     )
@@ -161,7 +161,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                           endIndent: 32,
                         ),
                         Material(
-                          color: _currentNAVSelected == 0 ? Colors.cyan.withOpacity(0.3) : Colors.transparent,
+                          color: _currentNAVSelected == 0 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
                           child: InkWell(
                             splashColor: Colors.white,
                             onTap: () {
@@ -170,14 +170,15 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                               BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchBStreamOnePageClickedEvent);
                             },
                             child: MenuItem(
-                              icon: MdiIcons.matrix,
+                              icon: MdiIcons.accountGroup,
                               title: "Batch B Stream One Corpers",
+
 
                             ),
                           ),
                         ),
                         Material(
-                          color: _currentNAVSelected == 1 ? Colors.cyan.withOpacity(0.3) : Colors.transparent,
+                          color: _currentNAVSelected == 1 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
                           child: InkWell(
                             splashColor: Colors.white,
                             onTap: () {
@@ -186,13 +187,13 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                               BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchBStreamTwoPageClickedEvent);
                             },
                             child: MenuItem(
-                              icon: MdiIcons.chartBellCurve,
+                              icon: MdiIcons.accountGroup,
                               title: "Batch B Stream Two Corpers",
                             ),
                           ),
                         ),
                         Material(
-                          color: _currentNAVSelected == 2 ? Colors.cyan.withOpacity(0.3) : Colors.transparent,
+                          color: _currentNAVSelected == 2 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
                           child: InkWell(
                             splashColor: Colors.white,
                             onTap: () {
@@ -201,13 +202,13 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                               BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchCStreamOnePageClickedEvent);
                             },
                             child: MenuItem(
-                              icon: MdiIcons.draw,
+                              icon: MdiIcons.accountGroup,
                               title: "Batch C Stream One Corpers",
                             ),
                           ),
                         ),
                         Material(
-                          color: _currentNAVSelected == 3 ? Colors.cyan.withOpacity(0.3) : Colors.transparent,
+                          color: _currentNAVSelected == 3 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
                           child: InkWell(
                             splashColor: Colors.white,
                             onTap: () {
@@ -222,7 +223,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                           ),
                         ),
                         Material(
-                          color: _currentNAVSelected == 4 ? Colors.cyan.withOpacity(0.3) : Colors.transparent,
+                          color: _currentNAVSelected == 4 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
                           child: InkWell(
                             splashColor: Colors.white,
                             onTap: () {
@@ -231,13 +232,13 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                               BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchAStreamOnePageClickedEvent);
                             },
                             child: MenuItem(
-                              icon: MdiIcons.teach,
+                              icon: MdiIcons.accountGroup,
                               title: "Batch A Stream One Corpers",
                             ),
                           ),
                         ),
                         Material(
-                          color: _currentNAVSelected == 5 ? Colors.cyan.withOpacity(0.3) : Colors.transparent,
+                          color: _currentNAVSelected == 5 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
                           child: InkWell(
                             splashColor: Colors.white,
                             onTap: () {
@@ -246,17 +247,17 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                               BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyExecutivePageClickedEvent);
                             },
                             child: MenuItem(
-                              icon: MdiIcons.pillar,
+                              icon: MdiIcons.teach,
                               title: "Executive CDS Corpers",
                             ),
                           ),
                         ),
                         Material(
-                          color: _currentNAVSelected == 5 ? Colors.cyan.withOpacity(0.3) : Colors.transparent,
+                          color: _currentNAVSelected == 6 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
                           child: InkWell(
                             splashColor: Colors.white,
                             onTap: () {
-                              _onSelected(5);
+                              _onSelected(6);
                               onIconPressed();
                               BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyLGOfficialsPageClickedEvent);
                             },
@@ -306,12 +307,12 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       child: Container(
                         width: 35,
                         height: 110,
-                        color: Colors.indigo.shade500,
+                        color: Color.fromRGBO(46, 137, 112, 1),
                         alignment: Alignment.centerLeft,
                         child: AnimatedIcon(
                           progress: _animationController.view,
                           icon: AnimatedIcons.menu_close,
-                          color: Color(0xFF1BB5FD),
+                          color: Colors.white70,
                           size: 25,
                         ),
                       ),

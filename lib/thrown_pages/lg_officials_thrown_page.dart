@@ -250,14 +250,14 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
-                    title: Text("Local Gvernment Officials",
+                    title: Text("Local Government Officials",
                         style:  GoogleFonts.amaticSC(
                             color: Colors.blueGrey,
                             fontSize: 26.0,
                             fontWeight: FontWeight.bold
                         )
                     ),
-                    background: Image.asset('assets/images/hallel_18.jpg',
+                    background: Image.asset('assets/images/fin_inc_1.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),

@@ -245,7 +245,7 @@ class _MyBatchBStreamTwoPageState extends State<MyBatchBStreamTwoPage> {
                             fontWeight: FontWeight.bold
                         )
                     ),
-                    background: Image.asset('assets/images/hallel_12.jpg',
+                    background: Image.asset('assets/images/fin_inc_4.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),

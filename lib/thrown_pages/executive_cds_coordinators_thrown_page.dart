@@ -250,7 +250,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                               fontWeight: FontWeight.bold
                           )
                       ),
-                      background: Image.asset('assets/images/proprietor.jpg',
+                      background: Image.asset('assets/images/fin_inc_1.jpg',
                         fit: BoxFit.cover,)
                   ),
                 ),

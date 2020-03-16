@@ -247,7 +247,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                             fontWeight: FontWeight.bold
                         )
                     ),
-                    background: Image.asset('assets/images/hallel_5.jpg',
+                    background: Image.asset('assets/images/fin_inc_3.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),
