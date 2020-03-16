@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "150068046033",
+    "firebase_url": "https://fin-inc-yearbook.firebaseio.com",
+    "project_id": "fin-inc-yearbook",
+    "storage_bucket": "fin-inc-yearbook.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150068046033:android:4ff02317d18e71a8b17df0",
+        "android_client_info": {
+          "package_name": "com.icdatinnovations.fnancialinclusioncds2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150068046033-3r0uar34f4saicbscmord1vbf3qfuhk8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.icdatinnovations.fnancialinclusioncds2020",
+            "certificate_hash": "35a7de7f844c9b3817d4f98afe7048aeb8437cef"
+          }
+        },
+        {
+          "client_id": "150068046033-2pl6i0lc84cnrpd6a0tbkh7567necu62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSFgtR9lqUUZDyuWVmYdv-a0jONb2ulY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150068046033-2pl6i0lc84cnrpd6a0tbkh7567necu62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
