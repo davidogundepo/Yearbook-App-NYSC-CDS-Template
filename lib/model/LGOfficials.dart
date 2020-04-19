@@ -6,22 +6,22 @@ class LGOfficials {
   String hobbies;
   String phone;
   String twitter;
-  String autobio;
-  String d_o_b;
+  String autoBio;
+  String dob;
   String email;
   String image;
   String facebook;
   String philosophy;
-  String state_of_origin;
-  String inception_year;
-  String position_enforcing;
-  String academic_qualification;
+  String stateOfOrigin;
+  String inceptionYear;
+  String positionEnforcing;
+  String academicQualification;
 
   LGOfficials.fromMap(Map<String, dynamic> data) {
-    academic_qualification = data['academic_qualification'];
-    state_of_origin = data['state_of_origin'];
+    academicQualification = data['academic_qualification'];
+    stateOfOrigin = data['state_of_origin'];
     id = data['id'];
-    autobio = data['autobio'];
+    autoBio = data['autobio'];
     email = data['email'];
     facebook = data['facebook'];
     image = data['image'];
@@ -29,10 +29,10 @@ class LGOfficials {
     nickname = data['nickname'];
     phone = data['phone'];
     twitter = data['twitter'];
-    d_o_b = data['d_o_b'];
+    dob = data['d_o_b'];
     hobbies = data['hobbies'];
-    position_enforcing = data['position_enforcing'];
-    inception_year = data['inception_year'];
+    positionEnforcing = data['position_enforcing'];
+    inceptionYear = data['inception_year'];
     philosophy = data['philosophy'];
   }
 

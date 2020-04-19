@@ -18,13 +18,36 @@ String urlFacebook = "https://fb.com/olowote.oluwaseun";
 String urlInstagram = "https://www.instagram.com/";
 String urlLinkedIn = "https://www.linkedin.com/";
 
+
+
+String reachDetails = "Reach";
+String autoBioDetails = "AutoBio";
+
+String callButton = "Call";
+String messageButton = "Send a Message";
+String emailButton = "Send an Email";
+String twitterButton = "My Twitter";
+String instagramButton = "My Instagram";
+String linkedInButton = "My LinkedIn";
+String facebookButton = "My Facebook";
+
+String autobiographyTitle = "Autobiography\n";
+String nicknameTitle = "My Nickname\n";
+String positionEnforcingTitle = "Position Enforcing\n";
+String yearOfInceptionTitle = "Year of Inception\n";
+String stateOfOriginTitle = "State of Origin\n";
+String dobTitle = "Date of Birth\n";
+String hobbiesTitle = "Hobbies\n";
+String philosophyTitle = "Philosophy about Life\n";
+String academicQualificationTitle = "Academic Qualification\n";
+
 LGOfficialsNotifier lgOfficialsNotifier;
 
 Map<int, Widget> userBIO;
 
-var _academic_qualification;
-var _autobio;
-var _d_o_b;
+var _academicQualification;
+var _autoBio;
+var _dob;
 var _email;
 var _facebook;
 var _hobbies;
@@ -32,10 +55,10 @@ var _name;
 var _nickname;
 var _philosophy;
 var _phone;
-var _state_of_origin;
+var _stateOfOrigin;
 var _twitter;
-var _inception_year;
-var _position_enforcing;
+var _inceptionYear;
+var _positionEnforcing;
 
 
 class LGOfficialsDetailsPage extends StatefulWidget {
@@ -164,7 +187,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                         backgroundColor: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
 
                         children: {
-                          0: Text('Reach',
+                          0: Text(reachDetails,
                             style: GoogleFonts.sacramento(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 25,
@@ -172,7 +195,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                 fontWeight: FontWeight.w400
                             ),
                           ),
-                          1: Text('AutoBio',
+                          1: Text(autoBioDetails,
                             style: GoogleFonts.sacramento(
                               color: Color.fromRGBO(46, 137, 112, 1),
                               fontSize: 25,
@@ -209,15 +232,15 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
   initState(){
     LGOfficialsNotifier lgOfficialsNotifier = Provider.of<LGOfficialsNotifier>(context, listen: false);
 
-    _autobio = lgOfficialsNotifier.currentLGOfficials.autobio;
-    _state_of_origin = lgOfficialsNotifier.currentLGOfficials.state_of_origin;
-    _d_o_b = lgOfficialsNotifier.currentLGOfficials.d_o_b;
-    _academic_qualification = lgOfficialsNotifier.currentLGOfficials.academic_qualification;
+    _autoBio = lgOfficialsNotifier.currentLGOfficials.autoBio;
+    _stateOfOrigin = lgOfficialsNotifier.currentLGOfficials.stateOfOrigin;
+    _dob = lgOfficialsNotifier.currentLGOfficials.dob;
+    _academicQualification = lgOfficialsNotifier.currentLGOfficials.academicQualification;
     _email = lgOfficialsNotifier.currentLGOfficials.email;
     _facebook = lgOfficialsNotifier.currentLGOfficials.facebook;
     _hobbies = lgOfficialsNotifier.currentLGOfficials.hobbies;
-    _inception_year = lgOfficialsNotifier.currentLGOfficials.inception_year;
-    _position_enforcing = lgOfficialsNotifier.currentLGOfficials.position_enforcing;
+    _inceptionYear = lgOfficialsNotifier.currentLGOfficials.inceptionYear;
+    _positionEnforcing = lgOfficialsNotifier.currentLGOfficials.positionEnforcing;
     _name = lgOfficialsNotifier.currentLGOfficials.name;
     _nickname = lgOfficialsNotifier.currentLGOfficials.nickname;
     _philosophy = lgOfficialsNotifier.currentLGOfficials.philosophy;
@@ -243,7 +266,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.dialpad, color: Colors.white,),
-                  label: Text('Call',
+                  label: Text(callButton,
                       style: GoogleFonts.abel(
                           color: Colors.white,
                           fontSize: 18,
@@ -267,7 +290,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.message, color: Colors.white,),
-                  label: Text('Send a Message',
+                  label: Text(messageButton,
                       style: GoogleFonts.abel(
                           color: Colors.white,
                           fontSize: 18,
@@ -291,7 +314,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.gmail, color: Colors.white,),
-                  label: Text("Send an Email",
+                  label: Text(emailButton,
                       style: GoogleFonts.abel(
                           color: Colors.white,
                           fontSize: 18,
@@ -315,7 +338,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.twitterCircle, color: Colors.white,),
-                  label: Text('My Twitter',
+                  label: Text(twitterButton,
                       style: GoogleFonts.abel(
                           color: Colors.white,
                           fontSize: 18,
@@ -339,7 +362,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.facebook, color: Colors.white,),
-                  label: Text('My Facebook',
+                  label: Text(facebookButton,
                     style: GoogleFonts.abel(
                         color: Colors.white,
                         fontSize: 18,
@@ -373,7 +396,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                     TextSpan(
                       children: <TextSpan>[
                         TextSpan(
-                            text: 'Autobiography\n',
+                            text: autobiographyTitle,
                             style:  GoogleFonts.aBeeZee(
                               color: Color.fromRGBO(46, 137, 112, 1),
                               fontSize: 19,
@@ -381,7 +404,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                             )
                         ),
                         TextSpan(
-                            text: ' '+_autobio,
+                            text: ' '+_autoBio,
                             style: GoogleFonts.trykker(
                               color: Color.fromRGBO(46, 137, 112, 1),
                               fontSize: 19,
@@ -414,7 +437,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'My Nickname\n',
+                              text: nicknameTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -456,7 +479,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Position Enforcing\n',
+                              text: positionEnforcingTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -464,7 +487,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               )
                           ),
                           TextSpan(
-                              text: ' '+_position_enforcing,
+                              text: ' '+_positionEnforcing,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -498,7 +521,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Year of Inception\n',
+                              text: yearOfInceptionTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -506,7 +529,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               )
                           ),
                           TextSpan(
-                              text: ' '+_inception_year,
+                              text: ' '+_inceptionYear,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -540,7 +563,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Academic Qualification\n',
+                              text: academicQualificationTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -548,7 +571,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               )
                           ),
                           TextSpan(
-                              text: ' '+_academic_qualification,
+                              text: ' '+_academicQualification,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -582,7 +605,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: "State of Origin\n",
+                              text: stateOfOriginTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -590,7 +613,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               )
                           ),
                           TextSpan(
-                              text: ' '+_state_of_origin,
+                              text: ' '+_stateOfOrigin,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -624,7 +647,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Date of Birth\n',
+                              text: dobTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -632,7 +655,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               )
                           ),
                           TextSpan(
-                              text: ' '+_d_o_b,
+                              text: ' '+_dob,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -666,7 +689,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Hobbies\n',
+                              text: hobbiesTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -708,7 +731,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Philosophy about Life\n',
+                              text: philosophyTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,

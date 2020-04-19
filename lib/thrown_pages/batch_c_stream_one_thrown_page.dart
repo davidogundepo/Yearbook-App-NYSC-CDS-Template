@@ -15,6 +15,26 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 
+
+String nyscName = "NYSC Rivers State";
+String thrownName = "Batch C Stream One Corpers";
+
+String exitAppStatement = "Exit from App";
+String exitAppTitle = "Come on!";
+String exitAppSubtitle = "Do you really really want to?";
+String exitAppNo = "Oh No";
+String exitAppYes = "I Have To";
+
+
+String whoWeAre = "Who We Are";
+String aboutNYSC = "About $nyscName";
+String acronymMeanings = "Acronym Meanings";
+String aboutApp = "About App";
+
+String imgAsset = "assets/images/fin_inc_1.jpg";
+
+
+
 class MyBatchCStreamOnePage extends StatefulWidget with NavigationStates {
 
   MyBatchCStreamOnePage({Key key, this.title}) : super(key: key);
@@ -47,53 +67,57 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
               navigateToBatchCStreamOneDetailsPage(context);
             },
 
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
-                      image: DecorationImage(
-                          image: CachedNetworkImageProvider(
-                              batchCStreamOneNotifier.batchCStreamOneList[index].image
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
+                        image: DecorationImage(
+                            alignment: Alignment(0, -1),
+                            image: CachedNetworkImageProvider(
+                                batchCStreamOneNotifier.batchCStreamOneList[index].image
+                            ),
+                            fit: BoxFit.cover
+                        )
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 60),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Text(
+                              batchCStreamOneNotifier.batchCStreamOneList[index].name,
+                              style: GoogleFonts.tenorSans(
+                                  color: Colors.blueGrey,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600
+                              )
                           ),
-                          fit: BoxFit.cover
-                      )
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 60),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: Text(
-                            batchCStreamOneNotifier.batchCStreamOneList[index].name,
-                            style: GoogleFonts.tenorSans(
-                                color: Colors.blueGrey,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w600
-                            )
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: Text(
-                            batchCStreamOneNotifier.batchCStreamOneList[index].twitter,
-                            style: GoogleFonts.varela(
-                                color: Colors.blueGrey,
-                                fontStyle: FontStyle.italic
-                            )
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Text(
+                              batchCStreamOneNotifier.batchCStreamOneList[index].twitter,
+                              style: GoogleFonts.varela(
+                                  color: Colors.blueGrey,
+                                  fontStyle: FontStyle.italic
+                              )
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                )
+                      ],
+                    ),
+                  )
 
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -105,17 +129,17 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Come on!'),
-        content: Text('Do you really really want to?'),
+        title: Text(exitAppTitle),
+        content: Text(exitAppSubtitle),
         actions: <Widget>[
           FlatButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: Text('Oh No'),
+            child: Text(exitAppNo),
           ),
           FlatButton(
             onPressed: () => exit(0),
             /*Navigator.of(context).pop(true)*/
-            child: Text('I Have To'),
+            child: Text(exitAppYes),
           ),
         ],
       ),
@@ -187,7 +211,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                           leading: new Icon(MdiIcons.atom,
                                             color: Colors.blueGrey,
                                           ),
-                                          title: new Text('Who We Are',
+                                          title: new Text(whoWeAre,
                                             style: GoogleFonts.zillaSlab(
                                                 color: Colors.blueGrey
                                             ),
@@ -200,7 +224,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                         leading: new Icon(MdiIcons.chessQueen,
                                           color: Colors.blueGrey,
                                         ),
-                                        title: new Text('About NYSC Rivers State',
+                                        title: new Text(aboutNYSC,
                                           style: GoogleFonts.zillaSlab(
                                               color: Colors.blueGrey
                                           ),
@@ -213,7 +237,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                           leading: new Icon(MdiIcons.sortAlphabeticalAscending,
                                             color: Colors.blueGrey,
                                           ),
-                                          title: new Text('Acronym Meanings',
+                                          title: new Text(acronymMeanings,
                                             style: GoogleFonts.zillaSlab(
                                                 color: Colors.blueGrey
                                             ),
@@ -226,7 +250,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                         leading: new Icon(MdiIcons.opacity,
                                           color: Colors.blueGrey,
                                         ),
-                                        title: new Text('About App',
+                                        title: new Text(aboutApp,
                                           style: GoogleFonts.zillaSlab(
                                               color: Colors.blueGrey
                                           ),
@@ -250,14 +274,14 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
-                    title: Text("Batch C Stream One Corpers",
+                    title: Text(thrownName,
                         style:  GoogleFonts.amaticSC(
                             color: Colors.blueGrey,
                             fontSize: 26.0,
                             fontWeight: FontWeight.bold
                         )
                     ),
-                    background: Image.asset('assets/images/fin_inc_1.jpg',
+                    background: Image.asset(imgAsset,
                       fit: BoxFit.cover,
                     ),
                   ),

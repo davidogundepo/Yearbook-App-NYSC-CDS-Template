@@ -18,37 +18,73 @@ String urlFacebook = "https://fb.com/olowote.oluwaseun";
 String urlInstagram = "https://www.instagram.com/";
 String urlLinkedIn = "https://www.linkedin.com/";
 
+String cdsName = "Financial Inclusion CDS";
+
+String reachDetails = "Reach";
+String autoBioDetails = "AutoBio";
+
+String callButton = "Call";
+String messageButton = "Send a Message";
+String emailButton = "Send an Email";
+String twitterButton = "My Twitter";
+String instagramButton = "My Instagram";
+String linkedInButton = "My LinkedIn";
+String facebookButton = "My Facebook";
+
+String autobiographyTitle = "Autobiography\n";
+String nicknameTitle = "My Nickname\n";
+String bestMomentTitle = "Best Moment in NYSC\n";
+String worstMomentTitle = "Worst Moment in NYSC\n";
+String ppaNameTitle = "PPA Name\n";
+String ppaLocationTitle = "PPA Location\n";
+String ppaAssignmentTitle = "PPA Assignment\n";
+String almaMaterTitle = "Alma Mater\n";
+String courseOfStudyTitle = "Course of Study\n";
+String academicQualificationTitle = "Academic Qualification\n";
+String graduationYearTitle = "Graduation Year\n";
+String cdsExecutiveTitle = "CDS Executive\n";
+String cdsExecutivePositionTitle = "CDS Executive Position\n";
+String whatsNextAfterTitle = "What's next after NYSC\n";
+String whereILiveTitle = "Where I live\n";
+String stateOfOriginTitle = "State of Origin\n";
+String dobTitle = "Date of Birth\n";
+String hobbiesTitle = "Hobbies\n";
+String philosophyTitle = "Philosophy about Life\n";
+String droplineTitle = "Dropline to My Junior $cdsName Colleagues\n";
+
+
 BatchCStreamOneNotifier batchCStreamOneNotifier;
 
 Map<int, Widget> userBIO;
 
-var _academic_qualification;
-var _alma_mater;
-var _autobio;
-var _bestmoment;
-var _course_of_study;
-var _d_o_b;
+var _academicQualification;
+var _almaMater;
+var _autoBio;
+var _bestMoment;
+var _courseOfStudy;
+var _dob;
 var _email;
 var _facebook;
-var _graduation_year;
+var _graduationYear;
 var _hobbies;
 var _instagram;
-var _linkedin;
-var _my_dropline;
+var _linkedIn;
+var _myDropline;
 var _name;
 var _nickname;
 var _philosophy;
 var _phone;
-var _ppa_assignment;
-var _cds_executive;
-var _cds_executive_position;
-var _ppa_location;
-var _ppa_name;
-var _state_of_origin;
+var _ppaAssignment;
+var _cdsExecutive;
+var _cdsExecutivePosition;
+var _ppaLocation;
+var _ppaName;
+var _stateOfOrigin;
 var _twitter;
-var _whats_next;
-var _where_you_live;
-var _worst_moment;
+var _whatsNext;
+var _whereYouLive;
+var _worstMoment;
+
 
 
 class BatchCStreamOneDetailsPage extends StatefulWidget {
@@ -177,7 +213,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                         backgroundColor: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
 
                         children: {
-                          0: Text('Reach',
+                          0: Text(reachDetails,
                             style: GoogleFonts.sacramento(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 25,
@@ -185,7 +221,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                                 fontWeight: FontWeight.w400
                             ),
                           ),
-                          1: Text('AutoBio',
+                          1: Text(autoBioDetails,
                             style: GoogleFonts.sacramento(
                               color: Color.fromRGBO(46, 137, 112, 1),
                               fontSize: 25,
@@ -221,34 +257,34 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
   initState(){
     BatchCStreamOneNotifier batchCStreamOneNotifier = Provider.of<BatchCStreamOneNotifier>(context, listen: false);
 
-    _autobio = batchCStreamOneNotifier.currentBatchCStreamOne.autobio;
-    _bestmoment = batchCStreamOneNotifier.currentBatchCStreamOne.bestmoment;
-    _course_of_study = batchCStreamOneNotifier.currentBatchCStreamOne.course_of_study;
-    _graduation_year = batchCStreamOneNotifier.currentBatchCStreamOne.graduation_year;
-    _linkedin = batchCStreamOneNotifier.currentBatchCStreamOne.linkedin;
-    _ppa_assignment = batchCStreamOneNotifier.currentBatchCStreamOne.ppa_assignment;
-    _cds_executive = batchCStreamOneNotifier.currentBatchCStreamOne.cds_executive;
-    _cds_executive_position = batchCStreamOneNotifier.currentBatchCStreamOne.cds_executive_position;
-    _ppa_location = batchCStreamOneNotifier.currentBatchCStreamOne.ppa_location;
-    _ppa_name = batchCStreamOneNotifier.currentBatchCStreamOne.ppa_name;
-    _state_of_origin = batchCStreamOneNotifier.currentBatchCStreamOne.state_of_origin;
-    _whats_next = batchCStreamOneNotifier.currentBatchCStreamOne.whats_next;
-    _where_you_live = batchCStreamOneNotifier.currentBatchCStreamOne.where_you_live;
-    _bestmoment = batchCStreamOneNotifier.currentBatchCStreamOne.bestmoment;
-    _d_o_b = batchCStreamOneNotifier.currentBatchCStreamOne.d_o_b;
-    _academic_qualification = batchCStreamOneNotifier.currentBatchCStreamOne.academic_qualification;
-    _alma_mater = batchCStreamOneNotifier.currentBatchCStreamOne.alma_mater;
+    _autoBio = batchCStreamOneNotifier.currentBatchCStreamOne.autoBio;
+    _bestMoment = batchCStreamOneNotifier.currentBatchCStreamOne.bestMoment;
+    _courseOfStudy = batchCStreamOneNotifier.currentBatchCStreamOne.courseOfStudy;
+    _graduationYear = batchCStreamOneNotifier.currentBatchCStreamOne.graduationYear;
+    _linkedIn = batchCStreamOneNotifier.currentBatchCStreamOne.linkedIn;
+    _ppaAssignment = batchCStreamOneNotifier.currentBatchCStreamOne.ppaAssignment;
+    _cdsExecutive = batchCStreamOneNotifier.currentBatchCStreamOne.cdsExecutive;
+    _cdsExecutivePosition = batchCStreamOneNotifier.currentBatchCStreamOne.cdsExecutivePosition;
+    _ppaLocation = batchCStreamOneNotifier.currentBatchCStreamOne.ppaLocation;
+    _ppaName = batchCStreamOneNotifier.currentBatchCStreamOne.ppaName;
+    _stateOfOrigin = batchCStreamOneNotifier.currentBatchCStreamOne.stateOfOrigin;
+    _whatsNext = batchCStreamOneNotifier.currentBatchCStreamOne.whatsNext;
+    _whereYouLive = batchCStreamOneNotifier.currentBatchCStreamOne.whereYouLive;
+    _bestMoment = batchCStreamOneNotifier.currentBatchCStreamOne.bestMoment;
+    _dob = batchCStreamOneNotifier.currentBatchCStreamOne.dob;
+    _academicQualification = batchCStreamOneNotifier.currentBatchCStreamOne.academicQualification;
+    _almaMater = batchCStreamOneNotifier.currentBatchCStreamOne.almaMater;
     _email = batchCStreamOneNotifier.currentBatchCStreamOne.email;
     _facebook = batchCStreamOneNotifier.currentBatchCStreamOne.facebook;
     _hobbies = batchCStreamOneNotifier.currentBatchCStreamOne.hobbies;
     _instagram = batchCStreamOneNotifier.currentBatchCStreamOne.instagram;
-    _my_dropline = batchCStreamOneNotifier.currentBatchCStreamOne.my_dropline;
+    _myDropline = batchCStreamOneNotifier.currentBatchCStreamOne.myDropline;
     _name = batchCStreamOneNotifier.currentBatchCStreamOne.name;
     _nickname = batchCStreamOneNotifier.currentBatchCStreamOne.nickname;
     _philosophy = batchCStreamOneNotifier.currentBatchCStreamOne.philosophy;
     _phone = batchCStreamOneNotifier.currentBatchCStreamOne.phone;
     _twitter = batchCStreamOneNotifier.currentBatchCStreamOne.twitter;
-    _worst_moment = batchCStreamOneNotifier.currentBatchCStreamOne.worst_moment;
+    _worstMoment = batchCStreamOneNotifier.currentBatchCStreamOne.worstMoment;
 
 
     userBIO = <int, Widget>{
@@ -269,7 +305,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.dialpad, color: Colors.white,),
-                  label: Text('Call',
+                  label: Text(callButton,
                       style: GoogleFonts.abel(
                           color: Colors.white,
                           fontSize: 18,
@@ -293,7 +329,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.message, color: Colors.white,),
-                  label: Text('Send a Message',
+                  label: Text(messageButton,
                       style: GoogleFonts.abel(
                           color: Colors.white,
                           fontSize: 18,
@@ -317,7 +353,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.gmail, color: Colors.white,),
-                  label: Text("Send an Email",
+                  label: Text(emailButton,
                       style: GoogleFonts.abel(
                           color: Colors.white,
                           fontSize: 18,
@@ -341,7 +377,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.twitterCircle, color: Colors.white,),
-                  label: Text('My Twitter',
+                  label: Text(twitterButton,
                       style: GoogleFonts.abel(
                           color: Colors.white,
                           fontSize: 18,
@@ -365,7 +401,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.instagram, color: Colors.white,),
-                  label: Text('My Instagram',
+                  label: Text(instagramButton,
                       style: GoogleFonts.abel(
                           color: Colors.white,
                           fontSize: 18,
@@ -389,7 +425,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                   elevation: 2,
                   color: Color.fromRGBO(114, 78, 147, 1),
                   icon: new Icon(MdiIcons.linkedinBox, color: Colors.white,),
-                  label: Text('My LinkedIn',
+                  label: Text(linkedInButton,
                       style: GoogleFonts.abel(
                           color: Colors.white,
                           fontSize: 18,
@@ -397,7 +433,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       )
                   ),
                   onPressed: () {
-                    launchURL(urlLinkedIn+_linkedin);
+                    launchURL(urlLinkedIn+_linkedIn);
                   },
                 ),
               ),
@@ -413,7 +449,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                   elevation: 2,
                   color: Color.fromRGBO(46, 137, 112, 1),
                   icon: new Icon(MdiIcons.facebook, color: Colors.white,),
-                  label: Text('My Facebook',
+                  label: Text(facebookButton,
                     style: GoogleFonts.abel(
                         color: Colors.white,
                         fontSize: 18,
@@ -447,7 +483,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                     TextSpan(
                       children: <TextSpan>[
                         TextSpan(
-                            text: 'Autobiography\n',
+                            text: autobiographyTitle,
                             style:  GoogleFonts.aBeeZee(
                               color: Color.fromRGBO(46, 137, 112, 1),
                               fontSize: 19,
@@ -455,7 +491,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                             )
                         ),
                         TextSpan(
-                            text: ' '+_autobio,
+                            text: ' '+_autoBio,
                             style: GoogleFonts.trykker(
                               color: Color.fromRGBO(46, 137, 112, 1),
                               fontSize: 19,
@@ -488,7 +524,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'My Nickname\n',
+                              text: nicknameTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -530,7 +566,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Best Moment in NYSC\n',
+                              text: bestMomentTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -538,7 +574,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_bestmoment,
+                              text: ' '+_bestMoment,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -572,7 +608,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Worst Moment in NYSC\n',
+                              text: worstMomentTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -580,7 +616,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_worst_moment,
+                              text: ' '+_worstMoment,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -614,7 +650,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'PPA Name\n',
+                              text: ppaNameTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -622,7 +658,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_ppa_name,
+                              text: ' '+_ppaName,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -656,7 +692,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'PPA Location\n',
+                              text: ppaLocationTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -664,7 +700,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_ppa_location,
+                              text: ' '+_ppaLocation,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -698,7 +734,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'PPA Assignment\n',
+                              text: ppaAssignmentTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -706,7 +742,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_ppa_assignment,
+                              text: ' '+_ppaAssignment,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -740,7 +776,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Alma Mater\n',
+                              text: almaMaterTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -748,7 +784,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_alma_mater,
+                              text: ' '+_almaMater,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -782,7 +818,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Course of Study\n',
+                              text: courseOfStudyTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -790,7 +826,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_course_of_study,
+                              text: ' '+_courseOfStudy,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -824,7 +860,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Academic Qualification\n',
+                              text: academicQualificationTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -832,7 +868,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_academic_qualification,
+                              text: ' '+_academicQualification,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -866,7 +902,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Graduation Year\n',
+                              text: graduationYearTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -874,7 +910,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_graduation_year,
+                              text: ' '+_graduationYear,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -908,7 +944,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'CDS Executive\n',
+                              text: cdsExecutiveTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -916,7 +952,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_cds_executive,
+                              text: ' '+_cdsExecutive,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -950,7 +986,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'CDS Executive Position\n',
+                              text: cdsExecutivePositionTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -958,7 +994,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_cds_executive_position,
+                              text: ' '+_cdsExecutivePosition,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -992,7 +1028,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: "What's next after NYSC\n",
+                              text: whatsNextAfterTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1000,7 +1036,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_whats_next,
+                              text: ' '+_whatsNext,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1034,7 +1070,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: "Where I live\n",
+                              text: whereILiveTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1042,7 +1078,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_where_you_live,
+                              text: ' '+_whereYouLive,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1076,7 +1112,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: "State of Origin\n",
+                              text: stateOfOriginTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1084,7 +1120,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_state_of_origin,
+                              text: ' '+_stateOfOrigin,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1118,7 +1154,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Date of Birth\n',
+                              text: dobTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1126,7 +1162,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_d_o_b,
+                              text: ' '+_dob,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1160,7 +1196,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Hobbies\n',
+                              text: hobbiesTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1202,7 +1238,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Philosophy about Life\n',
+                              text: philosophyTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1244,7 +1280,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              text: 'Dropline to My Junior Hallel Colleagues\n',
+                              text: droplineTitle,
                               style:  GoogleFonts.aBeeZee(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,
@@ -1252,7 +1288,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                               )
                           ),
                           TextSpan(
-                              text: ' '+_my_dropline,
+                              text: ' '+_myDropline,
                               style: GoogleFonts.trykker(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 fontSize: 19,

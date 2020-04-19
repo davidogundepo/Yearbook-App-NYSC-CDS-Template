@@ -9,6 +9,29 @@ import 'package:rxdart/rxdart.dart';
 import '../bloc_navigation_bloc/navigation_bloc.dart';
 import '../sidebar/menu_item.dart';
 
+
+
+String cdsName = "Financial Inclusion CDS";
+String title = "Financial Inclusion CDS".toUpperCase();
+String subtitle = "Obia/Akpor LG CDS GROUP";
+
+String batchBStreamOneTitle = "Batch B Stream One Corpers Corpers Corpers Corpers";
+String batchBStreamTwoTitle = "Batch B Stream Two Corpers Corpers Corpers";
+String batchCStreamOneTitle = "Batch C Stream One One Corpers";
+String batchCStreamTwoTitle = "Batch C Stream Two Corpers";
+String batchAStreamOneTitle = "Batch A Stream One Corpers";
+String executiveCDSCorpersTitle = "Executive CDS Corpers";
+String localGovOfficialsTitle = "Local Government Officials";
+
+String exitAppStatement = "Exit from App";
+String exitAppTitle = "Come on!";
+String exitAppSubtitle = "Do you really really want to?";
+String exitAppNo = "Oh No";
+String exitAppYes = "I Have To";
+
+String imgAsset = "assets/images/fin_inc_17.jpg";
+
+
 class SideBar extends StatefulWidget {
 
   @override
@@ -88,207 +111,232 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             colors: [Color.fromRGBO(46, 137, 112, 1), Color.fromRGBO(46, 137, 112, 1)]
                         )
                     ),
-                    child: Column(
-                      children: <Widget>[
-                        SizedBox(
-                          height: 50,
-                        ),
-                        Stack(
-                          children: <Widget>[
-                            Opacity(
-                              opacity: 0.7,
-                              child: Container(
-                                child: Material(
-                                  color: Colors.transparent,
-                                  child: InkWell(
-                                    splashColor: Colors.greenAccent,
-                                    onTap: () {},
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(bottom: 20, top: 80),
-                                      child: ListTile(
-                                        title: Text(
-                                          "FINANCIAL INCLUSION CDS",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.w800),
-                                        ),
-                                        subtitle: Text(
-                                          "Obia/Akpor LG CDS GROUP",
-                                          style: TextStyle(
-                                            color: Color.fromRGBO(46, 137, 112, 1),
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 20,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Column(
+                        children: <Widget>[
+                          SizedBox(
+                            height: 50,
+                          ),
+                          Stack(
+                            children: <Widget>[
+                              Opacity(
+                                opacity: 0.7,
+                                child: Container(
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    child: InkWell(
+                                      splashColor: Colors.greenAccent,
+                                      onTap: () {},
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(bottom: 20, top: 80),
+                                        child: ListTile(
+                                          title: Text(
+                                            title,
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 25,
+                                                fontWeight: FontWeight.w800),
+                                          ),
+                                          subtitle: Text(
+                                            subtitle,
+                                            style: TextStyle(
+                                              color: Color.fromRGBO(46, 137, 112, 1),
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 20,
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                width: 400.0,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: new ExactAssetImage('assets/images/fin_inc_17.jpg'),
-                                    fit: BoxFit.cover,
+                                  width: 400.0,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: new ExactAssetImage(imgAsset),
+                                      fit: BoxFit.cover,
+                                    ),
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                      colors: [Colors.green, Colors.greenAccent.withAlpha(50)],
+                                      stops: [0.3, 1],
+
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        blurRadius: 12,
+                                        offset: Offset(3, 12),
+                                      )
+                                    ],
+                                    borderRadius: new BorderRadius.circular(10),
                                   ),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                    colors: [Colors.green, Colors.greenAccent.withAlpha(50)],
-                                    stops: [0.3, 1],
 
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color.fromRGBO(46, 137, 112, 1),
-                                      blurRadius: 12,
-                                      offset: Offset(3, 12),
-                                    )
-                                  ],
-                                  borderRadius: new BorderRadius.circular(10),
+
                                 ),
-
-
+                              ),
+                            ],
+                          ),
+                          Divider(
+                            height: 30,
+                            thickness: 0.5,
+                            color: Colors.white.withOpacity(0.3),
+                            indent: 32,
+                            endIndent: 32,
+                          ),
+                          Material(
+                            color: _currentNAVSelected == 0 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            child: InkWell(
+                              splashColor: Colors.white,
+                              onTap: () {
+                                _onSelected(0);
+                                onIconPressed();
+                                BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchBStreamOnePageClickedEvent);
+                              },
+                              child:MenuItem(
+                                    icon: MdiIcons.accountGroup,
+                                    title: batchBStreamOneTitle,
+                                  ),
+                            ),
+                          ),
+                          Material(
+                            color: _currentNAVSelected == 1 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            child: InkWell(
+                              splashColor: Colors.white,
+                              onTap: () {
+                                _onSelected(1);
+                                onIconPressed();
+                                BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchBStreamTwoPageClickedEvent);
+                              },
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: MenuItem(
+                                  icon: MdiIcons.accountGroup,
+                                  title: batchBStreamTwoTitle,
+                                ),
                               ),
                             ),
-                          ],
-                        ),
-                        Divider(
-                          height: 30,
-                          thickness: 0.5,
-                          color: Colors.white.withOpacity(0.3),
-                          indent: 32,
-                          endIndent: 32,
-                        ),
-                        Material(
-                          color: _currentNAVSelected == 0 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
-                          child: InkWell(
-                            splashColor: Colors.white,
-                            onTap: () {
-                              _onSelected(0);
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchBStreamOnePageClickedEvent);
-                            },
-                            child: MenuItem(
-                              icon: MdiIcons.accountGroup,
-                              title: "Batch B Stream One Corpers",
-
-
+                          ),
+                          Material(
+                            color: _currentNAVSelected == 2 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            child: InkWell(
+                              splashColor: Colors.white,
+                              onTap: () {
+                                _onSelected(2);
+                                onIconPressed();
+                                BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchCStreamOnePageClickedEvent);
+                              },
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: MenuItem(
+                                  icon: MdiIcons.accountGroup,
+                                  title: batchCStreamOneTitle,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                        Material(
-                          color: _currentNAVSelected == 1 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
-                          child: InkWell(
-                            splashColor: Colors.white,
-                            onTap: () {
-                              _onSelected(1);
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchBStreamTwoPageClickedEvent);
-                            },
-                            child: MenuItem(
-                              icon: MdiIcons.accountGroup,
-                              title: "Batch B Stream Two Corpers",
+                          Material(
+                            color: _currentNAVSelected == 3 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            child: InkWell(
+                              splashColor: Colors.white,
+                              onTap: () {
+                                _onSelected(3);
+                                onIconPressed();
+                                BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchCStreamTwoPageClickedEvent);
+                              },
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: MenuItem(
+                                  icon: MdiIcons.accountGroup,
+                                  title: batchCStreamTwoTitle,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                        Material(
-                          color: _currentNAVSelected == 2 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
-                          child: InkWell(
-                            splashColor: Colors.white,
-                            onTap: () {
-                              _onSelected(2);
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchCStreamOnePageClickedEvent);
-                            },
-                            child: MenuItem(
-                              icon: MdiIcons.accountGroup,
-                              title: "Batch C Stream One Corpers",
+                          Material(
+                            color: _currentNAVSelected == 4 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            child: InkWell(
+                              splashColor: Colors.white,
+                              onTap: () {
+                                _onSelected(4);
+                                onIconPressed();
+                                BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchAStreamOnePageClickedEvent);
+                              },
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: MenuItem(
+                                  icon: MdiIcons.accountGroup,
+                                  title: batchAStreamOneTitle,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                        Material(
-                          color: _currentNAVSelected == 3 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
-                          child: InkWell(
-                            splashColor: Colors.white,
-                            onTap: () {
-                              _onSelected(3);
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchCStreamTwoPageClickedEvent);
-                            },
-                            child: MenuItem(
-                              icon: MdiIcons.accountGroup,
-                              title: "Batch C Stream Two Corpers",
+                          Material(
+                            color: _currentNAVSelected == 5 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            child: InkWell(
+                              splashColor: Colors.white,
+                              onTap: () {
+                                _onSelected(5);
+                                onIconPressed();
+                                BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyExecutivePageClickedEvent);
+                              },
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: MenuItem(
+                                  icon: MdiIcons.teach,
+                                  title: executiveCDSCorpersTitle,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                        Material(
-                          color: _currentNAVSelected == 4 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
-                          child: InkWell(
-                            splashColor: Colors.white,
-                            onTap: () {
-                              _onSelected(4);
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchAStreamOnePageClickedEvent);
-                            },
-                            child: MenuItem(
-                              icon: MdiIcons.accountGroup,
-                              title: "Batch A Stream One Corpers",
+                          Material(
+                            color: _currentNAVSelected == 6 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            child: InkWell(
+                              splashColor: Colors.white,
+                              onTap: () {
+                                _onSelected(6);
+                                onIconPressed();
+                                BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyLGOfficialsPageClickedEvent);
+                              },
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: MenuItem(
+                                  icon: MdiIcons.pillar,
+                                  title: localGovOfficialsTitle,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                        Material(
-                          color: _currentNAVSelected == 5 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
-                          child: InkWell(
-                            splashColor: Colors.white,
-                            onTap: () {
-                              _onSelected(5);
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyExecutivePageClickedEvent);
-                            },
-                            child: MenuItem(
-                              icon: MdiIcons.teach,
-                              title: "Executive CDS Corpers",
+                          Divider(
+                            height: 64,
+                            thickness: 0.5,
+                            color: Colors.white.withOpacity(0.3),
+                            indent: 32,
+                            endIndent: 32,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 50),
+                            child: Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                splashColor: Colors.white,
+                                onTap: () {
+                                  _onWillPop();
+                                  onIconPressed();
+                                },
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: MenuItem(
+                                    icon: MdiIcons.logout,
+                                    title: exitAppStatement,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                        Material(
-                          color: _currentNAVSelected == 6 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
-                          child: InkWell(
-                            splashColor: Colors.white,
-                            onTap: () {
-                              _onSelected(6);
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyLGOfficialsPageClickedEvent);
-                            },
-                            child: MenuItem(
-                              icon: MdiIcons.pillar,
-                              title: "Local Government Officials",
-                            ),
-                          ),
-                        ),
-                        Divider(
-                          height: 64,
-                          thickness: 0.5,
-                          color: Colors.white.withOpacity(0.3),
-                          indent: 32,
-                          endIndent: 32,
-                        ),
-                        Material(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            splashColor: Colors.white,
-                            onTap: () {
-                              _onWillPop();
-                              onIconPressed();
-                            },
-                            child: MenuItem(
-                              icon: MdiIcons.logout,
-                              title: "Exit from App",
-                            ),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -331,17 +379,17 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Come on!'),
-        content: Text('Do you really really want to?'),
+        title: Text(exitAppTitle),
+        content: Text(exitAppSubtitle),
         actions: <Widget>[
           FlatButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: Text('Oh No'),
+            child: Text(exitAppNo),
           ),
           FlatButton(
             onPressed: () => exit(0),
             /*Navigator.of(context).pop(true)*/
-            child: Text('I Have To'),
+            child: Text(exitAppYes),
           ),
         ],
       ),

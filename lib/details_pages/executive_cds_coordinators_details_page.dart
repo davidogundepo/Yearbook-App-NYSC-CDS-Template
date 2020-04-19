@@ -6,6 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 
+
+
+String nyscBatch = "Nysc Batch\n";
+String positionEnforced = "Position Enforced\n";
+
+
 ExecutiveCDSCoordinatorsNotifier executiveCDSCoordinatorsNotifier;
 
 class ExecutiveCDSCoordinatorsDetailsPage extends StatefulWidget {
@@ -129,7 +135,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                               TextSpan(
                                 children: <TextSpan>[
                                   TextSpan(
-                                      text: 'Nysc Batch\n',
+                                      text: nyscBatch,
                                       style: GoogleFonts.aBeeZee(
                                         color: Color.fromRGBO(254, 255, 236, 1),
                                         fontSize: 19,
@@ -137,7 +143,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                       )
                                   ),
                                   TextSpan(
-                                      text: ' '+executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.nysc_batch,
+                                      text: ' '+executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.nyscBatch,
                                       style: GoogleFonts.trykker(
                                         color: Color.fromRGBO(254, 255, 236, 1),
                                         fontSize: 19,
@@ -170,7 +176,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                 TextSpan(
                                   children: <TextSpan>[
                                     TextSpan(
-                                        text: 'Position Enforced\n',
+                                        text: positionEnforced,
                                         style: GoogleFonts.aBeeZee(
                                           color: Color.fromRGBO(254, 255, 236, 1),
                                           fontSize: 19,
@@ -178,7 +184,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                         )
                                     ),
                                     TextSpan(
-                                        text: ' '+executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.position_enforced,
+                                        text: ' '+executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.positionEnforced,
                                         style: GoogleFonts.trykker(
                                           color: Color.fromRGBO(254, 255, 236, 1),
                                           fontSize: 19,
