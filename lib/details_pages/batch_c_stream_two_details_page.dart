@@ -45,7 +45,7 @@ String graduationYearTitle = "Graduation Year\n";
 String cdsExecutiveTitle = "CDS Executive\n";
 String cdsExecutivePositionTitle = "CDS Executive Position\n";
 String whatsNextAfterTitle = "What's next after NYSC\n";
-String whereILiveTitle = "Where I live\n";
+String currentLivingStateTitle = "State of Living\n";
 String stateOfOriginTitle = "State of Origin\n";
 String dobTitle = "Date of Birth\n";
 String hobbiesTitle = "Hobbies\n";
@@ -79,10 +79,10 @@ var _cdsExecutive;
 var _cdsExecutivePosition;
 var _ppaLocation;
 var _ppaName;
-var _stateOfOrigin;
 var _twitter;
-var _whatsNext;
-var _whereYouLive;
+//var _whatsNext;
+var _stateLiving;
+var _originState;
 var _worstMoment;
 
 
@@ -93,6 +93,16 @@ class BatchCStreamTwoDetailsPage extends StatefulWidget {
 }
 
 class _BatchCStreamTwoDetailsPageState extends State<BatchCStreamTwoDetailsPage> {
+
+
+
+  bool _isVisible = true;
+
+  void showToast() {
+    setState(() {
+      _isVisible = !_isVisible;
+    });
+  }
 
 
   Future launchURL(String url) async{
@@ -179,12 +189,39 @@ class _BatchCStreamTwoDetailsPageState extends State<BatchCStreamTwoDetailsPage>
                         right: 16.0,
                         bottom: 16.0),
 
-                    child: Text(batchCStreamTwoNotifier.currentBatchCStreamTwo.name.toUpperCase(),
-                      style: GoogleFonts.blinker(
-                          color: Color.fromRGBO(46, 137, 112, 1),
-                          fontSize: 30,
-                          fontWeight: FontWeight.w500
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Text(batchCStreamTwoNotifier.currentBatchCStreamTwo.name.toUpperCase(),
+                          style: GoogleFonts.blinker(
+                              color: Color.fromRGBO(46, 137, 112, 1),
+                              fontSize: 30,
+                              fontWeight: FontWeight.w500
+                          ),
+                        ),
+                        (() {
+                          if (batchCStreamTwoNotifier.currentBatchCStreamTwo.cdsExecutive == "Yes") {
+                            return
+                              Row(
+                                children: <Widget>[
+                                  SizedBox(width: 10),
+                                  Icon (
+                                    MdiIcons.checkboxMarkedCircle,
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                  ),
+                                ],
+                              );
+                          } else {
+                            return Visibility(
+                              visible: !_isVisible,
+                              child: Icon (
+                                MdiIcons.checkboxMarkedCircle,
+                                color: Color.fromRGBO(46, 137, 112, 1),
+                              ),
+                            );
+                          }
+                        }()),
+                      ],
                     ),
                   ),
                 ),
@@ -268,9 +305,9 @@ class _BatchCStreamTwoDetailsPageState extends State<BatchCStreamTwoDetailsPage>
     _cdsExecutivePosition = batchCStreamTwoNotifier.currentBatchCStreamTwo.cdsExecutivePosition;
     _ppaLocation = batchCStreamTwoNotifier.currentBatchCStreamTwo.ppaLocation;
     _ppaName = batchCStreamTwoNotifier.currentBatchCStreamTwo.ppaName;
-    _stateOfOrigin = batchCStreamTwoNotifier.currentBatchCStreamTwo.stateOfOrigin;
-    _whatsNext = batchCStreamTwoNotifier.currentBatchCStreamTwo.whatsNext;
-    _whereYouLive = batchCStreamTwoNotifier.currentBatchCStreamTwo.whereYouLive;
+    _originState = batchCStreamTwoNotifier.currentBatchCStreamTwo.stateOfOrigin;
+//    _whatsNext = batchCStreamTwoNotifier.currentBatchCStreamTwo.whatsNext;
+    _stateLiving = batchCStreamTwoNotifier.currentBatchCStreamTwo.whereYouLive;
     _bestMoment = batchCStreamTwoNotifier.currentBatchCStreamTwo.bestMoment;
     _dob = batchCStreamTwoNotifier.currentBatchCStreamTwo.dob;
     _academicQualification = batchCStreamTwoNotifier.currentBatchCStreamTwo.academicQualification;
@@ -295,174 +332,407 @@ class _BatchCStreamTwoDetailsPageState extends State<BatchCStreamTwoDetailsPage>
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: InkWell(
-                splashColor: Colors.white,
-                child: RaisedButton.icon(
-                  shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  elevation: 2,
-                  color: Color.fromRGBO(46, 137, 112, 1),
-                  icon: new Icon(MdiIcons.dialpad, color: Colors.white,),
-                  label: Text(callButton,
-                      style: GoogleFonts.abel(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300
-                      )
-                  ),
-                  onPressed: () {
-                    launchURL(callFIRST+_phone);
-                  },
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: InkWell(
-                splashColor: Colors.white,
-                child: RaisedButton.icon(
-                  shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  elevation: 2,
-                  color: Color.fromRGBO(46, 137, 112, 1),
-                  icon: new Icon(MdiIcons.message, color: Colors.white,),
-                  label: Text(messageButton,
-                      style: GoogleFonts.abel(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300
-                      )
-                  ),
-                  onPressed: () {
-                    launchURL(smsFIRST+_phone);
-                  },
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: InkWell(
-                splashColor: Colors.white,
-                child: RaisedButton.icon(
-                  shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  elevation: 2,
-                  color: Color.fromRGBO(46, 137, 112, 1),
-                  icon: new Icon(MdiIcons.gmail, color: Colors.white,),
-                  label: Text(emailButton,
-                      style: GoogleFonts.abel(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300
-                      )
-                  ),
-                  onPressed: () {
-                    launchURL(mailFIRST+_email+mailSECOND+_name);
-                  },
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: InkWell(
-                splashColor: Colors.white,
-                child: RaisedButton.icon(
-                  shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  elevation: 2,
-                  color: Color.fromRGBO(46, 137, 112, 1),
-                  icon: new Icon(MdiIcons.twitterCircle, color: Colors.white,),
-                  label: Text(twitterButton,
-                      style: GoogleFonts.abel(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300
-                      )
-                  ),
-                  onPressed: () {
-                    launchURL(urlTwitter+_twitter);
-                  },
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: InkWell(
-                splashColor: Colors.white,
-                child: RaisedButton.icon(
-                  shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  elevation: 2,
-                  color: Color.fromRGBO(46, 137, 112, 1),
-                  icon: new Icon(MdiIcons.instagram, color: Colors.white,),
-                  label: Text(instagramButton,
-                      style: GoogleFonts.abel(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300
-                      )
-                  ),
-                  onPressed: () {
-                    launchURL(urlInstagram+_instagram);
-                  },
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: InkWell(
-                splashColor: Colors.white,
-                child: RaisedButton.icon(
-                  shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  elevation: 2,
-                  color: Color.fromRGBO(114, 78, 147, 1),
-                  icon: new Icon(MdiIcons.linkedinBox, color: Colors.white,),
-                  label: Text(linkedInButton,
-                      style: GoogleFonts.abel(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300
-                      )
-                  ),
-                  onPressed: () {
-                    launchURL(urlLinkedIn+_linkedIn);
-                  },
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: InkWell(
-                splashColor: Colors.white,
-                child: RaisedButton.icon(
-                  shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  elevation: 2,
-                  color: Color.fromRGBO(46, 137, 112, 1),
-                  icon: new Icon(MdiIcons.facebook, color: Colors.white,),
-                  label: Text(facebookButton,
-                    style: GoogleFonts.abel(
+            (() {
+              if (_phone.toString().isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: InkWell(
+                    splashColor: Colors.white,
+                    child: RaisedButton.icon(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 2,
+                      color: Color.fromRGBO(46, 137, 112, 1),
+                      icon: new Icon(
+                        MdiIcons.dialpad,
                         color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w300
+                      ),
+                      label: Text(callButton,
+                          style: GoogleFonts.abel(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300)),
+                      onPressed: () {
+                        launchURL(callFIRST + _phone);
+                      },
                     ),
                   ),
-                  onPressed: () {
-                    launchURL(urlFacebook+_facebook);
-                  },
-                ),
-              ),
-            ),
+                );
+              } else {
+                return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      splashColor: Colors.white,
+                      child: RaisedButton.icon(
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 2,
+                        color: Color.fromRGBO(46, 137, 112, 1),
+                        icon: new Icon(
+                          MdiIcons.dialpad,
+                          color: Colors.white,
+                        ),
+                        label: Text(callButton,
+                            style: GoogleFonts.abel(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w300)),
+                        onPressed: () {
+                          launchURL(callFIRST + _phone);
+                        },
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }()),
+            (() {
+              if (_phone.toString().isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: InkWell(
+                    splashColor: Colors.white,
+                    child: RaisedButton.icon(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 2,
+                      color: Color.fromRGBO(46, 137, 112, 1),
+                      icon: new Icon(
+                        MdiIcons.message,
+                        color: Colors.white,
+                      ),
+                      label: Text(messageButton,
+                          style: GoogleFonts.abel(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300)),
+                      onPressed: () {
+                        launchURL(smsFIRST + _phone);
+                      },
+                    ),
+                  ),
+                );
+              } else {
+                return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      splashColor: Colors.white,
+                      child: RaisedButton.icon(
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 2,
+                        color: Color.fromRGBO(46, 137, 112, 1),
+                        icon: new Icon(
+                          MdiIcons.message,
+                          color: Colors.white,
+                        ),
+                        label: Text(messageButton,
+                            style: GoogleFonts.abel(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w300)),
+                        onPressed: () {
+                          launchURL(smsFIRST + _phone);
+                        },
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }()),
+            (() {
+              if (_email.toString().isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: InkWell(
+                    splashColor: Colors.white,
+                    child: RaisedButton.icon(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 2,
+                      color: Color.fromRGBO(46, 137, 112, 1),
+                      icon: new Icon(
+                        MdiIcons.gmail,
+                        color: Colors.white,
+                      ),
+                      label: Text(emailButton,
+                          style: GoogleFonts.abel(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300)),
+                      onPressed: () {
+                        launchURL(mailFIRST + _email + mailSECOND + _name);
+                      },
+                    ),
+                  ),
+                );
+              } else {
+                return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      splashColor: Colors.white,
+                      child: RaisedButton.icon(
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 2,
+                        color: Color.fromRGBO(46, 137, 112, 1),
+                        icon: new Icon(
+                          MdiIcons.gmail,
+                          color: Colors.white,
+                        ),
+                        label: Text(emailButton,
+                            style: GoogleFonts.abel(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w300)),
+                        onPressed: () {
+                          launchURL(mailFIRST + _email + mailSECOND + _name);
+                        },
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }()),
+            (() {
+              if (_twitter.toString().isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: InkWell(
+                    splashColor: Colors.white,
+                    child: RaisedButton.icon(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 2,
+                      color: Color.fromRGBO(46, 137, 112, 1),
+                      icon: new Icon(
+                        MdiIcons.twitterCircle,
+                        color: Colors.white,
+                      ),
+                      label: Text(twitterButton,
+                          style: GoogleFonts.abel(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300)),
+                      onPressed: () {
+                        launchURL(urlTwitter + _twitter);
+                      },
+                    ),
+                  ),
+                );
+              } else {
+                return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      splashColor: Colors.white,
+                      child: RaisedButton.icon(
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 2,
+                        color: Color.fromRGBO(46, 137, 112, 1),
+                        icon: new Icon(
+                          MdiIcons.twitterCircle,
+                          color: Colors.white,
+                        ),
+                        label: Text(twitterButton,
+                            style: GoogleFonts.abel(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w300)),
+                        onPressed: () {
+                          launchURL(urlTwitter + _twitter);
+                        },
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }()),
+            (() {
+              if (_instagram.toString().isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: InkWell(
+                    splashColor: Colors.white,
+                    child: RaisedButton.icon(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 2,
+                      color: Color.fromRGBO(46, 137, 112, 1),
+                      icon: new Icon(
+                        MdiIcons.instagram,
+                        color: Colors.white,
+                      ),
+                      label: Text(instagramButton,
+                          style: GoogleFonts.abel(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300)),
+                      onPressed: () {
+                        launchURL(urlInstagram + _instagram);
+                      },
+                    ),
+                  ),
+                );
+              } else {
+                return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      splashColor: Colors.white,
+                      child: RaisedButton.icon(
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 2,
+                        color: Color.fromRGBO(46, 137, 112, 1),
+                        icon: new Icon(
+                          MdiIcons.instagram,
+                          color: Colors.white,
+                        ),
+                        label: Text(instagramButton,
+                            style: GoogleFonts.abel(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w300)),
+                        onPressed: () {
+                          launchURL(urlInstagram + _instagram);
+                        },
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }()),
+            (() {
+              if (_facebook.toString().isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: InkWell(
+                    splashColor: Colors.white,
+                    child: RaisedButton.icon(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 2,
+                      color: Color.fromRGBO(46, 137, 112, 1),
+                      icon: new Icon(
+                        MdiIcons.facebook,
+                        color: Colors.white,
+                      ),
+                      label: Text(
+                        facebookButton,
+                        style: GoogleFonts.abel(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w300),
+                      ),
+                      onPressed: () {
+                        launchURL(urlFacebook + _facebook);
+                      },
+                    ),
+                  ),
+                );
+              } else {
+                return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      splashColor: Colors.white,
+                      child: RaisedButton.icon(
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 2,
+                        color: Color.fromRGBO(46, 137, 112, 1),
+                        icon: new Icon(
+                          MdiIcons.facebook,
+                          color: Colors.white,
+                        ),
+                        label: Text(
+                          facebookButton,
+                          style: GoogleFonts.abel(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300),
+                        ),
+                        onPressed: () {
+                          launchURL(urlFacebook + _facebook);
+                        },
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }()),
+            (() {
+              if (_linkedIn.toString().isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: InkWell(
+                    splashColor: Colors.white,
+                    child: RaisedButton.icon(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 2,
+                      color: Color.fromRGBO(46, 137, 112, 1),
+                      icon: new Icon(
+                        MdiIcons.linkedinBox,
+                        color: Colors.white,
+                      ),
+                      label: Text(
+                        linkedInButton,
+                        style: GoogleFonts.abel(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w300),
+                      ),
+                      onPressed: () {
+                        launchURL(urlLinkedIn + _linkedIn);
+                      },
+                    ),
+                  ),
+                );
+              } else {
+                return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      splashColor: Colors.white,
+                      child: RaisedButton.icon(
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 2,
+                        color: Color.fromRGBO(46, 137, 112, 1),
+                        icon: new Icon(
+                          MdiIcons.linkedinBox,
+                          color: Colors.white,
+                        ),
+                        label: Text(
+                          linkedInButton,
+                          style: GoogleFonts.abel(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300),
+                        ),
+                        onPressed: () {
+                          launchURL(urlLinkedIn + _linkedIn);
+                        },
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }()),
+
           ],
         ),
       ),
@@ -472,843 +742,1661 @@ class _BatchCStreamTwoDetailsPageState extends State<BatchCStreamTwoDetailsPage>
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Container(
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                splashColor: Color.fromRGBO(46, 137, 112, 1),
-                onTap: () {},
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                  child: Text.rich(
-                    TextSpan(
-                      children: <TextSpan>[
+          (() {
+            if (_autoBio.toString().isNotEmpty) {
+              return Container(
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    splashColor: Color.fromRGBO(46, 137, 112, 1),
+                    onTap: () {},
+                    child: Padding(
+                      padding:
+                      const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                      child: Text.rich(
                         TextSpan(
-                            text: autobiographyTitle,
-                            style:  GoogleFonts.aBeeZee(
-                              color: Color.fromRGBO(46, 137, 112, 1),
-                              fontSize: 19,
-                              fontWeight: FontWeight.bold,
-                            )
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: autobiographyTitle,
+                                style: GoogleFonts.aBeeZee(
+                                  color: Color.fromRGBO(46, 137, 112, 1),
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                            TextSpan(
+                                text: ' ' + _autoBio,
+                                style: GoogleFonts.trykker(
+                                  color: Color.fromRGBO(46, 137, 112, 1),
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w300,
+                                )),
+                          ],
                         ),
-                        TextSpan(
-                            text: ' '+_autoBio,
-                            style: GoogleFonts.trykker(
-                              color: Color.fromRGBO(46, 137, 112, 1),
-                              fontSize: 19,
-                              fontWeight: FontWeight.w300,
-                            )
+                      ),
+                    ),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                    borderRadius: new BorderRadius.circular(10)),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
+                  child: Container(
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        splashColor: Color.fromRGBO(46, 137, 112, 1),
+                        onTap: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              bottom: 15, top: 15, left: 25),
+                          child: Text.rich(
+                            TextSpan(
+                              children: <TextSpan>[
+                                TextSpan(
+                                    text: autobiographyTitle,
+                                    style: GoogleFonts.aBeeZee(
+                                      color: Color.fromRGBO(46, 137, 112, 1),
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                                TextSpan(
+                                    text: ' ' + _autoBio,
+                                    style: GoogleFonts.trykker(
+                                      color: Color.fromRGBO(46, 137, 112, 1),
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.w300,
+                                    )),
+                              ],
+                            ),
+                          ),
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
-              ),
-            ),
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                        borderRadius: new BorderRadius.circular(10)),
+                  ));
+            }
+          }()),
 
-            decoration: BoxDecoration(
-                color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                borderRadius: new BorderRadius.circular(10)
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
+          (() {
+            if (_nickname.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: nicknameTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: nicknameTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _nickname,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
                           ),
-                          TextSpan(
-                              text: ' '+_nickname,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
-                          ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
                 ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: bestMomentTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: nicknameTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _nickname,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+          (() {
+            if (_bestMoment.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_bestMoment,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: bestMomentTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _bestMoment,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
                 ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: worstMomentTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: bestMomentTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _bestMoment,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+
+          (() {
+            if (_worstMoment.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_worstMoment,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: worstMomentTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _worstMoment,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
                 ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: ppaNameTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: worstMomentTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _worstMoment,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+
+          (() {
+            if (_ppaName.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_ppaName,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: ppaNameTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_ppaName,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: ppaLocationTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: ppaNameTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_ppaName,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+          (() {
+            if (_ppaLocation.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_ppaLocation,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: ppaLocationTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_ppaLocation,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: ppaAssignmentTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: ppaLocationTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_ppaLocation,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+
+          (() {
+            if (_ppaAssignment.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_ppaAssignment,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: ppaAssignmentTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_ppaAssignment,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: almaMaterTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: ppaAssignmentTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_ppaAssignment,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+
+          (() {
+            if (_almaMater.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_almaMater,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: almaMaterTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_almaMater,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: courseOfStudyTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: almaMaterTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_almaMater,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+          (() {
+            if (_courseOfStudy.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_courseOfStudy,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: courseOfStudyTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_courseOfStudy,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: academicQualificationTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: courseOfStudyTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_courseOfStudy,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+          (() {
+            if (_academicQualification.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_academicQualification,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: academicQualificationTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_academicQualification,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: graduationYearTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: academicQualificationTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_academicQualification,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+
+          (() {
+            if (_graduationYear.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_graduationYear,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: graduationYearTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_graduationYear,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: cdsExecutiveTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: graduationYearTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_graduationYear,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+
+          (() {
+            if (_cdsExecutive.toString() == "Yes") {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_cdsExecutive,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: cdsExecutivePositionTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_cdsExecutivePosition,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
 
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: cdsExecutivePositionTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: cdsExecutivePositionTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_cdsExecutivePosition,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
+            }
+          }()),
+//          Padding(
+//            padding: const EdgeInsets.only(top: 20.0),
+//            child: Container(
+//              child: Material(
+//                color: Colors.transparent,
+//                child: InkWell(
+//                  splashColor: Color.fromRGBO(46, 137, 112, 1),
+//                  onTap: () {},
+//                  child: Padding(
+//                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+//                    child: Text.rich(
+//                      TextSpan(
+//                        children: <TextSpan>[
+//                          TextSpan(
+//                              text: whatsNextAfterTitle,
+//                              style:  GoogleFonts.aBeeZee(
+//                                color: Color.fromRGBO(46, 137, 112, 1),
+//                                fontSize: 19,
+//                                fontWeight: FontWeight.bold,
+//                              )
+//                          ),
+//                          TextSpan(
+//                              text: ' '+_whatsNext,
+//                              style: GoogleFonts.trykker(
+//                                color: Color.fromRGBO(46, 137, 112, 1),
+//                                fontSize: 19,
+//                                fontWeight: FontWeight.w300,
+//                              )
+//                          ),
+//                        ],
+//                      ),
+//                    ),
+//                  ),
+//                ),
+//              ),
+//
+//              decoration: BoxDecoration(
+//                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+//                  borderRadius: new BorderRadius.circular(10)
+//              ),
+//            ),
+//          ),
+          (() {
+            if (_dob.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_cdsExecutivePosition,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: dobTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _dob,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
                 ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: whatsNextAfterTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: dobTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _dob,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+          (() {
+            if (_originState.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_whatsNext,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: stateOfOriginTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _originState,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
                 ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: whereILiveTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: stateOfOriginTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _originState,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+          (() {
+            if (_stateLiving.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_whereYouLive,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: currentLivingStateTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _stateLiving,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
                 ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: stateOfOriginTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: currentLivingStateTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _stateLiving,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+          (() {
+            if (_hobbies.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_stateOfOrigin,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: hobbiesTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _hobbies,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
                 ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: dobTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: hobbiesTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _hobbies,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+
+          (() {
+            if (_philosophy.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_dob,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: philosophyTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _philosophy,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
                 ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: hobbiesTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: philosophyTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _philosophy,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
                           ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+
+          (() {
+            if (_myDropline.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
                           TextSpan(
-                              text: ' '+_hobbies,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: droplineTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _myDropline,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
                 ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: philosophyTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: droplineTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _myDropline,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
                           ),
-                          TextSpan(
-                              text: ' '+_philosophy,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
-                          ),
-                        ],
+                        ),
                       ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
                     ),
-                  ),
-                ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Container(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  splashColor: Color.fromRGBO(46, 137, 112, 1),
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                    child: Text.rich(
-                      TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: droplineTitle,
-                              style:  GoogleFonts.aBeeZee(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              )
-                          ),
-                          TextSpan(
-                              text: ' '+_myDropline,
-                              style: GoogleFonts.trykker(
-                                color: Color.fromRGBO(46, 137, 112, 1),
-                                fontSize: 19,
-                                fontWeight: FontWeight.w300,
-                              )
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
-              decoration: BoxDecoration(
-                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
-                  borderRadius: new BorderRadius.circular(10)
-              ),
-            ),
-          ),
+                  )
+              );
+            }
+          }()),
         ],
       ),
     };

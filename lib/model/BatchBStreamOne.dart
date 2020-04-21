@@ -35,7 +35,9 @@ class BatchBStreamOne {
     almaMater = data['alma_mater'];
     courseOfStudy = data['course_of_study'];
     graduationYear = data['graduation_year'];
-    linkedIn = data['linkedin'];
+    linkedIn = data['linkedIn'];
+    whatsNext = data['whats_next'];
+    whereYouLive = data['where_you_liive'];
     ppaAssignment = data['ppa_assignment'];
     ppaLocation = data['ppa_location'];
     cdsExecutive = data['cds_executive'];
@@ -54,8 +56,6 @@ class BatchBStreamOne {
     phone = data['phone'];
     twitter = data['twitter'];
     dob = data['d_o_b'];
-    whatsNext = data['whats_next'];
-    whereYouLive = data['where_you_live'];
     hobbies = data['hobbies'];
     myDropline = data['my_dropline'];
     philosophy = data['philosophy'];

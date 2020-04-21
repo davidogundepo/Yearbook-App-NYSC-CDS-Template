@@ -15,8 +15,8 @@ String cdsName = "Financial Inclusion CDS";
 String title = "Financial Inclusion CDS".toUpperCase();
 String subtitle = "Obia/Akpor LG CDS GROUP";
 
-String batchBStreamOneTitle = "Batch B Stream One Corpers Corpers Corpers Corpers";
-String batchBStreamTwoTitle = "Batch B Stream Two Corpers Corpers Corpers";
+String batchBStreamOneTitle = "Batch B Stream One Corpers";
+String batchBStreamTwoTitle = "Batch B Stream Two Corpers";
 String batchCStreamOneTitle = "Batch C Stream One One Corpers";
 String batchCStreamTwoTitle = "Batch C Stream Two Corpers";
 String batchAStreamOneTitle = "Batch A Stream One Corpers";
@@ -116,7 +116,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       child: Column(
                         children: <Widget>[
                           SizedBox(
-                            height: 50,
+                            height: 60,
                           ),
                           Stack(
                             children: <Widget>[
@@ -194,10 +194,13 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                                 onIconPressed();
                                 BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchBStreamOnePageClickedEvent);
                               },
-                              child:MenuItem(
-                                    icon: MdiIcons.accountGroup,
-                                    title: batchBStreamOneTitle,
-                                  ),
+                              child:Align(
+                                alignment: Alignment.centerLeft,
+                                child: MenuItem(
+                                      icon: MdiIcons.accountGroup,
+                                      title: batchBStreamOneTitle,
+                                    ),
+                              ),
                             ),
                           ),
                           Material(

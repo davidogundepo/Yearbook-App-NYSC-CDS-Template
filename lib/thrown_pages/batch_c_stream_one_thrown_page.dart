@@ -31,7 +31,7 @@ String aboutNYSC = "About $nyscName";
 String acronymMeanings = "Acronym Meanings";
 String aboutApp = "About App";
 
-String imgAsset = "assets/images/fin_inc_1.jpg";
+String imgAsset = "assets/images/fin_inc_54.jpeg";
 
 
 
@@ -47,6 +47,14 @@ class MyBatchCStreamOnePage extends StatefulWidget with NavigationStates {
 }
 
 class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
+
+  bool _isVisible = true;
+
+  void showToast() {
+    setState(() {
+      _isVisible = !_isVisible;
+    });
+  }
 
 
   Widget _buildProductItem(BuildContext context, int index) {
@@ -93,25 +101,83 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.only(top: 20),
-                          child: Text(
-                              batchCStreamOneNotifier.batchCStreamOneList[index].name,
-                              style: GoogleFonts.tenorSans(
-                                  color: Colors.blueGrey,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600
-                              )
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                  batchCStreamOneNotifier.batchCStreamOneList[index].name,
+                                  style: GoogleFonts.tenorSans(
+                                      color: Colors.blueGrey,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600
+                                  )
+                              ),
+                              (() {
+                                if (batchCStreamOneNotifier.batchCStreamOneList[index].cdsExecutive == "Yes") {
+                                  return
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(width: 10),
+                                        Icon (
+                                          MdiIcons.checkboxMarkedCircle,
+                                          color: Color.fromRGBO(254, 250, 239, 1),
+                                        ),
+                                      ],
+                                    );
+                                } else {
+                                  return Visibility(
+                                    visible: !_isVisible,
+                                    child: Icon (
+                                      MdiIcons.checkboxMarkedCircle,
+                                      color: Color.fromRGBO(254, 250, 239, 1),
+                                    ),
+                                  );
+                                }
+                              }()),
+                            ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                              batchCStreamOneNotifier.batchCStreamOneList[index].twitter,
-                              style: GoogleFonts.varela(
-                                  color: Colors.blueGrey,
-                                  fontStyle: FontStyle.italic
+                        (() {
+                          if (batchCStreamOneNotifier.batchCStreamOneList[index].twitter.toString().isNotEmpty) {
+                            if (!batchCStreamOneNotifier.batchCStreamOneList[index].twitter.toString().contains("@")) {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchCStreamOneNotifier.batchCStreamOneList[index].twitter == batchCStreamOneNotifier.batchCStreamOneList[index].twitter ? '@'+batchCStreamOneNotifier.batchCStreamOneList[index].twitter : batchCStreamOneNotifier.batchCStreamOneList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Color.fromRGBO(254, 250, 239, 1),
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              );
+                            }
+                            else {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchCStreamOneNotifier.batchCStreamOneList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              );
+                            }
+                          } else {
+                            return Visibility(
+                              visible: !_isVisible,
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchCStreamOneNotifier.batchCStreamOneList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Color.fromRGBO(254, 250, 239, 1),
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
                               )
-                          ),
-                        ),
+                            );
+                          }
+                        }()),
                       ],
                     ),
                   )
@@ -282,6 +348,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                         )
                     ),
                     background: Image.asset(imgAsset,
+                      alignment: Alignment(0, -1),
                       fit: BoxFit.cover,
                     ),
                   ),

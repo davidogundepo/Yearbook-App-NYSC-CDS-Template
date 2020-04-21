@@ -90,13 +90,22 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.only(top: 20),
-                          child: Text(
-                              executiveCDSCoordinatorsNotifier.executiveCDSCoordinatorsList[index].name,
-                              style: GoogleFonts.tenorSans(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600
-                              )
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                  executiveCDSCoordinatorsNotifier.executiveCDSCoordinatorsList[index].name,
+                                  style: GoogleFonts.tenorSans(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600
+                                  )
+                              ),
+                              SizedBox(width: 10),
+                              Icon (
+                                MdiIcons.checkboxMarkedCircle,
+                                color: Colors.white,
+                              ),
+                            ],
                           ),
                         ),
                         Padding(
@@ -273,6 +282,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                           )
                       ),
                       background: Image.asset(imgAsset,
+                        alignment: Alignment(0, -0.5),
                         fit: BoxFit.cover,)
                   ),
                 ),

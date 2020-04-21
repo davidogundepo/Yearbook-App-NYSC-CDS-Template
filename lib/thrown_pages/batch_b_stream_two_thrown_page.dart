@@ -31,7 +31,7 @@ String aboutNYSC = "About $nyscName";
 String acronymMeanings = "Acronym Meanings";
 String aboutApp = "About App";
 
-String imgAsset = "assets/images/fin_inc_4.jpg";
+String imgAsset = "assets/images/fin_inc_22.jpeg";
 
 
 class MyBatchBStreamTwoPage extends StatefulWidget with NavigationStates {
@@ -46,6 +46,14 @@ class MyBatchBStreamTwoPage extends StatefulWidget with NavigationStates {
 }
 
 class _MyBatchBStreamTwoPageState extends State<MyBatchBStreamTwoPage> {
+  bool _isVisible = true;
+
+  void showToast() {
+    setState(() {
+      _isVisible = !_isVisible;
+    });
+  }
+
 
 
   Widget _buildProductItem(BuildContext context, int index) {
@@ -92,25 +100,83 @@ class _MyBatchBStreamTwoPageState extends State<MyBatchBStreamTwoPage> {
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
-                          child: Text(
-                              batchBStreamTwoNotifier.batchBStreamTwoList[index].name,
-                              style: GoogleFonts.tenorSans(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600
-                              )
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                  batchBStreamTwoNotifier.batchBStreamTwoList[index].name,
+                                  style: GoogleFonts.tenorSans(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600
+                                  )
+                              ),
+                              (() {
+                                if (batchBStreamTwoNotifier.batchBStreamTwoList[index].cdsExecutive == "Yes") {
+                                  return
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(width: 10),
+                                        Icon (
+                                          MdiIcons.checkboxMarkedCircle,
+                                          color: Colors.white,
+                                        ),
+                                      ],
+                                    );
+                                } else {
+                                  return Visibility(
+                                    visible: !_isVisible,
+                                    child: Icon (
+                                      MdiIcons.checkboxMarkedCircle,
+                                      color: Colors.white,
+                                    ),
+                                  );
+                                }
+                              }()),
+                            ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                              '@'+batchBStreamTwoNotifier.batchBStreamTwoList[index].twitter,
-                              style: GoogleFonts.varela(
-                                  color: Colors.white70,
-                                  fontStyle: FontStyle.italic
-                              )
-                          ),
-                        ),
+                        (() {
+                          if (batchBStreamTwoNotifier.batchBStreamTwoList[index].twitter.toString().isNotEmpty) {
+                            if (!batchBStreamTwoNotifier.batchBStreamTwoList[index].twitter.toString().contains("@")) {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchBStreamTwoNotifier.batchBStreamTwoList[index].twitter == batchBStreamTwoNotifier.batchBStreamTwoList[index].twitter ? '@'+batchBStreamTwoNotifier.batchBStreamTwoList[index].twitter : batchBStreamTwoNotifier.batchBStreamTwoList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              );
+                            }
+                            else {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchBStreamTwoNotifier.batchBStreamTwoList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              );
+                            }
+                          } else {
+                            return Visibility(
+                              visible: !_isVisible,
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchBStreamTwoNotifier.batchBStreamTwoList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              ),
+                            );
+                          }
+                        }()),
                       ],
                     ),
                   )

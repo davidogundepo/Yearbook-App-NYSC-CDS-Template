@@ -31,7 +31,7 @@ String aboutNYSC = "About $nyscName";
 String acronymMeanings = "Acronym Meanings";
 String aboutApp = "About App";
 
-String imgAsset = "assets/images/fin_inc_1.jpg";
+String imgAsset = "assets/images/fin_inc_40.jpeg";
 
 
 class MyBatchCStreamTwoPage extends StatefulWidget with NavigationStates {
@@ -46,6 +46,14 @@ class MyBatchCStreamTwoPage extends StatefulWidget with NavigationStates {
 }
 
 class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
+
+  bool _isVisible = true;
+
+  void showToast() {
+    setState(() {
+      _isVisible = !_isVisible;
+    });
+  }
 
   Widget _buildProductItem(BuildContext context, int index) {
     BatchCStreamTwoNotifier batchCStreamTwoNotifier = Provider.of<BatchCStreamTwoNotifier>(context);
@@ -94,25 +102,83 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
 
                         Padding(
                           padding: const EdgeInsets.only(top: 20),
-                          child: Text(
-                              batchCStreamTwoNotifier.batchCStreamTwoList[index].name,
-                              style: GoogleFonts.tenorSans(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600
-                              )
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                  batchCStreamTwoNotifier.batchCStreamTwoList[index].name,
+                                  style: GoogleFonts.tenorSans(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600
+                                  )
+                              ),
+                              (() {
+                                if (batchCStreamTwoNotifier.batchCStreamTwoList[index].cdsExecutive == "Yes") {
+                                  return
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(width: 10),
+                                        Icon (
+                                          MdiIcons.checkboxMarkedCircle,
+                                          color: Colors.white,
+                                        ),
+                                      ],
+                                    );
+                                } else {
+                                  return Visibility(
+                                    visible: !_isVisible,
+                                    child: Icon (
+                                      MdiIcons.checkboxMarkedCircle,
+                                      color: Colors.white,
+                                    ),
+                                  );
+                                }
+                              }()),
+                            ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                              batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter,
-                              style: GoogleFonts.varela(
-                                color: Colors.white70,
-                                fontStyle: FontStyle.italic,
-                              )
-                          ),
-                        ),
+                        (() {
+                          if (batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter.toString().isNotEmpty) {
+                            if (!batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter.toString().contains("@")) {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter == batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter ? '@'+batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter : batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              );
+                            }
+                            else {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              );
+                            }
+                          } else {
+                            return Visibility(
+                              visible: !_isVisible,
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              ),
+                            );
+                          }
+                        }()),
                       ],
                     ),
                   )
@@ -274,6 +340,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                           )
                       ),
                       background: Image.asset(imgAsset,
+                        alignment: Alignment(0, -0.5),
                         fit: BoxFit.cover
                         ,)
                   ),

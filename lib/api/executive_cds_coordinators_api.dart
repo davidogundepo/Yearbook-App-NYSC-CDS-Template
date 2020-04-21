@@ -4,7 +4,7 @@ import '../model/ExecutiveCDSCoordinators.dart';
 import '../notifier/executive_cds_coordinators_notifier.dart';
 
 getExecutiveCDSCoordinators(ExecutiveCDSCoordinatorsNotifier executiveCDSCoordinatorsNotifier) async{
-  QuerySnapshot snapshot = await Firestore.instance.collection('ExecutiveCDSCoordinators').getDocuments();
+  QuerySnapshot snapshot = await Firestore.instance.collection('ExecutiveCDSCoordinators').orderBy("name").getDocuments();
 
   List<ExecutiveCDSCoordinators> _executiveCDSCoordinators = [];
 

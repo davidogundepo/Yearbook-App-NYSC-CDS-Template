@@ -7,10 +7,6 @@ String acronym = "The following acronyms are used in the apps and their meanings
 String ficds = "FICDS - $cdsName";
 String cds = "CDS - Community Development Service";
 String lg = "LG - Local Government";
-String sp = "SP - School Prefcets";
-String sd = "SD - Science Department";
-String ad = "AD - Art Department";
-String ssd = "SSD - Social Science Department";
 
 
 String imgAsset = "assets/images/acronym.jpg";
@@ -84,7 +80,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+                      padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
                       child: RichText(
                         textAlign: TextAlign.justify,
                         text:TextSpan(
@@ -92,7 +88,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                             TextSpan(
                               text: acronym+'\n\n\n',
                               style: TextStyle(
-                                fontSize: 17,
+                                fontSize: 15,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -100,7 +96,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                             TextSpan(
                               text: ficds+'\n\n',
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 13,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -108,7 +104,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                             TextSpan(
                               text: cds+'\n\n',
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 13,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -116,39 +112,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                             TextSpan(
                               text: lg+'\n\n',
                               style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            TextSpan(
-                              text: sp+'\n\n',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            TextSpan(
-                              text: sd+'\n\n',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            TextSpan(
-                              text: ad+'\n\n',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            TextSpan(
-                              text: ssd,
-                              style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 13,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w400,
                               ),

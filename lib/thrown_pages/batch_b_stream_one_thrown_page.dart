@@ -45,6 +45,13 @@ class MyBatchBStreamOnePage extends StatefulWidget with NavigationStates {
 }
 
 class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
+  bool _isVisible = true;
+
+  void showToast() {
+    setState(() {
+      _isVisible = !_isVisible;
+    });
+  }
 
   Widget _buildProductItem(BuildContext context, int index) {
     BatchBStreamOneNotifier batchBStreamOneNotifier = Provider.of<BatchBStreamOneNotifier>(context);
@@ -89,26 +96,84 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: Text(
-                              batchBStreamOneNotifier.batchBStreamOneList[index].name,
-                              style: GoogleFonts.tenorSans(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600
-                              )
+                          padding: const EdgeInsets.only(top: 30),
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                  batchBStreamOneNotifier.batchBStreamOneList[index].name,
+                                  style: GoogleFonts.tenorSans(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600
+                                  )
+                              ),
+                              (() {
+                                if (batchBStreamOneNotifier.batchBStreamOneList[index].cdsExecutive == "Yes") {
+                                  return
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(width: 10),
+                                        Icon (
+                                          MdiIcons.checkboxMarkedCircle,
+                                          color: Colors.white,
+                                        ),
+                                      ],
+                                    );
+                                } else {
+                                  return Visibility(
+                                    visible: !_isVisible,
+                                    child: Icon (
+                                      MdiIcons.checkboxMarkedCircle,
+                                      color: Colors.white,
+                                    ),
+                                  );
+                                }
+                              }()),
+                            ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                              batchBStreamOneNotifier.batchBStreamOneList[index].twitter == batchBStreamOneNotifier.batchBStreamOneList[index].twitter ? '@'+batchBStreamOneNotifier.batchBStreamOneList[index].twitter : batchBStreamOneNotifier.batchBStreamOneList[index].twitter,
-                              style: GoogleFonts.varela(
-                                  color: Colors.white70,
-                                  fontStyle: FontStyle.italic
-                              )
-                          ),
-                        ),
+                        (() {
+                          if (batchBStreamOneNotifier.batchBStreamOneList[index].twitter.toString().isNotEmpty) {
+                            if (!batchBStreamOneNotifier.batchBStreamOneList[index].twitter.toString().contains("@")) {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchBStreamOneNotifier.batchBStreamOneList[index].twitter == batchBStreamOneNotifier.batchBStreamOneList[index].twitter ? '@'+batchBStreamOneNotifier.batchBStreamOneList[index].twitter : batchBStreamOneNotifier.batchBStreamOneList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              );
+                            }
+                            else {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchBStreamOneNotifier.batchBStreamOneList[index].twitter == batchBStreamOneNotifier.batchBStreamOneList[index].twitter ? '@'+batchBStreamOneNotifier.batchBStreamOneList[index].twitter : batchBStreamOneNotifier.batchBStreamOneList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              );
+                            }
+                          } else {
+                            return Visibility(
+                              visible: !_isVisible,
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchBStreamOneNotifier.batchBStreamOneList[index].twitter == batchBStreamOneNotifier.batchBStreamOneList[index].twitter ? '@'+batchBStreamOneNotifier.batchBStreamOneList[index].twitter : batchBStreamOneNotifier.batchBStreamOneList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              ),
+                            );
+                          }
+                        }()),
                       ],
                     ),
                   )
@@ -271,6 +336,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                         )
                     ),
                     background: Image.asset(imgAsset,
+                      alignment: Alignment(0, -1),
                       fit: BoxFit.cover,
                     ),
                   ),

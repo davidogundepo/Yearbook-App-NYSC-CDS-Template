@@ -17,7 +17,6 @@ void main() => runApp(MultiProvider(
   providers: [
     ChangeNotifierProvider(
       create: (context) => BatchAStreamOneNotifier(),
-
     ),
     ChangeNotifierProvider(
       create: (context) => BatchBStreamOneNotifier(),

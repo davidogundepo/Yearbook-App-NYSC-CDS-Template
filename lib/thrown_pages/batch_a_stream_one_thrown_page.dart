@@ -31,7 +31,7 @@ String aboutNYSC = "About $nyscName";
 String acronymMeanings = "Acronym Meanings";
 String aboutApp = "About App";
 
-String imgAsset = "assets/images/fin_inc_1.jpg";
+String imgAsset = "assets/images/fin_inc_36.jpeg";
 
 
 class MyBatchAStreamOnePage extends StatefulWidget with NavigationStates {
@@ -46,6 +46,14 @@ class MyBatchAStreamOnePage extends StatefulWidget with NavigationStates {
 }
 
 class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
+
+  bool _isVisible = true;
+
+  void showToast() {
+    setState(() {
+      _isVisible = !_isVisible;
+    });
+  }
 
   Widget _buildProductItem(BuildContext context, int index) {
     BatchAStreamOneNotifier batchAStreamOneNotifier = Provider.of<BatchAStreamOneNotifier>(context);
@@ -73,12 +81,6 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                   Container(
                     width: 100,
                     height: 100,
-//                    foregroundDecoration: const BoxDecoration(
-//                      image: DecorationImage(
-//                          image: NetworkImage(
-//                              'https://p6.storage.canalblog.com/69/50/922142/85510911_o.png'),
-//                          fit: BoxFit.fill),
-//                    ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
                         image: DecorationImage(
@@ -97,25 +99,83 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
-                          child: Text(
-                              batchAStreamOneNotifier.batchAStreamOneList[index].name,
-                              style: GoogleFonts.tenorSans(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600
-                              )
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                  batchAStreamOneNotifier.batchAStreamOneList[index].name,
+                                  style: GoogleFonts.tenorSans(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600
+                                  )
+                              ),
+                              (() {
+                                if (batchAStreamOneNotifier.batchAStreamOneList[index].cdsExecutive == "Yes") {
+                                  return
+                                    Row(
+                                      children: <Widget>[
+                                        SizedBox(width: 10),
+                                        Icon (
+                                          MdiIcons.checkboxMarkedCircle,
+                                          color: Colors.white,
+                                        ),
+                                      ],
+                                    );
+                                } else {
+                                  return Visibility(
+                                    visible: !_isVisible,
+                                    child: Icon (
+                                      MdiIcons.checkboxMarkedCircle,
+                                      color: Colors.white,
+                                    ),
+                                  );
+                                }
+                              }()),
+                            ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                              '@'+batchAStreamOneNotifier.batchAStreamOneList[index].twitter,
-                              style: GoogleFonts.varela(
-                                  color: Colors.white70,
-                                  fontStyle: FontStyle.italic
-                              )
-                          ),
-                        ),
+                        (() {
+                          if (batchAStreamOneNotifier.batchAStreamOneList[index].twitter.toString().isNotEmpty) {
+                            if (!batchAStreamOneNotifier.batchAStreamOneList[index].twitter.toString().contains("@")) {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchAStreamOneNotifier.batchAStreamOneList[index].twitter == batchAStreamOneNotifier.batchAStreamOneList[index].twitter ? '@'+batchAStreamOneNotifier.batchAStreamOneList[index].twitter : batchAStreamOneNotifier.batchAStreamOneList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              );
+                            }
+                            else {
+                              return Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchAStreamOneNotifier.batchAStreamOneList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              );
+                            }
+                          } else {
+                            return Visibility(
+                              visible: !_isVisible,
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text(
+                                    batchAStreamOneNotifier.batchAStreamOneList[index].twitter,
+                                    style: GoogleFonts.varela(
+                                        color: Colors.white70,
+                                        fontStyle: FontStyle.italic
+                                    )
+                                ),
+                              ),
+                            );
+                          }
+                        }()),
                       ],
                     ),
                   )
@@ -265,7 +325,7 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
-                    title: Text("Batch A Stream One Corpers",
+                    title: Text(thrownName,
                         style: GoogleFonts.amaticSC(
                             color: Colors.white,
                             fontSize: 26.0,
@@ -273,6 +333,7 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                         )
                     ),
                     background: Image.asset(imgAsset,
+                      alignment: Alignment(0, -0.6),
                       fit: BoxFit.cover,
                     ),
                   ),

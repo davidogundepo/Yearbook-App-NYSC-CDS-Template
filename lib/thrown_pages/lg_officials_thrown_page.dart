@@ -31,7 +31,7 @@ String aboutNYSC = "About $nyscName";
 String acronymMeanings = "Acronym Meanings";
 String aboutApp = "About App";
 
-String imgAsset = "assets/images/fin_inc_1.jpg";
+String imgAsset = "assets/images/fin_inc_45.jpeg";
 
 class MyLGOfficialsPage extends StatefulWidget with NavigationStates {
 
@@ -90,13 +90,23 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.only(top: 20),
-                          child: Text(
-                              lgOfficialsNotifier.lGOfficialsList[index].name,
-                              style: GoogleFonts.tenorSans(
-                                  color: Colors.blueGrey,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w600
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                  lgOfficialsNotifier.lGOfficialsList[index].name,
+                                  style: GoogleFonts.tenorSans(
+                                      color: Colors.blueGrey,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600
+                                  )
+                              ),
+
+                              SizedBox(width: 10),
+                              Icon (
+                                MdiIcons.checkboxMarkedCircle,
+                                color: Colors.white,
                               )
+                            ],
                           ),
                         ),
                         Padding(
@@ -278,6 +288,7 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
                         )
                     ),
                     background: Image.asset(imgAsset,
+                      alignment: Alignment(0, -1),
                       fit: BoxFit.cover,
                     ),
                   ),
