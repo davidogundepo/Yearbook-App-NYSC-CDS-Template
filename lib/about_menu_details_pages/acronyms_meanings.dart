@@ -7,6 +7,10 @@ String acronym = "The following acronyms are used in the apps and their meanings
 String ficds = "FICDS - $cdsName";
 String cds = "CDS - Community Development Service";
 String lg = "LG - Local Government";
+String nysc = "NYSC - National Youth Service Corps";
+String efcc = "EFCC - Economic and Financial Crimes Commission";
+String hiv = "HIV/AIDS - Human immunodeficiency virus/Acquired immunodeficiency syndrome";
+String ndlea = "NDLEA - National Drug Law Enforcement Agency";
 
 
 String imgAsset = "assets/images/acronym.jpg";
@@ -111,6 +115,38 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                             ),
                             TextSpan(
                               text: lg+'\n\n',
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            TextSpan(
+                              text: nysc+'\n\n',
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            TextSpan(
+                              text: efcc+'\n\n',
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            TextSpan(
+                              text: ndlea+'\n\n',
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            TextSpan(
+                              text: hiv+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
                                 color: Colors.white,

@@ -3,8 +3,9 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fnancialinclusioncds2020/about_menu_details_pages/about_nysc_federal.dart';
 import '../about_menu_details_pages/about_app.dart';
-import '../about_menu_details_pages/about_nysc_rivers.dart';
+import '../about_menu_details_pages/about_cds.dart';
 import '../about_menu_details_pages/acronyms_meanings.dart';
 import '../about_menu_details_pages/who_we_are.dart';
 import '../api/batch_a_stream_one_api.dart';
@@ -16,7 +17,8 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:provider/provider.dart';
 
 
-String nyscName = "NYSC Rivers State";
+String nyscName = "NYSC";
+String cdsName = "Financial Inclusion CDS Group";
 String thrownName = "Batch A Stream One Corpers";
 
 String exitAppStatement = "Exit from App";
@@ -27,7 +29,8 @@ String exitAppYes = "I Have To";
 
 
 String whoWeAre = "Who We Are";
-String aboutNYSC = "About $nyscName";
+String aboutCDS = "About $cdsName";
+String aboutNYSC = "About $nyscName 2020";
 String acronymMeanings = "Acronym Meanings";
 String aboutApp = "About App";
 
@@ -220,9 +223,13 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
   Future navigateToAcronymsMeaningsPage(context) async {
     Navigator.push(context, MaterialPageRoute(builder: (context) => AcronymsMeanings()));
   }
-  Future navigateToAboutNYSCRiversState(context) async {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => AboutNYSCRiversState()));
+  Future navigateToAboutCDS(context) async {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => AboutCDS()));
   }
+  Future navigateToAboutNYSCFederalState(context) async {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => AboutNYSCFederalState()));
+  }
+
   Future navigateToWhoWeArePage(context) async {
     Navigator.push(context, MaterialPageRoute(builder: (context) => WhoWeAre()));
   }
@@ -259,7 +266,7 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                             backgroundColor: Colors.transparent,
                             context: context,
                             builder: (context) => Container(
-                              height: 250,
+                              height: 300,
                               decoration: BoxDecoration(
                                 color: Color.fromRGBO(46, 137, 112, 1),
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -268,50 +275,63 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                                 color: Colors.transparent,
                                 child: InkWell(
                                   splashColor: Color.fromRGBO(46, 137, 112, 1),
-                                  child: Wrap(
-                                    children: <Widget>[
-                                      ListTile(
-                                          leading: new Icon(MdiIcons.atom, color: Colors.white),
-                                          title: new Text(whoWeAre,
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.vertical,
+                                    child: Wrap(
+                                      children: <Widget>[
+                                        ListTile(
+                                            leading: new Icon(MdiIcons.atom, color: Colors.white),
+                                            title: new Text(whoWeAre,
+                                              style: GoogleFonts.zillaSlab(
+                                                  color: Colors.white
+                                              ),),
+                                            onTap: () {
+                                              navigateToWhoWeArePage(context);
+                                            }
+                                        ),
+                                        ListTile(
+                                          leading: new Icon(MdiIcons.chessQueen, color: Colors.white),
+                                          title: new Text(aboutCDS,
                                             style: GoogleFonts.zillaSlab(
                                                 color: Colors.white
                                             ),),
                                           onTap: () {
-                                            navigateToWhoWeArePage(context);
-                                          }
-                                      ),
-                                      ListTile(
-                                        leading: new Icon(MdiIcons.chessQueen, color: Colors.white),
-                                        title: new Text(aboutNYSC,
-                                          style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
-                                          ),),
-                                        onTap: () {
-                                          navigateToAboutNYSCRiversState(context);
-                                        },
-                                      ),
-                                      ListTile(
-                                          leading: new Icon(MdiIcons.sortAlphabeticalAscending, color: Colors.white),
-                                          title: new Text(acronymMeanings,
+                                            navigateToAboutCDS(context);
+                                          },
+                                        ),
+                                        ListTile(
+                                          leading: new Icon(MdiIcons.chessQueen, color: Colors.white),
+                                          title: new Text(aboutNYSC,
                                             style: GoogleFonts.zillaSlab(
                                                 color: Colors.white
                                             ),),
                                           onTap: () {
-                                            navigateToAcronymsMeaningsPage(context);
-                                          }
-                                      ),
-                                      ListTile(
-                                        leading: new Icon(MdiIcons.opacity, color: Colors.white),
-                                        title: new Text(aboutApp,
-                                          style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
-                                          ),),
-                                        onTap: () {
-                                          navigateToAboutAppDetailsPage(context);
-                                        },
-                                      ),
+                                            navigateToAboutNYSCFederalState(context);
+                                          },
+                                        ),
+                                        ListTile(
+                                            leading: new Icon(MdiIcons.sortAlphabeticalAscending, color: Colors.white),
+                                            title: new Text(acronymMeanings,
+                                              style: GoogleFonts.zillaSlab(
+                                                  color: Colors.white
+                                              ),),
+                                            onTap: () {
+                                              navigateToAcronymsMeaningsPage(context);
+                                            }
+                                        ),
+                                        ListTile(
+                                          leading: new Icon(MdiIcons.opacity, color: Colors.white),
+                                          title: new Text(aboutApp,
+                                            style: GoogleFonts.zillaSlab(
+                                                color: Colors.white
+                                            ),),
+                                          onTap: () {
+                                            navigateToAboutAppDetailsPage(context);
+                                          },
+                                        ),
 
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

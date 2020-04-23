@@ -4,7 +4,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fnancialinclusioncds2020/about_menu_details_pages/about_app.dart';
-import 'package:fnancialinclusioncds2020/about_menu_details_pages/about_nysc_rivers.dart';
+import 'package:fnancialinclusioncds2020/about_menu_details_pages/about_cds.dart';
+import 'package:fnancialinclusioncds2020/about_menu_details_pages/about_nysc_federal.dart';
 import 'package:fnancialinclusioncds2020/about_menu_details_pages/acronyms_meanings.dart';
 import 'package:fnancialinclusioncds2020/about_menu_details_pages/who_we_are.dart';
 import 'package:fnancialinclusioncds2020/api/batch_c_stream_one_api.dart';
@@ -16,7 +17,8 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:provider/provider.dart';
 
 
-String nyscName = "NYSC Rivers State";
+String nyscName = "NYSC";
+String cdsName = "Financial Inclusion CDS Group";
 String thrownName = "Batch C Stream One Corpers";
 
 String exitAppStatement = "Exit from App";
@@ -27,7 +29,8 @@ String exitAppYes = "I Have To";
 
 
 String whoWeAre = "Who We Are";
-String aboutNYSC = "About $nyscName";
+String aboutCDS = "About $cdsName";
+String aboutNYSC = "About $nyscName 2020";
 String acronymMeanings = "Acronym Meanings";
 String aboutApp = "About App";
 
@@ -223,8 +226,11 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
   Future navigateToAcronymsMeaningsPage(context) async {
     Navigator.push(context, MaterialPageRoute(builder: (context) => AcronymsMeanings()));
   }
-  Future navigateToAboutNYSCRiversState(context) async {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => AboutNYSCRiversState()));
+  Future navigateToAboutCDS(context) async {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => AboutCDS()));
+  }
+  Future navigateToAboutNYSCFederalState(context) async {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => AboutNYSCFederalState()));
   }
   Future navigateToWhoWeArePage(context) async {
     Navigator.push(context, MaterialPageRoute(builder: (context) => WhoWeAre()));
@@ -262,7 +268,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                             backgroundColor: Colors.transparent,
                             context: context,
                             builder: (context) => Container(
-                              height: 250,
+                              height: 300,
                               decoration: BoxDecoration(
                                 color: Color.fromRGBO(254, 250, 239, 1),
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -290,13 +296,26 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                         leading: new Icon(MdiIcons.chessQueen,
                                           color: Colors.blueGrey,
                                         ),
+                                        title: new Text(aboutCDS,
+                                          style: GoogleFonts.zillaSlab(
+                                              color: Colors.blueGrey
+                                          ),
+                                        ),
+                                        onTap: () {
+                                          navigateToAboutCDS(context);
+                                        },
+                                      ),
+                                      ListTile(
+                                        leading: new Icon(MdiIcons.chessQueen,
+                                          color: Colors.blueGrey,
+                                        ),
                                         title: new Text(aboutNYSC,
                                           style: GoogleFonts.zillaSlab(
                                               color: Colors.blueGrey
                                           ),
                                         ),
                                         onTap: () {
-                                          navigateToAboutNYSCRiversState(context);
+                                          navigateToAboutNYSCFederalState(context);
                                         },
                                       ),
                                       ListTile(
