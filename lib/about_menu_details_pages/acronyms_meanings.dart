@@ -15,6 +15,17 @@ String ndlea = "NDLEA - National Drug Law Enforcement Agency";
 
 String imgAsset = "assets/images/acronym.jpg";
 
+
+Color backgroundColor = Color.fromRGBO(58, 31, 41, 1);
+Color appBarTextColor = Colors.white.withAlpha(150);
+Color appBarBackgroundColor = Color.fromRGBO(52, 18, 30, 1);
+Color cardBackgroundColor = Color.fromRGBO(52, 18, 30, 1);
+Color cardHeadingBackgroundColor = Colors.white.withAlpha(150);
+Color cardHeadingBackgroundTextColor = Color.fromRGBO(58, 31, 41, 1).withAlpha(220);
+Color cardBackgroundTextColor = Colors.white.withAlpha(150);
+
+
+
 class AcronymsMeanings extends StatefulWidget {
 
   AcronymsMeanings({Key key, this.title}) : super(key: key);
@@ -30,17 +41,17 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(58, 31, 41, 1),
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         title: Text(acronymTitle,
         style: TextStyle(
-          color: Colors.white
+          color: appBarTextColor
         ),),
         centerTitle: true,
         elevation: 10,
-        backgroundColor: Color.fromRGBO(52, 18, 30, 1),
+        backgroundColor: appBarBackgroundColor,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+          icon: Icon(Icons.arrow_back_ios, color: appBarTextColor),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -59,7 +70,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
             Container(
               child: Card(
                 margin: EdgeInsets.all(20),
-                color: Color.fromRGBO(52, 18, 30, 1),
+                color: cardBackgroundColor,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -68,14 +79,14 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                       child: Padding(
                         padding: const EdgeInsets.only(top: 20),
                         child: Card(
-                          color: Colors.white,
+                          color: cardHeadingBackgroundColor,
                           child: Padding(
                             padding: const EdgeInsets.only(top: 15, bottom: 15, left: 30, right: 30),
                             child: Text(acronymTitle,
                               style: TextStyle(
                                   fontSize: 25,
                                   fontStyle: FontStyle.italic,
-                                  color: Color.fromRGBO(58, 31, 41, 1).withAlpha(220),
+                                  color: cardHeadingBackgroundTextColor,
                                   fontWeight: FontWeight.w700
                               ),
                             ),
@@ -93,7 +104,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                               text: acronym+'\n\n\n',
                               style: TextStyle(
                                 fontSize: 15,
-                                color: Colors.white,
+                                color: cardBackgroundTextColor,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -101,7 +112,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                               text: ficds+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardBackgroundTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -109,7 +120,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                               text: cds+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardBackgroundTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -117,7 +128,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                               text: lg+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardBackgroundTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -125,7 +136,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                               text: nysc+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardBackgroundTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -133,7 +144,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                               text: efcc+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardBackgroundTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -141,7 +152,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                               text: ndlea+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardBackgroundTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -149,7 +160,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                               text: hiv+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardBackgroundTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),

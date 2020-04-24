@@ -70,7 +70,7 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            splashColor: Colors.blue,
+            splashColor: Color.fromRGBO(189, 150, 176, 1),
             onTap: () {
               batchAStreamOneNotifier.currentBatchAStreamOne = batchAStreamOneNotifier.batchAStreamOneList[index];
               navigateToBatchAStreamOneDetailsPage(context);
@@ -251,7 +251,7 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
       onWillPop: _onWillPop,
       child: Scaffold(
         body: Container(
-          color: Color.fromRGBO(86, 158, 128, 1),
+          color: Color.fromRGBO(189, 170, 176, 1),
           child: NestedScrollView(
             headerSliverBuilder: (BuildContext context,
                 bool innerBoxIsScrolled) {
@@ -268,7 +268,7 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                             builder: (context) => Container(
                               height: 300,
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(46, 137, 112, 1),
+                                color: Color.fromRGBO(189, 150, 176, 1),
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                               ),
                               child: Material(
@@ -300,7 +300,7 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                                           },
                                         ),
                                         ListTile(
-                                          leading: new Icon(MdiIcons.chessQueen, color: Colors.white),
+                                          leading: new Icon(MdiIcons.chessKing, color: Colors.white),
                                           title: new Text(aboutNYSC,
                                             style: GoogleFonts.zillaSlab(
                                                 color: Colors.white
@@ -339,7 +339,7 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                       },
                     ),
                   ],
-                  backgroundColor: Color.fromRGBO(46, 137, 112, 1),
+                  backgroundColor: Color.fromRGBO(189, 150, 176, 1),
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,

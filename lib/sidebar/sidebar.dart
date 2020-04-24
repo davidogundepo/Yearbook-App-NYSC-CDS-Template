@@ -108,7 +108,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         gradient: LinearGradient(
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
-                            colors: [Color.fromRGBO(46, 137, 112, 1), Color.fromRGBO(46, 137, 112, 1)]
+                            colors: [Color.fromRGBO(162, 78, 124, 1), Color.fromRGBO(162, 92, 124, 1)]
                         )
                     ),
                     child: SingleChildScrollView(
@@ -126,7 +126,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                                   child: Material(
                                     color: Colors.transparent,
                                     child: InkWell(
-                                      splashColor: Colors.greenAccent,
+                                      splashColor: Color.fromRGBO(162, 92, 124, 1),
                                       onTap: () {},
                                       child: Padding(
                                         padding: const EdgeInsets.only(bottom: 20, top: 80),
@@ -141,7 +141,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                                           subtitle: Text(
                                             subtitle,
                                             style: TextStyle(
-                                              color: Color.fromRGBO(46, 137, 112, 1),
+                                              color: Color.fromRGBO(162, 30, 124, 1),
                                               fontWeight: FontWeight.w500,
                                               fontSize: 20,
                                             ),
@@ -159,13 +159,13 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                                     gradient: LinearGradient(
                                       begin: Alignment.topLeft,
                                       end: Alignment.bottomRight,
-                                      colors: [Colors.green, Colors.greenAccent.withAlpha(50)],
+                                      colors: [Color.fromRGBO(162, 92, 124, 1), Color.fromRGBO(162, 92, 124, 1)],
                                       stops: [0.3, 1],
 
                                     ),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(162, 92, 124, 1),
                                         blurRadius: 12,
                                         offset: Offset(3, 12),
                                       )
@@ -186,9 +186,9 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             endIndent: 32,
                           ),
                           Material(
-                            color: _currentNAVSelected == 0 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            color: _currentNAVSelected == 0 ? Color.fromRGBO(162, 30, 124, 1).withOpacity(0.3) : Colors.transparent,
                             child: InkWell(
-                              splashColor: Colors.white,
+                              splashColor: Color.fromRGBO(162, 30, 124, 1),
                               onTap: () {
                                 _onSelected(0);
                                 onIconPressed();
@@ -204,9 +204,9 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             ),
                           ),
                           Material(
-                            color: _currentNAVSelected == 1 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            color: _currentNAVSelected == 1 ? Color.fromRGBO(162, 30, 124, 1).withOpacity(0.3) : Colors.transparent,
                             child: InkWell(
-                              splashColor: Colors.white,
+                              splashColor: Color.fromRGBO(162, 30, 124, 1),
                               onTap: () {
                                 _onSelected(1);
                                 onIconPressed();
@@ -222,9 +222,9 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             ),
                           ),
                           Material(
-                            color: _currentNAVSelected == 2 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            color: _currentNAVSelected == 2 ? Color.fromRGBO(162, 30, 124, 1).withOpacity(0.3) : Colors.transparent,
                             child: InkWell(
-                              splashColor: Colors.white,
+                              splashColor: Color.fromRGBO(162, 30, 124, 1),
                               onTap: () {
                                 _onSelected(2);
                                 onIconPressed();
@@ -240,9 +240,9 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             ),
                           ),
                           Material(
-                            color: _currentNAVSelected == 3 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            color: _currentNAVSelected == 3 ? Color.fromRGBO(162, 30, 124, 1).withOpacity(0.3) : Colors.transparent,
                             child: InkWell(
-                              splashColor: Colors.white,
+                              splashColor: Color.fromRGBO(162, 30, 124, 1),
                               onTap: () {
                                 _onSelected(3);
                                 onIconPressed();
@@ -258,9 +258,9 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             ),
                           ),
                           Material(
-                            color: _currentNAVSelected == 4 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            color: _currentNAVSelected == 4 ? Color.fromRGBO(162, 30, 124, 1).withOpacity(0.3) : Colors.transparent,
                             child: InkWell(
-                              splashColor: Colors.white,
+                              splashColor: Color.fromRGBO(162, 30, 124, 1),
                               onTap: () {
                                 _onSelected(4);
                                 onIconPressed();
@@ -276,9 +276,9 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             ),
                           ),
                           Material(
-                            color: _currentNAVSelected == 5 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            color: _currentNAVSelected == 5 ? Color.fromRGBO(162, 30, 124, 1).withOpacity(0.3) : Colors.transparent,
                             child: InkWell(
-                              splashColor: Colors.white,
+                              splashColor: Color.fromRGBO(162, 30, 124, 1),
                               onTap: () {
                                 _onSelected(5);
                                 onIconPressed();
@@ -294,9 +294,9 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             ),
                           ),
                           Material(
-                            color: _currentNAVSelected == 6 ? Colors.greenAccent.withOpacity(0.3) : Colors.transparent,
+                            color: _currentNAVSelected == 6 ? Color.fromRGBO(162, 30, 124, 1).withOpacity(0.3) : Colors.transparent,
                             child: InkWell(
-                              splashColor: Colors.white,
+                              splashColor: Color.fromRGBO(162, 30, 124, 1),
                               onTap: () {
                                 _onSelected(6);
                                 onIconPressed();
@@ -323,7 +323,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             child: Material(
                               color: Colors.transparent,
                               child: InkWell(
-                                splashColor: Colors.white,
+                                splashColor: Color.fromRGBO(162, 30, 124, 1),
                                 onTap: () {
                                   _onWillPop();
                                   onIconPressed();
@@ -358,7 +358,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       child: Container(
                         width: 35,
                         height: 110,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(162, 78, 124, 1),
                         alignment: Alignment.centerLeft,
                         child: AnimatedIcon(
                           progress: _animationController.view,

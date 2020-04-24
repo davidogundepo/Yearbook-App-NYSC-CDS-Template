@@ -71,7 +71,7 @@ class _MyBatchBStreamTwoPageState extends State<MyBatchBStreamTwoPage> {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            splashColor: Color.fromRGBO(237, 209, 166, 1),
+            splashColor: Color.fromRGBO(212, 78, 68, 1),
             onTap: () {
               batchBStreamTwoNotifier.currentBatchBStreamTwo = batchBStreamTwoNotifier.batchBStreamTwoList[index];
               navigateToBatchBStreamTwoDetailsPage(context);
@@ -251,7 +251,7 @@ class _MyBatchBStreamTwoPageState extends State<MyBatchBStreamTwoPage> {
       onWillPop: _onWillPop,
       child: Scaffold(
         body: Container(
-          color: Color.fromRGBO(194, 178, 128, 1),
+          color: Color.fromRGBO(212, 88, 68, 1),
 
           child: NestedScrollView(
             headerSliverBuilder: (BuildContext context,
@@ -268,7 +268,7 @@ class _MyBatchBStreamTwoPageState extends State<MyBatchBStreamTwoPage> {
                             builder: (context) => Container(
                               height: 300,
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(194, 178, 128, 1),
+                                color: Color.fromRGBO(212, 78, 68, 1),
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                               ),
                               child: Material(
@@ -298,7 +298,7 @@ class _MyBatchBStreamTwoPageState extends State<MyBatchBStreamTwoPage> {
                                         },
                                       ),
                                       ListTile(
-                                        leading: new Icon(MdiIcons.chessQueen, color: Colors.white),
+                                        leading: new Icon(MdiIcons.chessKing, color: Colors.white),
                                         title: new Text(aboutNYSC,
                                           style: GoogleFonts.zillaSlab(
                                               color: Colors.white
@@ -336,7 +336,7 @@ class _MyBatchBStreamTwoPageState extends State<MyBatchBStreamTwoPage> {
                       },
                     ),
                   ],
-                  backgroundColor: Color.fromRGBO(155, 134, 99, 1),
+                  backgroundColor: Color.fromRGBO(212, 78, 68, 1),
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,

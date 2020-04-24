@@ -24,6 +24,16 @@ String termsEtConditions7 = "If you print off, copy or download any part of our 
 String termsEtConditionsMore = "For more information about our terms and conditions, please trust and click me.";
 
 
+Color backgroundColor = Color.fromRGBO(102, 66, 36, 1);
+Color appBarTextColor = Colors.white.withAlpha(250);
+Color appBarBackgroundColor = Color.fromRGBO(104, 65, 34, 1);
+Color appBarIconColor = Colors.white.withAlpha(250);
+Color cardBackgroundColor = Colors.brown;
+Color headingCardColor = Colors.white.withAlpha(250);
+Color headingCardTextColor = Colors.brown;
+Color cardTextColor = Colors.white.withAlpha(250);
+
+
 
 class AboutAppDetails extends StatefulWidget {
 
@@ -39,17 +49,17 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(102, 66, 36, 1),
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         title: Text(title,
           style: TextStyle(
-              color: Colors.white
+              color: appBarTextColor
           ),),
         centerTitle: true,
         elevation: 10,
-        backgroundColor: Color.fromRGBO(104, 65, 34, 1),
+        backgroundColor: appBarBackgroundColor,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+          icon: Icon(Icons.arrow_back_ios, color: appBarIconColor),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -68,7 +78,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
             Container(
               child: Card(
                 margin: EdgeInsets.all(20),
-                color: Colors.brown,
+                color: cardBackgroundColor,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -77,7 +87,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                       child: Padding(
                         padding: const EdgeInsets.only(top: 20,),
                         child: Card(
-                          color: Colors.white,
+                          color: headingCardColor,
                           child: Padding(
                             padding: const EdgeInsets.only(top: 15, bottom: 15, left: 30, right: 30),
                             child: Text(nyscAlmanac,
@@ -85,7 +95,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               style: TextStyle(
                                   fontSize: 20,
                                   fontStyle: FontStyle.italic,
-                                  color: Colors.brown,
+                                  color: headingCardTextColor,
                                   fontWeight: FontWeight.w700
                               ),
                             ),
@@ -103,7 +113,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               text: aboutApp+'\n\n\n',
                               style: TextStyle(
                                 fontSize: 15,
-                                color: Colors.white,
+                                color: cardTextColor,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -111,7 +121,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               text: blemish+'\n\n\n',
                               style: TextStyle(
                                   fontSize: 14,
-                                  color: Colors.white,
+                                  color: cardTextColor,
                                   fontWeight: FontWeight.w300,
                                   fontStyle: FontStyle.italic
                               ),
@@ -120,7 +130,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               text: termsEtConditions+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -128,7 +138,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               text: copyrightTerms+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -136,7 +146,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               text: termsEtConditions2+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -144,7 +154,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               text: termsEtConditions3+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -152,7 +162,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               text: termsEtConditions4+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -160,7 +170,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               text: termsEtConditions5+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -168,7 +178,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               text: termsEtConditions6+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -176,7 +186,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                               text: termsEtConditions7+'\n\n',
                               style: TextStyle(
                                 fontSize: 13,
-                                color: Colors.white,
+                                color: cardTextColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -185,7 +195,7 @@ class _AboutAppDetailsState extends State<AboutAppDetails> {
                                 text: termsEtConditionsMore+'\n\n',
                                 style: TextStyle(
                                   fontSize: 14,
-                                  color: Colors.white,
+                                  color: cardTextColor,
                                   fontWeight: FontWeight.w500,
                                   fontStyle: FontStyle.italic,
                                 ),

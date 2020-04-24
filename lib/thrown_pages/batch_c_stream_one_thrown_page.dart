@@ -72,7 +72,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            splashColor: Colors.white,
+            splashColor: Color.fromRGBO(64, 101, 93, 1),
             onTap: () {
               batchCStreamOneNotifier.currentBatchCStreamOne = batchCStreamOneNotifier.batchCStreamOneList[index];
               navigateToBatchCStreamOneDetailsPage(context);
@@ -109,7 +109,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                               Text(
                                   batchCStreamOneNotifier.batchCStreamOneList[index].name,
                                   style: GoogleFonts.tenorSans(
-                                      color: Colors.blueGrey,
+                                      color: Colors.white,
                                       fontSize: 17,
                                       fontWeight: FontWeight.w600
                                   )
@@ -253,7 +253,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
       onWillPop: _onWillPop,
       child: Scaffold(
         body: Container(
-          color: Color.fromRGBO(242, 243, 244, 1),
+          color: Color.fromRGBO(64, 96, 93, 1),
 
           child: NestedScrollView(
             headerSliverBuilder: (BuildContext context,
@@ -262,7 +262,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                 SliverAppBar(
                   actions: <Widget>[
                     IconButton(
-                      icon: Icon(MdiIcons.bandage, color: Colors.blueGrey,),
+                      icon: Icon(MdiIcons.bandage, color: Colors.white,),
                       onPressed: () {
                         showModalBottomSheet(
                             backgroundColor: Colors.transparent,
@@ -270,7 +270,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                             builder: (context) => Container(
                               height: 300,
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(254, 250, 239, 1),
+                                color: Color.fromRGBO(64, 91, 93, 1),
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                               ),
                               child: Material(
@@ -281,11 +281,11 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                     children: <Widget>[
                                       ListTile(
                                           leading: new Icon(MdiIcons.atom,
-                                            color: Colors.blueGrey,
+                                            color: Colors.white,
                                           ),
                                           title: new Text(whoWeAre,
                                             style: GoogleFonts.zillaSlab(
-                                                color: Colors.blueGrey
+                                                color: Colors.white
                                             ),
                                           ),
                                           onTap: () {
@@ -294,11 +294,11 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.chessQueen,
-                                          color: Colors.blueGrey,
+                                          color: Colors.white,
                                         ),
                                         title: new Text(aboutCDS,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.blueGrey
+                                              color: Colors.white
                                           ),
                                         ),
                                         onTap: () {
@@ -306,12 +306,12 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                         },
                                       ),
                                       ListTile(
-                                        leading: new Icon(MdiIcons.chessQueen,
-                                          color: Colors.blueGrey,
+                                        leading: new Icon(MdiIcons.chessKing,
+                                          color: Colors.white,
                                         ),
                                         title: new Text(aboutNYSC,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.blueGrey
+                                              color: Colors.white
                                           ),
                                         ),
                                         onTap: () {
@@ -320,11 +320,11 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                       ),
                                       ListTile(
                                           leading: new Icon(MdiIcons.sortAlphabeticalAscending,
-                                            color: Colors.blueGrey,
+                                            color: Colors.white,
                                           ),
                                           title: new Text(acronymMeanings,
                                             style: GoogleFonts.zillaSlab(
-                                                color: Colors.blueGrey
+                                                color: Colors.white
                                             ),
                                           ),
                                           onTap: () {
@@ -333,11 +333,11 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.opacity,
-                                          color: Colors.blueGrey,
+                                          color: Colors.white,
                                         ),
                                         title: new Text(aboutApp,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.blueGrey
+                                              color: Colors.white
                                           ),
                                         ),
                                         onTap: () {
@@ -353,7 +353,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                       },
                     ),
                   ],
-                  backgroundColor: Color.fromRGBO(254, 250, 239, 1),
+                  backgroundColor: Color.fromRGBO(64, 91, 93, 1),
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,
@@ -361,7 +361,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                     centerTitle: true,
                     title: Text(thrownName,
                         style:  GoogleFonts.amaticSC(
-                            color: Colors.blueGrey,
+                            color: Colors.white,
                             fontSize: 26.0,
                             fontWeight: FontWeight.bold
                         )

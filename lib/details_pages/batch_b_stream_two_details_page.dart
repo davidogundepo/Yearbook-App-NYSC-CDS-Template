@@ -119,7 +119,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
     batchBStreamTwoNotifier = Provider.of<BatchBStreamTwoNotifier>(context, listen: true);
 
   return Scaffold(
-    backgroundColor: Color.fromRGBO(86, 158, 128, 1),
+    backgroundColor: Color.fromRGBO(212, 88, 68, 1),
     appBar: AppBar(
       centerTitle: true,
       title: Text(batchBStreamTwoNotifier.currentBatchBStreamTwo.nickname,
@@ -134,7 +134,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
         ),
       ),
       elevation: 10,
-      backgroundColor: Color.fromRGBO(46, 137, 112, 1),
+      backgroundColor: Color.fromRGBO(212, 78, 68, 1),
       leading: IconButton(
         icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
         onPressed: () {
@@ -171,13 +171,13 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
           Material(
             color: Colors.transparent,
             child: InkWell(
-              splashColor: Color.fromRGBO(46, 137, 112, 1).withOpacity(0.20),
+              splashColor: Color.fromRGBO(212, 78, 68, 1).withOpacity(0.20),
               onTap: () {},
               child: Card(
                 elevation: 4,
                 shape: OutlineInputBorder(
                   borderSide: BorderSide(
-                      color: Color.fromRGBO(46, 137, 112, 1).withOpacity(0.70), width: 4.0, style: BorderStyle.solid
+                      color: Color.fromRGBO(212, 78, 68, 1).withOpacity(0.70), width: 4.0, style: BorderStyle.solid
                   ),
                 ),
 
@@ -194,7 +194,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     children: <Widget>[
                       Text(batchBStreamTwoNotifier.currentBatchBStreamTwo.name.toUpperCase(),
                         style: GoogleFonts.blinker(
-                            color: Color.fromRGBO(46, 137, 112, 1),
+                            color: Color.fromRGBO(212, 78, 68, 1),
                             fontSize: 30,
                             fontWeight: FontWeight.w500
                         ),
@@ -207,7 +207,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                 SizedBox(width: 10),
                                 Icon (
                                   MdiIcons.checkboxMarkedCircle,
-                                  color: Color.fromRGBO(46, 137, 112, 1),
+                                  color: Color.fromRGBO(212, 78, 68, 1),
                                 ),
                               ],
                             );
@@ -216,7 +216,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                             visible: !_isVisible,
                             child: Icon (
                               MdiIcons.checkboxMarkedCircle,
-                              color: Color.fromRGBO(46, 137, 112, 1),
+                              color: Color.fromRGBO(212, 78, 68, 1),
                             ),
                           );
                         }
@@ -247,12 +247,12 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     child: CupertinoSlidingSegmentedControl<int>(
                       padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
                       thumbColor: Colors.white,
-                      backgroundColor: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      backgroundColor: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
 
                       children: {
                         0: Text(reachDetails,
                           style: GoogleFonts.sacramento(
-                              color: Color.fromRGBO(46, 137, 112, 1),
+                              color: Color.fromRGBO(212, 78, 68, 1),
                               fontSize: 25,
                               fontStyle: FontStyle.normal,
                               fontWeight: FontWeight.w400
@@ -260,7 +260,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         ),
                         1: Text(autoBioDetails,
                           style: GoogleFonts.sacramento(
-                            color: Color.fromRGBO(46, 137, 112, 1),
+                            color: Color.fromRGBO(212, 78, 68, 1),
                             fontSize: 25,
                             fontStyle: FontStyle.normal,
                             fontWeight: FontWeight.w400,
@@ -343,7 +343,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(212, 78, 68, 1),
                       icon: new Icon(
                         MdiIcons.dialpad,
                         color: Colors.white,
@@ -370,7 +370,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(212, 78, 68, 1),
                         icon: new Icon(
                           MdiIcons.dialpad,
                           color: Colors.white,
@@ -399,7 +399,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(212, 78, 68, 1),
                       icon: new Icon(
                         MdiIcons.message,
                         color: Colors.white,
@@ -426,7 +426,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(212, 78, 68, 1),
                         icon: new Icon(
                           MdiIcons.message,
                           color: Colors.white,
@@ -455,7 +455,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(212, 78, 68, 1),
                       icon: new Icon(
                         MdiIcons.gmail,
                         color: Colors.white,
@@ -482,7 +482,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(212, 78, 68, 1),
                         icon: new Icon(
                           MdiIcons.gmail,
                           color: Colors.white,
@@ -511,7 +511,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(212, 78, 68, 1),
                       icon: new Icon(
                         MdiIcons.twitterCircle,
                         color: Colors.white,
@@ -538,7 +538,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(212, 78, 68, 1),
                         icon: new Icon(
                           MdiIcons.twitterCircle,
                           color: Colors.white,
@@ -567,7 +567,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(212, 78, 68, 1),
                       icon: new Icon(
                         MdiIcons.instagram,
                         color: Colors.white,
@@ -594,7 +594,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(212, 78, 68, 1),
                         icon: new Icon(
                           MdiIcons.instagram,
                           color: Colors.white,
@@ -623,7 +623,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(212, 78, 68, 1),
                       icon: new Icon(
                         MdiIcons.facebook,
                         color: Colors.white,
@@ -652,7 +652,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(212, 78, 68, 1),
                         icon: new Icon(
                           MdiIcons.facebook,
                           color: Colors.white,
@@ -683,7 +683,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(212, 78, 68, 1),
                       icon: new Icon(
                         MdiIcons.linkedinBox,
                         color: Colors.white,
@@ -712,7 +712,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(212, 78, 68, 1),
                         icon: new Icon(
                           MdiIcons.linkedinBox,
                           color: Colors.white,
@@ -748,7 +748,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    splashColor: Color.fromRGBO(46, 137, 112, 1),
+                    splashColor: Color.fromRGBO(212, 78, 68, 1),
                     onTap: () {},
                     child: Padding(
                       padding:
@@ -759,14 +759,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                             TextSpan(
                                 text: autobiographyTitle,
                                 style: GoogleFonts.aBeeZee(
-                                  color: Color.fromRGBO(46, 137, 112, 1),
+                                  color: Color.fromRGBO(212, 78, 68, 1),
                                   fontSize: 19,
                                   fontWeight: FontWeight.bold,
                                 )),
                             TextSpan(
                                 text: ' ' + _autoBio,
                                 style: GoogleFonts.trykker(
-                                  color: Color.fromRGBO(46, 137, 112, 1),
+                                  color: Color.fromRGBO(212, 78, 68, 1),
                                   fontSize: 19,
                                   fontWeight: FontWeight.w300,
                                 )),
@@ -777,7 +777,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                    color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                     borderRadius: new BorderRadius.circular(10)),
               );
             } else {
@@ -787,7 +787,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        splashColor: Color.fromRGBO(46, 137, 112, 1),
+                        splashColor: Color.fromRGBO(212, 78, 68, 1),
                         onTap: () {},
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -798,14 +798,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                 TextSpan(
                                     text: autobiographyTitle,
                                     style: GoogleFonts.aBeeZee(
-                                      color: Color.fromRGBO(46, 137, 112, 1),
+                                      color: Color.fromRGBO(212, 78, 68, 1),
                                       fontSize: 19,
                                       fontWeight: FontWeight.bold,
                                     )),
                                 TextSpan(
                                     text: ' ' + _autoBio,
                                     style: GoogleFonts.trykker(
-                                      color: Color.fromRGBO(46, 137, 112, 1),
+                                      color: Color.fromRGBO(212, 78, 68, 1),
                                       fontSize: 19,
                                       fontWeight: FontWeight.w300,
                                     )),
@@ -816,7 +816,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                        color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                         borderRadius: new BorderRadius.circular(10)),
                   ));
             }
@@ -830,7 +830,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -841,14 +841,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: nicknameTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _nickname,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -859,7 +859,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -872,7 +872,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -883,14 +883,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: nicknameTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _nickname,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -901,7 +901,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -917,7 +917,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -928,14 +928,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: bestMomentTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _bestMoment,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -946,7 +946,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -959,7 +959,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -970,14 +970,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: bestMomentTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _bestMoment,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -988,7 +988,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -1005,7 +1005,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -1016,14 +1016,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: worstMomentTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _worstMoment,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -1034,7 +1034,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -1047,7 +1047,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -1058,14 +1058,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: worstMomentTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _worstMoment,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -1076,7 +1076,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -1093,7 +1093,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1103,7 +1103,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ppaNameTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1111,7 +1111,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ' '+_ppaName,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1124,7 +1124,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1138,7 +1138,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1148,7 +1148,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ppaNameTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1156,7 +1156,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ' '+_ppaName,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1169,7 +1169,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1186,7 +1186,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1196,7 +1196,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ppaLocationTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1204,7 +1204,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ' '+_ppaLocation,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1217,7 +1217,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1231,7 +1231,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1241,7 +1241,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ppaLocationTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1249,7 +1249,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ' '+_ppaLocation,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1262,7 +1262,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1280,7 +1280,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1290,7 +1290,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ppaAssignmentTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1298,7 +1298,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ' '+_ppaAssignment,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1311,7 +1311,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1325,7 +1325,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1335,7 +1335,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ppaAssignmentTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1343,7 +1343,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ' '+_ppaAssignment,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1356,7 +1356,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1374,7 +1374,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1384,7 +1384,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: almaMaterTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1392,7 +1392,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ' '+_almaMater,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1405,7 +1405,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1419,7 +1419,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1429,7 +1429,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: almaMaterTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1437,7 +1437,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ' '+_almaMater,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1450,7 +1450,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1467,7 +1467,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1477,7 +1477,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: courseOfStudyTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1485,7 +1485,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ' '+_courseOfStudy,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1498,7 +1498,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1512,7 +1512,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1522,7 +1522,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: courseOfStudyTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1530,7 +1530,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ' '+_courseOfStudy,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1543,7 +1543,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1560,7 +1560,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1570,7 +1570,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: academicQualificationTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1578,7 +1578,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ' '+_academicQualification,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1591,7 +1591,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1605,7 +1605,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1615,7 +1615,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: academicQualificationTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1623,7 +1623,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ' '+_academicQualification,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1636,7 +1636,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1654,7 +1654,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1664,7 +1664,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: graduationYearTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1672,7 +1672,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ' '+_graduationYear,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1685,7 +1685,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1699,7 +1699,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1709,7 +1709,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: graduationYearTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1717,7 +1717,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ' '+_graduationYear,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1730,7 +1730,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1748,7 +1748,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1758,7 +1758,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: cdsExecutivePositionTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1766,7 +1766,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: ' '+_cdsExecutivePosition,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1779,7 +1779,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1793,7 +1793,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1803,7 +1803,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: cdsExecutivePositionTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1811,7 +1811,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: ' '+_cdsExecutivePosition,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1824,7 +1824,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1838,7 +1838,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
 //              child: Material(
 //                color: Colors.transparent,
 //                child: InkWell(
-//                  splashColor: Color.fromRGBO(46, 137, 112, 1),
+//                  splashColor: Color.fromRGBO(212, 78, 68, 1),
 //                  onTap: () {},
 //                  child: Padding(
 //                    padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1848,7 +1848,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
 //                          TextSpan(
 //                              text: whatsNextAfterTitle,
 //                              style:  GoogleFonts.aBeeZee(
-//                                color: Color.fromRGBO(46, 137, 112, 1),
+//                                color: Color.fromRGBO(212, 78, 68, 1),
 //                                fontSize: 19,
 //                                fontWeight: FontWeight.bold,
 //                              )
@@ -1856,7 +1856,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
 //                          TextSpan(
 //                              text: ' '+_whatsNext,
 //                              style: GoogleFonts.trykker(
-//                                color: Color.fromRGBO(46, 137, 112, 1),
+//                                color: Color.fromRGBO(212, 78, 68, 1),
 //                                fontSize: 19,
 //                                fontWeight: FontWeight.w300,
 //                              )
@@ -1869,7 +1869,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
 //              ),
 //
 //              decoration: BoxDecoration(
-//                  color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+//                  color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
 //                  borderRadius: new BorderRadius.circular(10)
 //              ),
 //            ),
@@ -1882,7 +1882,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -1893,14 +1893,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: dobTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _dob,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -1911,7 +1911,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -1924,7 +1924,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -1935,14 +1935,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: dobTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _dob,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -1953,7 +1953,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -1969,7 +1969,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -1980,14 +1980,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: stateOfOriginTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _originState,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -1998,7 +1998,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -2011,7 +2011,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -2022,14 +2022,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: stateOfOriginTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _originState,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -2040,7 +2040,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -2056,7 +2056,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -2067,14 +2067,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: currentLivingStateTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _stateLiving,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -2085,7 +2085,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -2098,7 +2098,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -2109,14 +2109,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: currentLivingStateTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _stateLiving,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -2127,7 +2127,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -2143,7 +2143,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -2154,14 +2154,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: hobbiesTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _hobbies,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -2172,7 +2172,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -2185,7 +2185,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -2196,14 +2196,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: hobbiesTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _hobbies,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -2214,7 +2214,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -2231,7 +2231,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -2242,14 +2242,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: philosophyTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _philosophy,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -2260,7 +2260,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -2273,7 +2273,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -2284,14 +2284,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: philosophyTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _philosophy,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -2302,7 +2302,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -2319,7 +2319,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(212, 78, 68, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -2330,14 +2330,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                               TextSpan(
                                   text: droplineTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _myDropline,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(212, 78, 68, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -2348,7 +2348,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -2361,7 +2361,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(212, 78, 68, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -2372,14 +2372,14 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                                   TextSpan(
                                       text: droplineTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _myDropline,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(212, 78, 68, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -2390,7 +2390,7 @@ class _BatchBStreamTwoDetailsPageState extends State<BatchBStreamTwoDetailsPage>
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(212, 78, 68, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )

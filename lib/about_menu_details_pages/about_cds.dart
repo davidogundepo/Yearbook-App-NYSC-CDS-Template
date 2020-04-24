@@ -26,13 +26,26 @@ String whyCDSGroup = "WHY $cdsName?".toUpperCase();
 String whyCDSGroupStatement = "$cdsName was established on the 3rd of October 1974 out of the vision and passion of President David Oludepo to empower today’s youth for tomorrows challenges.\n\nWe offer students (both domestic and international) the opportunity to earn an unparalleled high-quality educational experience. With passionate and  qualified teaching staff, a clean and caring school atmosphere, and the resources to supply students with the skills necessary for their continued personal success, our school looks to help students to realize their potential.";
 String cdsBody = "Financial Inclusion CDS Body\n\n";
 String cdsBodyStatement = "We currently have 54 corp members in $cdsName, 31 male corpers and 22 female corpers. 13 corp members have graduated from $cdsName.";
-String cdsPopulationChart = "$cdsName Students Population Chart";
+String cdsPopulationChart = "$cdsName Corp Members Population Chart";
 
 String schoolAchievements = "Some of our achievements";
 
 double maleCDSCorperPopulation = 31;
 double femaleCDSCorperPopulation = 22;
 
+
+Color backgroundColor = Colors.blueGrey[900];
+Color appBarBackgroundColor = Colors.blueGrey[800];
+Color appBarBackgroundTextColor = Colors.blueGrey;
+Color cardBackgroundColor = Colors.black38;
+Color cardTextColor = Colors.blueGrey;
+Color materialInkWellColor = Colors.blueGrey;
+Color materialTextColor = Colors.blueGrey;
+Color containerColor = Colors.blueGrey.withAlpha(50);
+Color containerTextColor = Colors.blueGrey[900];
+Color containerColor2 = Colors.blueGrey;
+Color chartBackgroundColor = Colors.blueGrey[200];
+Color chartTextColor = Colors.blueGrey[900].withOpacity(0.9);
 
 class AboutCDS extends StatefulWidget {
 
@@ -66,12 +79,14 @@ class _AboutCDS extends State<AboutCDS> {
     AchievementsNotifier achievementsNotifier = Provider.of<AchievementsNotifier>(context);
 
     return Scaffold(
-      backgroundColor: Colors.blueGrey[900],
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         centerTitle: true,
-        title: Text(aboutCDS),
+        title: Text(aboutCDS,
+        style: TextStyle(
+          color: appBarBackgroundTextColor),),
         elevation: 10,
-        backgroundColor: Colors.blueGrey[800],
+        backgroundColor: appBarBackgroundColor,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -86,7 +101,7 @@ class _AboutCDS extends State<AboutCDS> {
                 children: <Widget>[
                   Container(
                     child: Card(
-                      color: Colors.black38,
+                      color: cardBackgroundColor,
                       elevation: 4,
                       margin:   EdgeInsets.all(24),
                       child: SingleChildScrollView(
@@ -102,7 +117,7 @@ class _AboutCDS extends State<AboutCDS> {
                                     visionTitle,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: Colors.blueGrey,
+                                      color: cardTextColor,
                                       fontSize: 24,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -116,7 +131,7 @@ class _AboutCDS extends State<AboutCDS> {
                                 visionStatement,
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: cardTextColor,
                                     fontSize: 18
                                 ),
                               ),
@@ -128,7 +143,7 @@ class _AboutCDS extends State<AboutCDS> {
                   ),
                   Container(
                     child: Card(
-                      color: Colors.black38,
+                      color: cardBackgroundColor,
                       elevation: 4,
                       margin:   EdgeInsets.all(24),
                       child: SingleChildScrollView(
@@ -144,7 +159,7 @@ class _AboutCDS extends State<AboutCDS> {
                                     missionTitle,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: Colors.blueGrey,
+                                      color: cardTextColor,
                                       fontSize: 24,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -158,7 +173,7 @@ class _AboutCDS extends State<AboutCDS> {
                                 missionStatement,
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: cardTextColor,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 18
                                 ),
@@ -171,7 +186,7 @@ class _AboutCDS extends State<AboutCDS> {
                   ),
                   Container(
                     child: Card(
-                      color: Colors.black38,
+                      color: cardBackgroundColor,
                       elevation: 4,
                       margin:   EdgeInsets.all(24),
                       child: SingleChildScrollView(
@@ -187,7 +202,7 @@ class _AboutCDS extends State<AboutCDS> {
                                     coreValues,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: Colors.blueGrey,
+                                      color: cardTextColor,
                                       fontSize: 24,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -205,7 +220,7 @@ class _AboutCDS extends State<AboutCDS> {
                                       text: cvStatement1,
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Colors.blueGrey,
+                                        color: cardTextColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -213,7 +228,7 @@ class _AboutCDS extends State<AboutCDS> {
                                       text: cvStatement2,
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Colors.blueGrey,
+                                        color: cardTextColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -221,7 +236,7 @@ class _AboutCDS extends State<AboutCDS> {
                                       text: cvStatement3,
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Colors.blueGrey,
+                                        color: cardTextColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -229,7 +244,7 @@ class _AboutCDS extends State<AboutCDS> {
                                       text: cvStatement4,
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Colors.blueGrey,
+                                        color: cardTextColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -244,7 +259,7 @@ class _AboutCDS extends State<AboutCDS> {
                   ),
                   Container(
                     child: Card(
-                      color: Colors.black38,
+                      color: cardBackgroundColor,
                       elevation: 4,
                       margin:   EdgeInsets.all(24),
                       child: SingleChildScrollView(
@@ -260,7 +275,7 @@ class _AboutCDS extends State<AboutCDS> {
                                     whyCDSGroup,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: Colors.blueGrey,
+                                      color: cardTextColor,
                                       fontSize: 24,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -274,7 +289,7 @@ class _AboutCDS extends State<AboutCDS> {
                                 whyCDSGroupStatement,
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: cardTextColor,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 16
                                 ),
@@ -294,7 +309,7 @@ class _AboutCDS extends State<AboutCDS> {
                 child: Material (
                   color: Colors.transparent,
                   child: InkWell(
-                    splashColor: Colors.blueGrey,
+                    splashColor: materialInkWellColor,
                     onTap: () {},
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 15, top: 15, left: 10, right: 10),
@@ -307,7 +322,7 @@ class _AboutCDS extends State<AboutCDS> {
                               TextSpan(
                                   text: cdsBody,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: materialTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -315,7 +330,7 @@ class _AboutCDS extends State<AboutCDS> {
                               TextSpan(
                                   text: cdsBodyStatement,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: materialTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -328,7 +343,7 @@ class _AboutCDS extends State<AboutCDS> {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey.withAlpha(50),
+                    color: containerColor,
                     borderRadius: new BorderRadius.circular(10)
                 ),
               ),
@@ -338,13 +353,13 @@ class _AboutCDS extends State<AboutCDS> {
               child: Container(
                 height: 250,
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey.withAlpha(50),
+                    color: containerColor,
                     borderRadius: new BorderRadius.circular(10)
                 ),
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    splashColor: Colors.blueGrey,
+                    splashColor: materialInkWellColor,
                     onTap: () {},
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
@@ -353,18 +368,18 @@ class _AboutCDS extends State<AboutCDS> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Padding(
-                            padding: const EdgeInsets.only(top: 15, bottom: 30, left: 10),
+                            padding: const EdgeInsets.only(top: 15, bottom: 30, left: 10, right: 10),
                             child: Text(cdsPopulationChart,
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                  color: Colors.blueGrey,
+                                  color: materialTextColor,
                                   fontSize: 19,
                                   fontWeight: FontWeight.bold,
                                 )),
                           ),
                           PieChart(
                             legendStyle: TextStyle(
-                              color: Colors.blueGrey,
+                              color: materialTextColor,
                             ),
                             dataMap: cdsCorperMap,
                             animationDuration: Duration(seconds: 10),
@@ -373,7 +388,7 @@ class _AboutCDS extends State<AboutCDS> {
                             showChartValuesInPercentage: false,
                             showChartValues: true,
                             showChartValuesOutside: false,
-                            chartValueBackgroundColor: Colors.grey[200],
+                            chartValueBackgroundColor: chartBackgroundColor,
                             colorList: cdsCorperColorList,
                             showLegends: true,
                             legendPosition: LegendPosition.right,
@@ -381,7 +396,7 @@ class _AboutCDS extends State<AboutCDS> {
                             showChartValueLabel: true,
                             initialAngle: 0,
                             chartValueStyle: defaultChartValueStyle.copyWith(
-                              color: Colors.blueGrey[900].withOpacity(0.9),
+                              color: chartTextColor,
                             ),
                             chartType: ChartType.disc,
                           ),
@@ -398,7 +413,7 @@ class _AboutCDS extends State<AboutCDS> {
               child: Text(schoolAchievements,
                 style: TextStyle(
                     fontSize: 20,
-                    color: Colors.blueGrey,
+                    color: materialTextColor,
                     fontWeight: FontWeight.w500
                 ),
               ),
@@ -428,7 +443,7 @@ class _AboutCDS extends State<AboutCDS> {
                       Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
-                            color: Colors.blueGrey
+                            color: containerColor2
                         ),
                         child: ListTile(
                           title: Center(
@@ -437,7 +452,7 @@ class _AboutCDS extends State<AboutCDS> {
                               child: Text(
                                 achievementsNotifier.achievementsList[index].toastName,
                                 style: TextStyle(
-                                  color: Colors.blueGrey[900],
+                                  color: containerTextColor,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17.0,
                                 ),
@@ -484,7 +499,7 @@ bool toggle = false;
 Map<String, double> cdsCorperMap = Map();
 
 List<Color> cdsCorperColorList = [
-  Colors.indigo,
-  Colors.brown,
+  Color.fromRGBO(145, 172, 179, 1).withAlpha(160),
+  Color.fromRGBO(184, 186, 181, 1),
 ];
 

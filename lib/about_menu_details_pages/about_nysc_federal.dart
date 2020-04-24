@@ -97,6 +97,20 @@ double femaleCorperPopulation = 127523;
 double staffPopulation = 4054;
 
 
+
+Color backgroundColor = Color.fromRGBO(25, 59, 111, 1);
+Color appBarBackgroundColor = Color.fromRGBO(25, 49, 111, 1);
+Color appBarBackgroundTextColor = Colors.blueGrey;
+Color cardBackgroundColor = Color.fromRGBO(25, 49, 111, 1);
+Color cardTextColor = Colors.blueGrey;
+Color materialInkWellColor = Colors.blue.withAlpha(80);
+Color materialTextColor = Colors.blueGrey;
+Color containerColor = Colors.blueGrey.withAlpha(50);
+Color containerTextColor = Colors.white.withAlpha(110);
+Color containerColor2 = Colors.blueGrey;
+Color chartBackgroundColor = Colors.grey[200];
+Color chartTextColor = Colors.white;
+
 class AboutNYSCFederalState extends StatefulWidget {
 
   @override
@@ -135,12 +149,15 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
     FederalAchievementsNotifier federalAchievementsNotifier = Provider.of<FederalAchievementsNotifier>(context);
 
     return Scaffold(
-      backgroundColor: Colors.blueGrey[900],
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         centerTitle: true,
-        title: Text(aboutNYSC),
+        title: Text(aboutNYSC,
+        style: TextStyle(
+          color: appBarBackgroundTextColor
+        ),),
         elevation: 10,
-        backgroundColor: Colors.blueGrey[800],
+        backgroundColor: appBarBackgroundColor,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -155,7 +172,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                 children: <Widget>[
                   Container(
                     child: Card(
-                      color: Colors.black38,
+                      color: cardBackgroundColor,
                       elevation: 4,
                       margin:   EdgeInsets.all(24),
                       child: SingleChildScrollView(
@@ -171,7 +188,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                     visionTitle,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: Colors.blueGrey,
+                                      color: cardTextColor,
                                       fontSize: 24,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -185,7 +202,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                 visionStatement,
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: cardTextColor,
                                     fontSize: 18
                                 ),
                               ),
@@ -197,7 +214,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                   ),
                   Container(
                     child: Card(
-                      color: Colors.black38,
+                      color: cardBackgroundColor,
                       elevation: 4,
                       margin:   EdgeInsets.all(24),
                       child: SingleChildScrollView(
@@ -213,7 +230,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                     missionTitle,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: Colors.blueGrey,
+                                      color: cardTextColor,
                                       fontSize: 24,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -227,7 +244,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                 missionStatement,
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: cardTextColor,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 18
                                 ),
@@ -240,7 +257,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                   ),
                   Container(
                     child: Card(
-                      color: Colors.black38,
+                      color: cardBackgroundColor,
                       elevation: 4,
                       margin:   EdgeInsets.all(24),
                       child: SingleChildScrollView(
@@ -256,7 +273,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                     coreValues,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: Colors.blueGrey,
+                                      color: cardTextColor,
                                       fontSize: 24,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -274,7 +291,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                       text: cvStatement1,
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Colors.blueGrey,
+                                        color: cardTextColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -282,7 +299,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                       text: cvStatement2,
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Colors.blueGrey,
+                                        color: cardTextColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -290,7 +307,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                       text: cvStatement3,
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Colors.blueGrey,
+                                        color: cardTextColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -298,7 +315,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                       text: cvStatement4,
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Colors.blueGrey,
+                                        color: cardTextColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -306,7 +323,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                       text: cvStatement5,
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Colors.blueGrey,
+                                        color: cardTextColor,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -321,7 +338,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                   ),
                   Container(
                     child: Card(
-                      color: Colors.black38,
+                      color: cardBackgroundColor,
                       elevation: 4,
                       margin:   EdgeInsets.all(24),
                       child: SingleChildScrollView(
@@ -337,7 +354,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                     whyNYSC,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: Colors.blueGrey,
+                                      color: cardTextColor,
                                       fontSize: 24,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -351,7 +368,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                                 whyNYSCStatement,
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: cardTextColor,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 16
                                 ),
@@ -371,7 +388,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                 child: Material (
                   color: Colors.transparent,
                   child: InkWell(
-                    splashColor: Colors.blueGrey,
+                    splashColor: materialInkWellColor,
                     onTap: () {},
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 15, top: 15, left: 10, right: 10),
@@ -384,7 +401,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: staffBody,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -392,7 +409,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: staffBodyStatement,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -405,7 +422,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey.withAlpha(50),
+                    color: containerColor,
                     borderRadius: new BorderRadius.circular(10)
                 ),
               ),
@@ -415,13 +432,13 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
               child: Container(
                 height: 250,
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey.withAlpha(50),
+                    color: containerColor,
                     borderRadius: new BorderRadius.circular(10)
                 ),
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    splashColor: Colors.blueGrey,
+                    splashColor: materialInkWellColor,
                     onTap: () {},
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
@@ -434,14 +451,14 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                             child: Text(populationChart,
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                  color: Colors.blueGrey,
+                                  color: containerTextColor,
                                   fontSize: 19,
                                   fontWeight: FontWeight.bold,
                                 )),
                           ),
                           PieChart(
                             legendStyle: TextStyle(
-                              color: Colors.blueGrey,
+                              color: containerTextColor,
                             ),
                             dataMap: federalNYSCMap,
                             animationDuration: Duration(seconds: 10),
@@ -450,7 +467,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                             showChartValuesInPercentage: false,
                             showChartValues: true,
                             showChartValuesOutside: false,
-                            chartValueBackgroundColor: Colors.grey[200],
+                            chartValueBackgroundColor: containerTextColor,
                             colorList: federalNYSCColorList,
                             showLegends: true,
                             legendPosition: LegendPosition.right,
@@ -458,7 +475,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                             showChartValueLabel: true,
                             initialAngle: 0,
                             chartValueStyle: defaultChartValueStyle.copyWith(
-                              color: Colors.blueGrey[900].withOpacity(0.9),
+                              color: chartTextColor,
                             ),
                             chartType: ChartType.disc,
                           ),
@@ -475,7 +492,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                 child: Material (
                   color: Colors.transparent,
                   child: InkWell(
-                    splashColor: Colors.blueGrey,
+                    splashColor: materialInkWellColor,
                     onTap: () {},
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 15, top: 15, left: 10, right: 10),
@@ -488,7 +505,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: corperBody,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -496,7 +513,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: corperBodyStatement,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -509,7 +526,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey.withAlpha(50),
+                    color: containerColor,
                     borderRadius: new BorderRadius.circular(10)
                 ),
               ),
@@ -519,13 +536,13 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
               child: Container(
                 height: 270,
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey.withAlpha(50),
+                    color: containerColor,
                     borderRadius: new BorderRadius.circular(10)
                 ),
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    splashColor: Colors.blueGrey,
+                    splashColor: materialInkWellColor,
                     onTap: () {},
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
@@ -538,14 +555,14 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                             child: Text(corperPopulationChart,
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                  color: Colors.blueGrey,
+                                  color: containerTextColor,
                                   fontSize: 19,
                                   fontWeight: FontWeight.bold,
                                 )),
                           ),
                           PieChart(
                             legendStyle: TextStyle(
-                              color: Colors.blueGrey,
+                              color: containerTextColor,
                             ),
                             dataMap: federalNYSCCorpMemberMap,
                             animationDuration: Duration(seconds: 10),
@@ -554,7 +571,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                             showChartValuesInPercentage: false,
                             showChartValues: true,
                             showChartValuesOutside: false,
-                            chartValueBackgroundColor: Colors.grey[200],
+                            chartValueBackgroundColor: chartBackgroundColor,
                             colorList: federalNYSCCorpMemberColorList,
                             showLegends: true,
                             legendPosition: LegendPosition.right,
@@ -562,7 +579,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                             showChartValueLabel: true,
                             initialAngle: 0,
                             chartValueStyle: defaultChartValueStyle.copyWith(
-                              color: Colors.blueGrey[900].withOpacity(0.9),
+                              color: Color.fromRGBO(25, 49, 111, 1).withAlpha(160),
                             ),
                             chartType: ChartType.ring,
                           ),
@@ -578,7 +595,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
               child: Text(orientationCamp,
                 style: TextStyle(
                     fontSize: 20,
-                    color: Colors.blueGrey,
+                    color: containerTextColor,
                     fontWeight: FontWeight.w500
                 ),
               ),
@@ -590,7 +607,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                 child: Material (
                   color: Colors.transparent,
                   child: InkWell(
-                    splashColor: Colors.blueGrey,
+                    splashColor: materialInkWellColor,
                     onTap: () {},
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 15, top: 15, left: 10, right: 10),
@@ -602,7 +619,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp1,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -610,7 +627,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp2,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -618,7 +635,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp3,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -626,7 +643,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp4,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -634,7 +651,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp5,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -642,7 +659,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp6,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -650,7 +667,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp7,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -658,7 +675,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp8,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -666,7 +683,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp9,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -674,7 +691,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp10,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -682,7 +699,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp11,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -690,7 +707,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp12,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -698,7 +715,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp13,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -706,7 +723,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp14,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -714,7 +731,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp15,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -722,7 +739,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp16,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -730,7 +747,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp17,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -738,7 +755,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp18,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -746,7 +763,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp19,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -754,7 +771,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp20,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -762,7 +779,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp21,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -770,7 +787,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp22,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -778,7 +795,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp23,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -786,7 +803,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp24,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -794,7 +811,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp25,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -802,7 +819,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp26,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -810,7 +827,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp27,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -818,7 +835,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp28,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -826,7 +843,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp29,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -834,7 +851,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp30,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -842,7 +859,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp31,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -850,7 +867,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp32,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -858,7 +875,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp33,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -866,7 +883,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp34,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -874,7 +891,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp35,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -882,7 +899,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp36,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -890,7 +907,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: stateOrientationCamp37,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -904,7 +921,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey.withAlpha(50),
+                    color: containerColor,
                     borderRadius: new BorderRadius.circular(10)
                 ),
               ),
@@ -916,7 +933,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                 child: Material (
                   color: Colors.transparent,
                   child: InkWell(
-                    splashColor: Colors.blueGrey,
+                    splashColor: materialInkWellColor,
                     onTap: () {},
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 15, top: 15, left: 10, right: 10),
@@ -928,7 +945,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: cdsGroups,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -936,7 +953,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: someCdsGroups1,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -944,7 +961,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: someCdsGroups2,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -952,7 +969,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: someCdsGroups3,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -960,7 +977,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: someCdsGroups4,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -968,7 +985,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: someCdsGroups5,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -976,7 +993,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: someCdsGroups6,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -984,7 +1001,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: someCdsGroups7,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -992,7 +1009,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: someCdsGroups8,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1000,7 +1017,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               TextSpan(
                                   text: someCdsGroups9,
                                   style: TextStyle(
-                                    color: Colors.blueGrey,
+                                    color: containerTextColor,
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1014,7 +1031,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey.withAlpha(50),
+                    color: containerColor,
                     borderRadius: new BorderRadius.circular(10)
                 ),
               ),
@@ -1024,7 +1041,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
               child: Text(nyscArialViews,
                 style: TextStyle(
                     fontSize: 20,
-                    color: Colors.blueGrey,
+                    color: containerTextColor,
                     fontWeight: FontWeight.w500
                 ),
               ),
@@ -1042,7 +1059,6 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                     Container(
                       height: 250,
                       decoration: BoxDecoration(
-//                        color: Colors.blue,
                           borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
                           image: DecorationImage(
                             image: CachedNetworkImageProvider(
@@ -1055,7 +1071,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                     Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
-                          color: Colors.blueGrey
+                          color: containerColor2
                       ),
                       child: ListTile(
                         title: Center(
@@ -1064,7 +1080,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                             child: Text(
                               federalArialNotifier.federalArialList[index].toastName,
                               style: TextStyle(
-                                color: Colors.blueGrey[900],
+                                color: Color.fromRGBO(25, 49, 111, 1).withAlpha(190),
                                 fontWeight: FontWeight.w800,
                                 fontSize: 17.0,
                               ),
@@ -1079,11 +1095,11 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, bottom: 10),
+              padding: const EdgeInsets.only(left: 20, bottom: 10, right: 20),
               child: Text(nyscAchievements,
                 style: TextStyle(
                     fontSize: 20,
-                    color: Colors.blueGrey,
+                    color: containerTextColor,
                     fontWeight: FontWeight.w500
                 ),
               ),
@@ -1113,7 +1129,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                       Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
-                            color: Colors.blueGrey
+                            color: containerColor2
                         ),
                         child: ListTile(
                           title: Center(
@@ -1122,7 +1138,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               child: Text(
                                 federalAchievementsNotifier.federalAchievementsList[index].toastName,
                                 style: TextStyle(
-                                  color: Colors.blueGrey[900],
+                                  color: Color.fromRGBO(25, 49, 111, 1).withAlpha(190),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17.0,
                                 ),
@@ -1141,13 +1157,13 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
 
             ),
             Padding(
-                padding: const EdgeInsets.only(left: 20, bottom: 30, top: 20),
+                padding: const EdgeInsets.only(left: 20, bottom: 30, right: 20),
                 child: RichText(
                   text: TextSpan(
                       text: moreInfoAboutNYSC,
                       style: TextStyle(
                         fontSize: 17,
-                        color: Colors.blueGrey,
+                        color: containerTextColor,
                         fontWeight: FontWeight.w800,
                         fontStyle: FontStyle.italic,
                       ),
@@ -1202,13 +1218,13 @@ Map<String, double> federalNYSCMap = Map();
 Map<String, double> federalNYSCCorpMemberMap = Map();
 
 List<Color> federalNYSCColorList = [
-  Colors.greenAccent,
-  Colors.deepPurpleAccent,
-  Colors.brown,
+  containerTextColor,
+  Color.fromRGBO(25, 49, 111, 1),
+  Colors.lightBlue,
 ];
 
 List<Color> federalNYSCCorpMemberColorList = [
-  Colors.lightGreen,
-  Colors.redAccent,
+  Color.fromRGBO(25, 49, 111, 1).withAlpha(160),
+  Color.fromRGBO(184, 186, 181, 1),
 ];
 

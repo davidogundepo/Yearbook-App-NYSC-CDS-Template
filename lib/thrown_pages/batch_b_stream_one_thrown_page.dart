@@ -69,7 +69,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            splashColor: Colors.pinkAccent,
+            splashColor: Color.fromRGBO(95, 32, 86, 1),
             onTap: () {
               batchBStreamOneNotifier.currentBatchBStreamOne = batchBStreamOneNotifier.batchBStreamOneList[index];
                navigateToBatchBStreamOneDetailsPage(context);
@@ -249,7 +249,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
       onWillPop: _onWillPop,
       child: Scaffold(
         body: Container(
-          color: Color.fromRGBO(222, 93, 131, 1),
+          color: Color.fromRGBO(95, 72, 86, 1),
 
           child: NestedScrollView(
             headerSliverBuilder: (BuildContext context,
@@ -266,7 +266,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                             builder: (context) => Container(
                               height: 300,
                               decoration: BoxDecoration(
-                                color: Colors.pink[300],
+                                color: Color.fromRGBO(95, 62, 86, 1),
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                               ),
                               child: Material(
@@ -300,7 +300,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                                         },
                                       ),
                                       ListTile(
-                                        leading: new Icon(MdiIcons.chessQueen, color: Colors.white),
+                                        leading: new Icon(MdiIcons.chessKing, color: Colors.white),
                                         title: new Text(aboutNYSC,
                                           style: GoogleFonts.zillaSlab(
                                             color: Colors.white,
@@ -339,7 +339,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                       },
                     ),
                   ],
-                  backgroundColor: Colors.pink[300],
+                  backgroundColor: Color.fromRGBO(95, 62, 86, 1),
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,

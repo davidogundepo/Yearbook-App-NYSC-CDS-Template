@@ -80,11 +80,10 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    lgOfficialsNotifier =
-        Provider.of<LGOfficialsNotifier>(context, listen: true);
+    lgOfficialsNotifier = Provider.of<LGOfficialsNotifier>(context, listen: true);
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(86, 158, 128, 1),
+      backgroundColor: Color.fromRGBO(167, 129, 29, 1),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -98,7 +97,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
           ),
         ),
         elevation: 10,
-        backgroundColor: Color.fromRGBO(46, 137, 112, 1),
+        backgroundColor: Color.fromRGBO(167, 119, 29, 1),
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
@@ -139,14 +138,13 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
             Material(
               color: Colors.transparent,
               child: InkWell(
-                splashColor: Color.fromRGBO(46, 137, 112, 1).withOpacity(0.20),
+                splashColor: Color.fromRGBO(167, 119, 29, 1).withOpacity(0.20),
                 onTap: () {},
                 child: Card(
                   elevation: 4,
                   shape: OutlineInputBorder(
                     borderSide: BorderSide(
-                        color:
-                            Color.fromRGBO(46, 137, 112, 1).withOpacity(0.70),
+                        color: Color.fromRGBO(167, 119, 29, 1).withOpacity(0.70),
                         width: 4.0,
                         style: BorderStyle.solid),
                   ),
@@ -158,17 +156,16 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         Text(
-                          lgOfficialsNotifier.currentLGOfficials.name
-                              .toUpperCase(),
+                          lgOfficialsNotifier.currentLGOfficials.name.toUpperCase(),
                           style: GoogleFonts.blinker(
-                              color: Color.fromRGBO(46, 137, 112, 1),
+                              color: Color.fromRGBO(167, 119, 29, 1),
                               fontSize: 30,
                               fontWeight: FontWeight.w500),
                         ),
                         SizedBox(width: 10),
                         Icon(
                           MdiIcons.checkboxMarkedCircle,
-                          color: Color.fromRGBO(46, 137, 112, 1),
+                          color: Color.fromRGBO(167, 119, 29, 1),
                         ),
                       ],
                     ),
@@ -197,12 +194,12 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                         padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
                         thumbColor: Colors.white,
                         backgroundColor:
-                            Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                            Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                         children: {
                           0: Text(
                             reachDetails,
                             style: GoogleFonts.sacramento(
-                                color: Color.fromRGBO(46, 137, 112, 1),
+                                color: Color.fromRGBO(167, 119, 29, 1),
                                 fontSize: 25,
                                 fontStyle: FontStyle.normal,
                                 fontWeight: FontWeight.w400),
@@ -210,7 +207,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                           1: Text(
                             autoBioDetails,
                             style: GoogleFonts.sacramento(
-                              color: Color.fromRGBO(46, 137, 112, 1),
+                              color: Color.fromRGBO(167, 119, 29, 1),
                               fontSize: 25,
                               fontStyle: FontStyle.normal,
                               fontWeight: FontWeight.w400,
@@ -273,7 +270,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(167, 119, 29, 1),
                       icon: new Icon(
                         MdiIcons.dialpad,
                         color: Colors.white,
@@ -300,7 +297,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(167, 119, 29, 1),
                         icon: new Icon(
                           MdiIcons.dialpad,
                           color: Colors.white,
@@ -329,7 +326,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(167, 119, 29, 1),
                       icon: new Icon(
                         MdiIcons.message,
                         color: Colors.white,
@@ -356,7 +353,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(167, 119, 29, 1),
                         icon: new Icon(
                           MdiIcons.message,
                           color: Colors.white,
@@ -385,7 +382,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(167, 119, 29, 1),
                       icon: new Icon(
                         MdiIcons.gmail,
                         color: Colors.white,
@@ -412,7 +409,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(167, 119, 29, 1),
                         icon: new Icon(
                           MdiIcons.gmail,
                           color: Colors.white,
@@ -441,7 +438,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(167, 119, 29, 1),
                       icon: new Icon(
                         MdiIcons.twitterCircle,
                         color: Colors.white,
@@ -468,7 +465,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(167, 119, 29, 1),
                         icon: new Icon(
                           MdiIcons.twitterCircle,
                           color: Colors.white,
@@ -498,7 +495,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       shape: BeveledRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       elevation: 2,
-                      color: Color.fromRGBO(46, 137, 112, 1),
+                      color: Color.fromRGBO(167, 119, 29, 1),
                       icon: new Icon(
                         MdiIcons.facebook,
                         color: Colors.white,
@@ -527,7 +524,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         elevation: 2,
-                        color: Color.fromRGBO(46, 137, 112, 1),
+                        color: Color.fromRGBO(167, 119, 29, 1),
                         icon: new Icon(
                           MdiIcons.facebook,
                           color: Colors.white,
@@ -562,7 +559,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    splashColor: Color.fromRGBO(46, 137, 112, 1),
+                    splashColor: Color.fromRGBO(167, 119, 29, 1),
                     onTap: () {},
                     child: Padding(
                       padding:
@@ -573,14 +570,14 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                             TextSpan(
                                 text: autobiographyTitle,
                                 style: GoogleFonts.aBeeZee(
-                                  color: Color.fromRGBO(46, 137, 112, 1),
+                                  color: Color.fromRGBO(167, 119, 29, 1),
                                   fontSize: 19,
                                   fontWeight: FontWeight.bold,
                                 )),
                             TextSpan(
                                 text: ' ' + _autoBio,
                                 style: GoogleFonts.trykker(
-                                  color: Color.fromRGBO(46, 137, 112, 1),
+                                  color: Color.fromRGBO(167, 119, 29, 1),
                                   fontSize: 19,
                                   fontWeight: FontWeight.w300,
                                 )),
@@ -591,7 +588,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                    color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                     borderRadius: new BorderRadius.circular(10)),
               );
             } else {
@@ -601,7 +598,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        splashColor: Color.fromRGBO(46, 137, 112, 1),
+                        splashColor: Color.fromRGBO(167, 119, 29, 1),
                         onTap: () {},
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -612,14 +609,14 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                 TextSpan(
                                     text: autobiographyTitle,
                                     style: GoogleFonts.aBeeZee(
-                                      color: Color.fromRGBO(46, 137, 112, 1),
+                                      color: Color.fromRGBO(167, 119, 29, 1),
                                       fontSize: 19,
                                       fontWeight: FontWeight.bold,
                                     )),
                                 TextSpan(
                                     text: ' ' + _autoBio,
                                     style: GoogleFonts.trykker(
-                                      color: Color.fromRGBO(46, 137, 112, 1),
+                                      color: Color.fromRGBO(167, 119, 29, 1),
                                       fontSize: 19,
                                       fontWeight: FontWeight.w300,
                                     )),
@@ -630,7 +627,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                        color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                         borderRadius: new BorderRadius.circular(10)),
                   ));
             }
@@ -644,7 +641,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(167, 119, 29, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -655,14 +652,14 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: nicknameTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _nickname,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -673,7 +670,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -686,7 +683,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(167, 119, 29, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -697,14 +694,14 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: nicknameTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _nickname,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -715,7 +712,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -731,7 +728,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(167, 119, 29, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -742,14 +739,14 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: positionEnforcingTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _positionEnforcing,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )),
@@ -760,7 +757,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -773,7 +770,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(167, 119, 29, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -784,14 +781,14 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: positionEnforcingTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _positionEnforcing,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )),
@@ -802,7 +799,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -819,7 +816,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(167, 119, 29, 1),
                       onTap: () {},
                       child: Padding(
                         padding:
@@ -830,14 +827,14 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: yearOfInceptionTitle,
                                   style: GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )),
                               TextSpan(
                                   text: ' ' + _inceptionYear,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   ))
@@ -848,7 +845,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                     ),
                   ),
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)),
                 ),
               );
@@ -861,7 +858,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(167, 119, 29, 1),
                           onTap: () {},
                           child: Padding(
                             padding:
@@ -872,14 +869,14 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: yearOfInceptionTitle,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )),
                                   TextSpan(
                                       text: ' ' + _inceptionYear,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       ))
@@ -891,7 +888,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                         ),
                       ),
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   )
@@ -908,7 +905,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(167, 119, 29, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -918,7 +915,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: academicQualificationTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -926,7 +923,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: ' '+_academicQualification,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -939,7 +936,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -953,7 +950,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(167, 119, 29, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -963,7 +960,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: academicQualificationTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -971,7 +968,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: ' '+_academicQualification,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -984,7 +981,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1001,7 +998,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(167, 119, 29, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1011,7 +1008,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: stateOfOriginTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1019,7 +1016,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: ' '+_stateOfOrigin,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1032,7 +1029,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1046,7 +1043,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(167, 119, 29, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1056,7 +1053,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: stateOfOriginTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1064,7 +1061,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: ' '+_stateOfOrigin,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1077,7 +1074,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1095,7 +1092,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(167, 119, 29, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1105,7 +1102,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: dobTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1113,7 +1110,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: ' '+_dob,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1126,7 +1123,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1140,7 +1137,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(167, 119, 29, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1150,7 +1147,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: dobTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1158,7 +1155,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: ' '+_dob,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1171,7 +1168,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1189,7 +1186,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(167, 119, 29, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1199,7 +1196,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: hobbiesTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1207,7 +1204,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: ' '+_hobbies,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1220,7 +1217,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1234,7 +1231,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(167, 119, 29, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1244,7 +1241,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: hobbiesTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1252,7 +1249,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: ' '+_hobbies,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1265,7 +1262,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -1282,7 +1279,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   child: Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      splashColor: Color.fromRGBO(46, 137, 112, 1),
+                      splashColor: Color.fromRGBO(167, 119, 29, 1),
                       onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1292,7 +1289,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: philosophyTitle,
                                   style:  GoogleFonts.aBeeZee(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.bold,
                                   )
@@ -1300,7 +1297,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               TextSpan(
                                   text: ' '+_philosophy,
                                   style: GoogleFonts.trykker(
-                                    color: Color.fromRGBO(46, 137, 112, 1),
+                                    color: Color.fromRGBO(167, 119, 29, 1),
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
                                   )
@@ -1313,7 +1310,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                   ),
 
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                      color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                       borderRadius: new BorderRadius.circular(10)
                   ),
                 ),
@@ -1327,7 +1324,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(46, 137, 112, 1),
+                          splashColor: Color.fromRGBO(167, 119, 29, 1),
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -1337,7 +1334,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: philosophyTitle,
                                       style:  GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -1345,7 +1342,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                                   TextSpan(
                                       text: ' '+_philosophy,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(46, 137, 112, 1),
+                                        color: Color.fromRGBO(167, 119, 29, 1),
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -1358,7 +1355,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(46, 137, 112, 1).withAlpha(50),
+                          color: Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),

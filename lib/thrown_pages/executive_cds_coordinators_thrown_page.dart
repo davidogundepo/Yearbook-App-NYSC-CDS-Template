@@ -195,7 +195,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
       onWillPop: _onWillPop,
       child: Scaffold(
         body: Container(
-          color: Colors.blue,
+          color: Color.fromRGBO(123, 176, 182, 1),
 
           child: NestedScrollView(
             headerSliverBuilder: (BuildContext context,
@@ -212,7 +212,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                             builder: (context) => Container(
                               height: 300,
                               decoration: BoxDecoration(
-                                color: Colors.blue[300],
+                                color: Color.fromRGBO(123, 166, 182, 1),
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                               ),
                               child: Material(
@@ -244,7 +244,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                                         },
                                       ),
                                       ListTile(
-                                        leading: new Icon(MdiIcons.chessQueen,
+                                        leading: new Icon(MdiIcons.chessKing,
                                           color: Colors.white,),
                                         title: new Text(aboutNYSC,
                                           style: GoogleFonts.zillaSlab(
@@ -285,7 +285,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                       },
                     ),
                   ],
-                  backgroundColor: Colors.blueAccent,
+                  backgroundColor: Color.fromRGBO(123, 166, 182, 1),
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,

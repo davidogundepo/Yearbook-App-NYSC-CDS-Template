@@ -26,7 +26,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
     executiveCDSCoordinatorsNotifier = Provider.of<ExecutiveCDSCoordinatorsNotifier>(context, listen: true);
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(254, 250, 239, 1),
+      backgroundColor: Color.fromRGBO(123, 176, 182, 1),
       appBar: AppBar(
         centerTitle: true,
 //        title: Text(classPrefectsNotifier.currentClassPrefects.name),
@@ -37,7 +37,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
         ),
 
         elevation: 10,
-        backgroundColor: Color.fromRGBO(254, 255, 236, 1),
+        backgroundColor: Color.fromRGBO(123, 166, 182, 1),
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios,
             color: Colors.blueGrey,),
@@ -78,14 +78,14 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
             Material(
               color: Colors.transparent,
               child: InkWell(
-                splashColor: Color.fromRGBO(254, 255, 236, 1).withOpacity(0.20),
+                splashColor: Color.fromRGBO(123, 166, 182, 1).withOpacity(0.20),
                 onTap: () {},
                 child: Card(
                   color: Colors.blueGrey,
                   elevation: 4,
                   shape: OutlineInputBorder(
                     borderSide: BorderSide(
-                        color: Color.fromRGBO(254, 255, 236, 1), width: 4.0, style: BorderStyle.solid
+                        color: Color.fromRGBO(123, 166, 182, 1), width: 4.0, style: BorderStyle.solid
                     ),
                   ),
 
@@ -102,7 +102,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                       children: <Widget>[
                         Text(executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.name.toUpperCase(),
                           style: GoogleFonts.blinker(
-                              color: Color.fromRGBO(254, 255, 236, 1),
+                              color: Colors.white,
                               fontSize: 30,
                               fontWeight: FontWeight.w500
                           ),
@@ -110,7 +110,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                         SizedBox(width: 10),
                         Icon (
                           MdiIcons.checkboxMarkedCircle,
-                          color: Color.fromRGBO(254, 255, 236, 1),
+                          color: Colors.white,
                         ),
                       ],
                     ),
@@ -137,7 +137,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          splashColor: Color.fromRGBO(254, 255, 236, 1),
+                          splashColor: Colors.white,
                           onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -147,7 +147,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                   TextSpan(
                                       text: nyscBatch,
                                       style: GoogleFonts.aBeeZee(
-                                        color: Color.fromRGBO(254, 255, 236, 1),
+                                        color: Colors.white,
                                         fontSize: 19,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -155,7 +155,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                   TextSpan(
                                       text: ' '+executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.nyscBatch,
                                       style: GoogleFonts.trykker(
-                                        color: Color.fromRGBO(254, 255, 236, 1),
+                                        color: Colors.white,
                                         fontSize: 19,
                                         fontWeight: FontWeight.w300,
                                       )
@@ -168,7 +168,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                       ),
 
                       decoration: BoxDecoration(
-                          color: Color.fromRGBO(254, 255, 236, 1).withAlpha(120),
+                          color: Color.fromRGBO(123, 166, 182, 1).withAlpha(120),
                           borderRadius: new BorderRadius.circular(10)
                       ),
                     ),
@@ -178,7 +178,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                         child: Material(
                           color: Colors.transparent,
                           child: InkWell(
-                            splashColor: Color.fromRGBO(254, 255, 236, 1),
+                            splashColor: Colors.white,
                             onTap: () {},
                             child: Padding(
                               padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -188,7 +188,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                     TextSpan(
                                         text: positionEnforced,
                                         style: GoogleFonts.aBeeZee(
-                                          color: Color.fromRGBO(254, 255, 236, 1),
+                                          color: Colors.white,
                                           fontSize: 19,
                                           fontWeight: FontWeight.bold,
                                         )
@@ -196,7 +196,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                     TextSpan(
                                         text: ' '+executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.positionEnforced,
                                         style: GoogleFonts.trykker(
-                                          color: Color.fromRGBO(254, 255, 236, 1),
+                                          color: Colors.white,
                                           fontSize: 19,
                                           fontWeight: FontWeight.w300,
                                         )
@@ -209,7 +209,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                         ),
 
                         decoration: BoxDecoration(
-                            color: Color.fromRGBO(254, 255, 236, 1).withAlpha(120),
+                            color: Color.fromRGBO(123, 166, 182, 1).withAlpha(120),
                             borderRadius: new BorderRadius.circular(10)
                         ),
                       ),

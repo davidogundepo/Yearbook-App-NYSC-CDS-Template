@@ -302,7 +302,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                                         },
                                       ),
                                       ListTile(
-                                        leading: new Icon(MdiIcons.chessQueen,
+                                        leading: new Icon(MdiIcons.chessKing,
                                           color: Colors.white,),
                                         title: new Text(aboutNYSC,
                                           style: GoogleFonts.zillaSlab(
