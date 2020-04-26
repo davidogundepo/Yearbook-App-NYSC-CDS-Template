@@ -84,7 +84,7 @@ class _AboutCDS extends State<AboutCDS> {
         centerTitle: true,
         title: Text(aboutCDS,
         style: TextStyle(
-          color: appBarBackgroundTextColor),),
+          color: appBarBackgroundTextColor)),
         elevation: 10,
         backgroundColor: appBarBackgroundColor,
       ),

@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fnancialinclusioncds2020/notifier/batch_c_stream_one_notifier.dart';
@@ -93,7 +94,7 @@ class BatchCStreamOneDetailsPage extends StatefulWidget {
 }
 
 class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage> {
-
+  ConfettiController _confettiController;
 
 
   bool _isVisible = true;
@@ -118,171 +119,190 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
     
     batchCStreamOneNotifier = Provider.of<BatchCStreamOneNotifier>(context, listen: true);
 
-    return Scaffold(
-      backgroundColor: Color.fromRGBO(64, 96, 93, 1),
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(batchCStreamOneNotifier.currentBatchCStreamOne.nickname,
-          style: GoogleFonts.sanchez(
-              color: Colors.white,
-              fontSize: 25,
-              fontWeight: FontWeight.w400
-          ),),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
+    return ConfettiWidget(
+      confettiController: _confettiController,
+      blastDirectionality: BlastDirectionality.explosive,
+      shouldLoop: false,
+      colors: [
+        Colors.green,
+        Colors.blue,
+        Colors.pink,
+        Colors.orange,
+        Colors.purple,
+        Colors.brown,
+        Colors.white,
+        Colors.blueGrey,
+        Colors.redAccent,
+        Colors.teal,
+        Colors.indigoAccent,
+        Colors.cyan,
+      ],
+      child: Scaffold(
+        backgroundColor: Color.fromRGBO(64, 96, 93, 1),
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(batchCStreamOneNotifier.currentBatchCStreamOne.nickname,
+            style: GoogleFonts.sanchez(
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: FontWeight.w400
+            ),),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(30),
+            ),
+          ),
+          elevation: 10,
+          backgroundColor: Color.fromRGBO(64, 91, 93, 1),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
         ),
-        elevation: 10,
-        backgroundColor: Color.fromRGBO(64, 91, 93, 1),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Tooltip(
-                child: Container(
-                  width: 400,
-                  height: 520,
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Tooltip(
+                  child: Container(
+                    width: 400,
+                    height: 520,
+                    child: Card(
+                      elevation: 5,
+                      margin: EdgeInsets.all(10),
+                      semanticContainer: true,
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: CachedNetworkImage(
+                        imageUrl: batchCStreamOneNotifier.currentBatchCStreamOne.image,
+                        fit: BoxFit.cover,
+                        placeholder: (context, url) => CircularProgressIndicator(),
+                        errorWidget: (context, url, error) => Icon(MdiIcons.alertRhombus),
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
+                  message: batchCStreamOneNotifier.currentBatchCStreamOne.name
+              ),
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  splashColor: Color.fromRGBO(64, 96, 93, 1).withOpacity(0.20),
+                  onTap: () {},
                   child: Card(
-                    elevation: 5,
-                    margin: EdgeInsets.all(10),
-                    semanticContainer: true,
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: CachedNetworkImage(
-                      imageUrl: batchCStreamOneNotifier.currentBatchCStreamOne.image,
-                      fit: BoxFit.cover,
-                      placeholder: (context, url) => CircularProgressIndicator(),
-                      errorWidget: (context, url, error) => Icon(MdiIcons.alertRhombus),
+                    elevation: 4,
+                    shape: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Color.fromRGBO(64, 91, 93, 1).withOpacity(0.70), width: 4.0, style: BorderStyle.solid
+                      ),
                     ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                ),
-                message: batchCStreamOneNotifier.currentBatchCStreamOne.name
-            ),
-            Material(
-              color: Colors.transparent,
-              child: InkWell(
-                splashColor: Color.fromRGBO(64, 96, 93, 1).withOpacity(0.20),
-                onTap: () {},
-                child: Card(
-                  elevation: 4,
-                  shape: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Color.fromRGBO(64, 91, 93, 1).withOpacity(0.70), width: 4.0, style: BorderStyle.solid
-                    ),
-                  ),
 
-                  margin: EdgeInsets.fromLTRB(16, 16, 16, 16),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 16.0,
-                        top: 16.0,
-                        right: 16.0,
-                        bottom: 16.0),
+                    margin: EdgeInsets.fromLTRB(16, 16, 16, 16),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 16.0,
+                          top: 16.0,
+                          right: 16.0,
+                          bottom: 16.0),
 
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Text(batchCStreamOneNotifier.currentBatchCStreamOne.name.toUpperCase(),
-                          style: GoogleFonts.blinker(
-                              color: Color.fromRGBO(64, 91, 93, 1),
-                              fontSize: 30,
-                              fontWeight: FontWeight.w500
-                          ),
-                        ),
-                        (() {
-                          if (batchCStreamOneNotifier.currentBatchCStreamOne.cdsExecutive == "Yes") {
-                            return
-                              Row(
-                                children: <Widget>[
-                                  SizedBox(width: 10),
-                                  Icon (
-                                    MdiIcons.checkboxMarkedCircle,
-                                    color: Color.fromRGBO(64, 91, 93, 1),
-                                  ),
-                                ],
-                              );
-                          } else {
-                            return Visibility(
-                              visible: !_isVisible,
-                              child: Icon (
-                                MdiIcons.checkboxMarkedCircle,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Text(batchCStreamOneNotifier.currentBatchCStreamOne.name.toUpperCase(),
+                            style: GoogleFonts.blinker(
                                 color: Color.fromRGBO(64, 91, 93, 1),
-                              ),
-                            );
-                          }
-                        }()),
-                      ],
+                                fontSize: 30,
+                                fontWeight: FontWeight.w500
+                            ),
+                          ),
+                          (() {
+                            if (batchCStreamOneNotifier.currentBatchCStreamOne.cdsExecutive == "Yes") {
+                              return
+                                Row(
+                                  children: <Widget>[
+                                    SizedBox(width: 10),
+                                    Icon (
+                                      MdiIcons.checkboxMarkedCircle,
+                                      color: Color.fromRGBO(64, 91, 93, 1),
+                                    ),
+                                  ],
+                                );
+                            } else {
+                              return Visibility(
+                                visible: !_isVisible,
+                                child: Icon (
+                                  MdiIcons.checkboxMarkedCircle,
+                                  color: Color.fromRGBO(64, 91, 93, 1),
+                                ),
+                              );
+                            }
+                          }()),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            Card(
-              elevation: 5,
-              color: Colors.white,
-              margin: EdgeInsets.all(10),
-              semanticContainer: true,
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
+              Card(
+                elevation: 5,
+                color: Colors.white,
+                margin: EdgeInsets.all(10),
+                semanticContainer: true,
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
 
-              child: Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 20, left: 8.0, right: 8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 35),
-                      child: CupertinoSlidingSegmentedControl<int>(
-                        padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
-                        thumbColor: Colors.white,
-                        backgroundColor: Color.fromRGBO(64, 91, 93, 1).withAlpha(130),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 20, left: 8.0, right: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 35),
+                        child: CupertinoSlidingSegmentedControl<int>(
+                          padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
+                          thumbColor: Colors.white,
+                          backgroundColor: Color.fromRGBO(64, 91, 93, 1).withAlpha(130),
 
-                        children: {
-                          0: Text(reachDetails,
-                            style: GoogleFonts.sacramento(
+                          children: {
+                            0: Text(reachDetails,
+                              style: GoogleFonts.sacramento(
+                                  color: Color.fromRGBO(64, 91, 93, 1),
+                                  fontSize: 25,
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.w400
+                              ),
+                            ),
+                            1: Text(autoBioDetails,
+                              style: GoogleFonts.sacramento(
                                 color: Color.fromRGBO(64, 91, 93, 1),
                                 fontSize: 25,
                                 fontStyle: FontStyle.normal,
-                                fontWeight: FontWeight.w400
-                            ),
-                          ),
-                          1: Text(autoBioDetails,
-                            style: GoogleFonts.sacramento(
-                              color: Color.fromRGBO(64, 91, 93, 1),
-                              fontSize: 25,
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w400,
+                                fontWeight: FontWeight.w400,
 
+                              ),
                             ),
-                          ),
-                        },
-                        onValueChanged: (int val) {
-                          setState(() {
-                            sharedValue = val;
+                          },
+                          onValueChanged: (int val) {
+                            setState(() {
+                              sharedValue = val;
 
-                          });
-                        },
-                        groupValue: sharedValue,
+                            });
+                          },
+                          groupValue: sharedValue,
+                        ),
                       ),
-                    ),
-                    userBIO[sharedValue],
-                  ],
+                      userBIO[sharedValue],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -292,6 +312,9 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
 
 
   initState(){
+    _confettiController = ConfettiController(duration: const Duration(seconds: 35));
+    _confettiController.play();
+
     BatchCStreamOneNotifier batchCStreamOneNotifier = Provider.of<BatchCStreamOneNotifier>(context, listen: false);
 
     _autoBio = batchCStreamOneNotifier.currentBatchCStreamOne.autoBio;
@@ -2400,5 +2423,12 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
     };
     super.initState();
   }
+
+  @override
+  void dispose() {
+    _confettiController.dispose();
+    super.dispose();
+  }
+
 
 }

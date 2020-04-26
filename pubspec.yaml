@@ -67,6 +67,9 @@ dependencies:
   splashscreen: ^1.2.0
   awesome_loader: ^0.0.3
   pie_chart: ^3.1.1
+  device_preview: ^0.4.4
+  shimmer: ^1.1.1
+  confetti: ^0.4.0
 
 dev_dependencies:
   flutter_test:

@@ -61,7 +61,7 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            splashColor: Colors.white,
+            splashColor: Color.fromRGBO(167, 119, 29, 1),
             onTap: () {
               lgOfficialsNotifier.currentLGOfficials = lgOfficialsNotifier.lGOfficialsList[index];
               navigateToLGOfficialsDetailsPage(context);

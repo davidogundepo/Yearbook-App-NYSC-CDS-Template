@@ -4,8 +4,10 @@ import 'dart:ui' as ui;
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:shimmer/shimmer.dart';
 import '../bloc_navigation_bloc/navigation_bloc.dart';
 import '../sidebar/menu_item.dart';
 
@@ -121,7 +123,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                           Stack(
                             children: <Widget>[
                               Opacity(
-                                opacity: 0.7,
+                                opacity: 1.0,
                                 child: Container(
                                   child: Material(
                                     color: Colors.transparent,
@@ -129,20 +131,33 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                                       splashColor: Color.fromRGBO(162, 92, 124, 1),
                                       onTap: () {},
                                       child: Padding(
-                                        padding: const EdgeInsets.only(bottom: 20, top: 80),
+                                        padding: const EdgeInsets.only(bottom: 20, top: 100),
                                         child: ListTile(
-                                          title: Text(
-                                            title,
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 25,
-                                                fontWeight: FontWeight.w800),
+                                          title: Shimmer.fromColors(
+                                            baseColor: Colors.white,
+                                            highlightColor: Color.fromRGBO(162, 30, 124, 1),
+                                            period: Duration(seconds: 2),
+                                            child: Text(
+                                              title,
+                                              style: GoogleFonts.pacifico(
+                                                  color: Colors.white,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.w800,
+                                                shadows: <Shadow>[
+                                                  Shadow(
+                                                    blurRadius: 30,
+                                                    color: Colors.white,
+                                                    offset: Offset.fromDirection(100, 12)
+                                                  )
+                                                ]
+                                              ),
+                                            ),
                                           ),
                                           subtitle: Text(
                                             subtitle,
-                                            style: TextStyle(
+                                            style: GoogleFonts.varela(
                                               color: Color.fromRGBO(162, 30, 124, 1),
-                                              fontWeight: FontWeight.w500,
+                                              fontWeight: FontWeight.w700,
                                               fontSize: 20,
                                             ),
                                           ),

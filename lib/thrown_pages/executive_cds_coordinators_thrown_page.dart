@@ -61,7 +61,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            splashColor: Colors.blue,
+            splashColor: Color.fromRGBO(123, 166, 182, 1),
             onTap: () {
               executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators = executiveCDSCoordinatorsNotifier.executiveCDSCoordinatorsList[index];
               navigateToExecutiveCDSCoordinatorsDetailsPage(context);

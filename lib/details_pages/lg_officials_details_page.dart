@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fnancialinclusioncds2020/notifier/lg_officials_notifier.dart';
@@ -62,6 +63,8 @@ class LGOfficialsDetailsPage extends StatefulWidget {
 }
 
 class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
+  ConfettiController _confettiController;
+
   bool _isVisible = true;
 
   void showToast() {
@@ -82,152 +85,171 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
   Widget build(BuildContext context) {
     lgOfficialsNotifier = Provider.of<LGOfficialsNotifier>(context, listen: true);
 
-    return Scaffold(
-      backgroundColor: Color.fromRGBO(167, 129, 29, 1),
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          lgOfficialsNotifier.currentLGOfficials.nickname,
-          style: GoogleFonts.sanchez(
-              color: Colors.white, fontSize: 25, fontWeight: FontWeight.w400),
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
+    return ConfettiWidget(
+      confettiController: _confettiController,
+      blastDirectionality: BlastDirectionality.explosive,
+      shouldLoop: false,
+      colors: [
+        Colors.green,
+        Colors.blue,
+        Colors.pink,
+        Colors.orange,
+        Colors.purple,
+        Colors.brown,
+        Colors.white,
+        Colors.blueGrey,
+        Colors.redAccent,
+        Colors.teal,
+        Colors.indigoAccent,
+        Colors.cyan,
+      ],
+      child: Scaffold(
+        backgroundColor: Color.fromRGBO(167, 129, 29, 1),
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            lgOfficialsNotifier.currentLGOfficials.nickname,
+            style: GoogleFonts.sanchez(
+                color: Colors.white, fontSize: 25, fontWeight: FontWeight.w400),
           ),
-        ),
-        elevation: 10,
-        backgroundColor: Color.fromRGBO(167, 119, 29, 1),
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Tooltip(
-                child: Container(
-                  width: 400,
-                  height: 520,
-                  child: Card(
-                    elevation: 5,
-                    margin: EdgeInsets.all(10),
-                    semanticContainer: true,
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: CachedNetworkImage(
-                      imageUrl: lgOfficialsNotifier.currentLGOfficials.image,
-                      fit: BoxFit.cover,
-                      placeholder: (context, url) =>
-                          CircularProgressIndicator(),
-                      errorWidget: (context, url, error) =>
-                          Icon(MdiIcons.alertRhombus),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                ),
-                message: lgOfficialsNotifier.currentLGOfficials.name),
-            Material(
-              color: Colors.transparent,
-              child: InkWell(
-                splashColor: Color.fromRGBO(167, 119, 29, 1).withOpacity(0.20),
-                onTap: () {},
-                child: Card(
-                  elevation: 4,
-                  shape: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Color.fromRGBO(167, 119, 29, 1).withOpacity(0.70),
-                        width: 4.0,
-                        style: BorderStyle.solid),
-                  ),
-                  margin: EdgeInsets.fromLTRB(16, 16, 16, 16),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 16.0, top: 16.0, right: 16.0, bottom: 16.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Text(
-                          lgOfficialsNotifier.currentLGOfficials.name.toUpperCase(),
-                          style: GoogleFonts.blinker(
-                              color: Color.fromRGBO(167, 119, 29, 1),
-                              fontSize: 30,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        SizedBox(width: 10),
-                        Icon(
-                          MdiIcons.checkboxMarkedCircle,
-                          color: Color.fromRGBO(167, 119, 29, 1),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(30),
             ),
-            Card(
-              elevation: 5,
+          ),
+          elevation: 10,
+          backgroundColor: Color.fromRGBO(167, 119, 29, 1),
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios,
               color: Colors.white,
-              margin: EdgeInsets.all(10),
-              semanticContainer: true,
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Tooltip(
+                  child: Container(
+                    width: 400,
+                    height: 520,
+                    child: Card(
+                      elevation: 5,
+                      margin: EdgeInsets.all(10),
+                      semanticContainer: true,
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: CachedNetworkImage(
+                        imageUrl: lgOfficialsNotifier.currentLGOfficials.image,
+                        fit: BoxFit.cover,
+                        placeholder: (context, url) =>
+                            CircularProgressIndicator(),
+                        errorWidget: (context, url, error) =>
+                            Icon(MdiIcons.alertRhombus),
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
+                  message: lgOfficialsNotifier.currentLGOfficials.name),
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  splashColor: Color.fromRGBO(167, 119, 29, 1).withOpacity(0.20),
+                  onTap: () {},
+                  child: Card(
+                    elevation: 4,
+                    shape: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Color.fromRGBO(167, 119, 29, 1).withOpacity(0.70),
+                          width: 4.0,
+                          style: BorderStyle.solid),
+                    ),
+                    margin: EdgeInsets.fromLTRB(16, 16, 16, 16),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 16.0, top: 16.0, right: 16.0, bottom: 16.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Text(
+                            lgOfficialsNotifier.currentLGOfficials.name.toUpperCase(),
+                            style: GoogleFonts.blinker(
+                                color: Color.fromRGBO(167, 119, 29, 1),
+                                fontSize: 30,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(width: 10),
+                          Icon(
+                            MdiIcons.checkboxMarkedCircle,
+                            color: Color.fromRGBO(167, 119, 29, 1),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                    top: 20, bottom: 20, left: 8.0, right: 8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 35),
-                      child: CupertinoSlidingSegmentedControl<int>(
-                        padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
-                        thumbColor: Colors.white,
-                        backgroundColor:
-                            Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
-                        children: {
-                          0: Text(
-                            reachDetails,
-                            style: GoogleFonts.sacramento(
+              Card(
+                elevation: 5,
+                color: Colors.white,
+                margin: EdgeInsets.all(10),
+                semanticContainer: true,
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      top: 20, bottom: 20, left: 8.0, right: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 35),
+                        child: CupertinoSlidingSegmentedControl<int>(
+                          padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
+                          thumbColor: Colors.white,
+                          backgroundColor:
+                              Color.fromRGBO(167, 119, 29, 1).withAlpha(50),
+                          children: {
+                            0: Text(
+                              reachDetails,
+                              style: GoogleFonts.sacramento(
+                                  color: Color.fromRGBO(167, 119, 29, 1),
+                                  fontSize: 25,
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            1: Text(
+                              autoBioDetails,
+                              style: GoogleFonts.sacramento(
                                 color: Color.fromRGBO(167, 119, 29, 1),
                                 fontSize: 25,
                                 fontStyle: FontStyle.normal,
-                                fontWeight: FontWeight.w400),
-                          ),
-                          1: Text(
-                            autoBioDetails,
-                            style: GoogleFonts.sacramento(
-                              color: Color.fromRGBO(167, 119, 29, 1),
-                              fontSize: 25,
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w400,
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
-                          ),
-                        },
-                        onValueChanged: (int val) {
-                          setState(() {
-                            sharedValue = val;
-                          });
-                        },
-                        groupValue: sharedValue,
+                          },
+                          onValueChanged: (int val) {
+                            setState(() {
+                              sharedValue = val;
+                            });
+                          },
+                          groupValue: sharedValue,
+                        ),
                       ),
-                    ),
-                    userBIO[sharedValue],
-                  ],
+                      userBIO[sharedValue],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -236,6 +258,9 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
   int sharedValue = 0;
 
   initState() {
+    _confettiController = ConfettiController(duration: const Duration(seconds: 35));
+    _confettiController.play();
+
     LGOfficialsNotifier lgOfficialsNotifier =
         Provider.of<LGOfficialsNotifier>(context, listen: false);
 
@@ -1367,5 +1392,11 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
       ),
     };
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _confettiController.dispose();
+    super.dispose();
   }
 }
