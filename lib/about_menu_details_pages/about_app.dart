@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 String cdsName = "Financial Inclusion CDS";
 String title = "About App";
-String imageAboutApp = "assets/images/about_app.jpg";
+String imageAboutApp = "assets/images/fin_inc_cds_wwa.jpg";
 String nyscAlmanac = "$cdsName Almanac, 2020";
 String developerWebsite = "https://davidogundepo.wordpress.com/";
 

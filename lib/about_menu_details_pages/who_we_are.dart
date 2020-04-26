@@ -168,7 +168,7 @@ class _WhoWeAreState extends State<WhoWeAre> {
                 color: cardBackgroundColor,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Center(
                       child: Padding(
