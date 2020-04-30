@@ -223,7 +223,6 @@ class _MyBatchBStreamTwoPageState extends State<MyBatchBStreamTwoPage> {
           ),
           FlatButton(
             onPressed: () => exit(0),
-            /*Navigator.of(context).pop(true)*/
             child: Text(exitAppYes,
               style: TextStyle(
                   color: Colors.white

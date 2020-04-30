@@ -405,7 +405,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
           borderRadius: BorderRadius.all(Radius.circular(8)),
 
         ),
-        backgroundColor: Color.fromRGBO(167, 129, 29, 1),
+        backgroundColor: Color.fromRGBO(162, 78, 124, 1),
         title: Text(exitAppTitle,
           style: TextStyle(
               color: Colors.white
