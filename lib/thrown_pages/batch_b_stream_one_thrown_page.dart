@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fnancialinclusioncds2020/about_menu_details_pages/about_nysc_federal.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../api/batch_b_stream_one_api.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import '../about_menu_details_pages/about_app.dart';
@@ -254,10 +255,55 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
     Navigator.push(context, MaterialPageRoute(builder: (context) => WhoWeAre()));
   }
 
+  startTime() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool firstTime = prefs.getBool('first_time');
+
+    if (firstTime != null && !firstTime) {
+      // Not first time
+    } else {
+      // First time
+      prefs.setBool('first_time', false);
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8)),
+
+          ),
+          backgroundColor: Color.fromRGBO(95, 72, 86, 1),
+          title: Text("Network",
+            style: TextStyle(
+                color: Colors.white
+            ),
+          ),
+          content: Text("The internet connection is required for the first time launch, please leave on for few seconds :)",
+            style: TextStyle(
+                color: Colors.white
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text("Okies",
+                style: TextStyle(
+                    color: Colors.white
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+    }
+  }
+
   @override
   void initState() {
     BatchBStreamOneNotifier batchBStreamOneNotifier = Provider.of<BatchBStreamOneNotifier>(context, listen: false);
     getBatchBStreamOne(batchBStreamOneNotifier);
+
+    startTime();
+
     super.initState();
   }
 

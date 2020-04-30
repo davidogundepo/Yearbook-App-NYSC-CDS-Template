@@ -132,8 +132,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                                       child: InkWell(
                                         splashColor: Color.fromRGBO(162, 92, 124, 1),
                                         onTap: () {},
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(bottom: 20, top: 100),
+                                        child: Align(
+                                          alignment: Alignment(0, 0.9),
                                           child: ListTile(
                                             title: Shimmer.fromColors(
                                               baseColor: Colors.white,
