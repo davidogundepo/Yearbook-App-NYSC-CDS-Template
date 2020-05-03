@@ -11,6 +11,7 @@ String nysc = "NYSC - National Youth Service Corps";
 String efcc = "EFCC - Economic and Financial Crimes Commission";
 String hiv = "HIV/AIDS - Human immunodeficiency virus/Acquired immunodeficiency syndrome";
 String ndlea = "NDLEA - National Drug Law Enforcement Agency";
+String icdat = "ICDAT - I Can Do All Things";
 
 
 String imgAsset = "assets/images/acronym.jpg";
@@ -160,6 +161,14 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                                 ),
                                 TextSpan(
                                   text: hiv+'\n\n',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: cardBackgroundTextColor,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: icdat+'\n\n',
                                   style: TextStyle(
                                     fontSize: 13,
                                     color: cardBackgroundTextColor,
