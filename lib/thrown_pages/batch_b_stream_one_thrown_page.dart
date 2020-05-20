@@ -155,7 +155,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                               return Padding(
                                 padding: const EdgeInsets.only(top: 10),
                                 child: Text(
-                                    batchBStreamOneNotifier.batchBStreamOneList[index].twitter == batchBStreamOneNotifier.batchBStreamOneList[index].twitter ? '@'+batchBStreamOneNotifier.batchBStreamOneList[index].twitter : batchBStreamOneNotifier.batchBStreamOneList[index].twitter,
+                                    batchBStreamOneNotifier.batchBStreamOneList[index].twitter,
                                     style: GoogleFonts.varela(
                                         color: Colors.white70,
                                         fontStyle: FontStyle.italic

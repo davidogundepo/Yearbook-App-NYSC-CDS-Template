@@ -145,6 +145,7 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                       child: CachedNetworkImage(
                         imageUrl: lgOfficialsNotifier.currentLGOfficials.image,
                         fit: BoxFit.cover,
+                        alignment: Alignment(0, -1),
                         placeholder: (context, url) =>
                             CircularProgressIndicator(),
                         errorWidget: (context, url, error) =>

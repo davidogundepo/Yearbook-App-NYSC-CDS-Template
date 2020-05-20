@@ -29,6 +29,8 @@ class BatchCStreamTwo {
   String whatsNext;
   String whereYouLive;
   String worstMoment;
+  String nyscBatch;
+  String occupation;
 
   BatchCStreamTwo.fromMap(Map<String, dynamic> data) {
     academicQualification = data['academic_qualification'];
@@ -60,6 +62,8 @@ class BatchCStreamTwo {
     myDropline = data['my_dropline'];
     philosophy = data['philosophy'];
     worstMoment = data['worst_moment'];
+    nyscBatch = data['name'];
+    occupation = data['name'];
   }
 
 }

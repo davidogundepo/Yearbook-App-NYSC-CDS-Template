@@ -49,6 +49,8 @@ String whatsNextAfterTitle = "What's next after NYSC\n";
 String currentLivingStateTitle = "State of Living\n";
 String stateOfOriginTitle = "State of Origin\n";
 String dobTitle = "Date of Birth\n";
+String nyscBatchTitle = "NYSC Batch\n";
+String occupationTitle = "Occupation\n";
 String hobbiesTitle = "Hobbies\n";
 String philosophyTitle = "Philosophy about Life\n";
 String droplineTitle = "Dropline to My Junior $cdsName Colleagues\n";
@@ -85,6 +87,8 @@ var _twitter;
 var _stateLiving;
 var _originState;
 var _worstMoment;
+var _nyscBatch;
+var _occupation;
 
 
 
@@ -177,6 +181,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
                       child: CachedNetworkImage(
                         imageUrl: batchCStreamOneNotifier.currentBatchCStreamOne.image,
                         fit: BoxFit.cover,
+                        alignment: Alignment(0, -1),
                         placeholder: (context, url) => CircularProgressIndicator(),
                         errorWidget: (context, url, error) => Icon(MdiIcons.alertRhombus),
                       ),
@@ -345,6 +350,8 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
     _phone = batchCStreamOneNotifier.currentBatchCStreamOne.phone;
     _twitter = batchCStreamOneNotifier.currentBatchCStreamOne.twitter;
     _worstMoment = batchCStreamOneNotifier.currentBatchCStreamOne.worstMoment;
+    _nyscBatch = batchCStreamOneNotifier.currentBatchCStreamOne.nyscBatch;
+    _occupation = batchCStreamOneNotifier.currentBatchCStreamOne.occupation;
 
 
     userBIO = <int, Widget>{
@@ -1895,6 +1902,180 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
 //              ),
 //            ),
 //          ),
+          (() {
+            if (_nyscBatch.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(64, 91, 93, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
+                          TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: nyscBatchTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(64, 91, 93, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _nyscBatch,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(64, 91, 93, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(64, 91, 93, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(64, 91, 93, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: nyscBatchTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(64, 91, 93, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _nyscBatch,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(64, 91, 93, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(64, 91, 93, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+          (() {
+            if (_occupation.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      splashColor: Color.fromRGBO(64, 91, 93, 1),
+                      onTap: () {},
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
+                          TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: occupationTitle,
+                                  style: GoogleFonts.aBeeZee(
+                                    color: Color.fromRGBO(64, 91, 93, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              TextSpan(
+                                  text: ' ' + _occupation,
+                                  style: GoogleFonts.trykker(
+                                    color: Color.fromRGBO(64, 91, 93, 1),
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(64, 91, 93, 1).withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          splashColor: Color.fromRGBO(64, 91, 93, 1),
+                          onTap: () {},
+                          child: Padding(
+                            padding:
+                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: occupationTitle,
+                                      style: GoogleFonts.aBeeZee(
+                                        color: Color.fromRGBO(64, 91, 93, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                      text: ' ' + _occupation,
+                                      style: GoogleFonts.trykker(
+                                        color: Color.fromRGBO(64, 91, 93, 1),
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(64, 91, 93, 1).withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)),
+                    ),
+                  )
+              );
+            }
+          }()),
+
           (() {
             if (_dob.toString().isNotEmpty) {
               return Padding(

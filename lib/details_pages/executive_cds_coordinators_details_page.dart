@@ -84,6 +84,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                       child: CachedNetworkImage(
                         imageUrl: executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.image,
                         fit: BoxFit.cover,
+                        alignment: Alignment(0, -1),
                         placeholder: (context, imageURL) =>
                         new CircularProgressIndicator(),
                         errorWidget: (context, url, error) =>
