@@ -169,6 +169,7 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
+
               Tooltip(
                   child: Container(
                     width: 400,
