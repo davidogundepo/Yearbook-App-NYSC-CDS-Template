@@ -36,6 +36,24 @@ String aboutApp = "About App";
 
 String imgAsset = "assets/images/fin_inc_1.jpg";
 
+
+
+Color backgroundColor = Color.fromRGBO(123, 176, 182, 1);
+Color appBarTextColor = Colors.white;
+Color appBarBackgroundColor = Color.fromRGBO(123, 166, 182, 1);
+Color appBarIconColor = Colors.white;
+Color modalColor = Color.fromRGBO(123, 166, 182, 1);
+Color modalBackgroundColor = Colors.transparent;
+Color materialBackgroundColor = Colors.transparent;
+Color cardBackgroundColor = Colors.white;
+Color splashColor = Color.fromRGBO(123, 166, 182, 1);
+Color iconColor = Colors.white;
+Color textColor = Colors.white;
+Color textColorTwo = Colors.white70;
+Color dialogBackgroundColor = Color.fromRGBO(123, 176, 182, 1);
+Color borderColor = Colors.black;
+
+
 class MyExecutiveCDSCoordinatorsPage extends StatefulWidget with NavigationStates {
 
   MyExecutiveCDSCoordinatorsPage({Key key, this.title}) : super(key: key);
@@ -55,13 +73,13 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),color: Colors.black.withAlpha(50),
+          borderRadius: BorderRadius.circular(10),color: borderColor.withAlpha(50),
         ),
 
         child: Material(
-          color: Colors.transparent,
+          color: materialBackgroundColor,
           child: InkWell(
-            splashColor: Color.fromRGBO(123, 166, 182, 1),
+            splashColor: splashColor,
             onTap: () {
               executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators = executiveCDSCoordinatorsNotifier.executiveCDSCoordinatorsList[index];
               navigateToExecutiveCDSCoordinatorsDetailsPage(context);
@@ -98,7 +116,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                               Text(
                                   executiveCDSCoordinatorsNotifier.executiveCDSCoordinatorsList[index].name,
                                   style: GoogleFonts.tenorSans(
-                                      color: Colors.white,
+                                      color: textColor,
                                       fontSize: 17,
                                       fontWeight: FontWeight.w600
                                   )
@@ -106,7 +124,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                               SizedBox(width: 10),
                               Icon (
                                 MdiIcons.checkboxMarkedCircle,
-                                color: Colors.white,
+                                color: iconColor
                               ),
                             ],
                           ),
@@ -116,7 +134,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                           child: Text(
                               executiveCDSCoordinatorsNotifier.executiveCDSCoordinatorsList[index].positionEnforced,
                               style: GoogleFonts.tenorSans(
-                                  color: Colors.white,
+                                  color: textColor,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w300,
                                   fontStyle: FontStyle.italic
@@ -144,15 +162,15 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
           borderRadius: BorderRadius.all(Radius.circular(8)),
 
         ),
-        backgroundColor: Color.fromRGBO(123, 176, 182, 1),
+        backgroundColor: dialogBackgroundColor,
         title: Text(exitAppTitle,
           style: TextStyle(
-              color: Colors.white
+              color: textColor
           ),
         ),
         content: Text(exitAppSubtitle,
           style: TextStyle(
-              color: Colors.white
+              color: textColor
           ),
         ),
         actions: <Widget>[
@@ -160,7 +178,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
             onPressed: () => Navigator.of(context).pop(false),
             child: Text(exitAppNo,
               style: TextStyle(
-                  color: Colors.white
+                  color: textColor
               ),
             ),
           ),
@@ -169,7 +187,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
             /*Navigator.of(context).pop(true)*/
             child: Text(exitAppYes,
               style: TextStyle(
-                  color: Colors.white
+                  color: textColor
               ),
             ),
           ),
@@ -216,7 +234,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
       onWillPop: _onWillPop,
       child: Scaffold(
         body: Container(
-          color: Color.fromRGBO(123, 176, 182, 1),
+          color: backgroundColor,
 
           child: NestedScrollView(
             headerSliverBuilder: (BuildContext context,
@@ -225,29 +243,29 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                 SliverAppBar(
                   actions: <Widget>[
                     IconButton(
-                      icon: Icon(MdiIcons.bandage, color: Colors.white,),
+                      icon: Icon(MdiIcons.bandage, color: iconColor),
                       onPressed: () {
                         showModalBottomSheet(
-                            backgroundColor: Colors.transparent,
+                            backgroundColor: modalBackgroundColor,
                             context: context,
                             builder: (context) => Container(
                               height: 300,
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(123, 166, 182, 1),
+                                color: modalColor,
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                               ),
                               child: Material(
-                                color: Colors.transparent,
+                                color: materialBackgroundColor,
                                 child: InkWell(
-                                  splashColor: Colors.black87,
+                                  splashColor: splashColor,
                                   child: Wrap(
                                     children: <Widget>[
                                       ListTile(
                                           leading: new Icon(MdiIcons.atom,
-                                            color: Colors.white,),
+                                            color: iconColor),
                                           title: new Text(whoWeAre,
                                             style: GoogleFonts.zillaSlab(
-                                                color: Colors.white
+                                                color: textColor
                                             ),),
                                           onTap: () {
                                             navigateToWhoWeArePage(context);
@@ -255,10 +273,10 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.chessQueen,
-                                          color: Colors.white,),
+                                          color: iconColor),
                                         title: new Text(aboutCDS,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
+                                              color: textColor
                                           ),),
                                         onTap: () {
                                           navigateToAboutCDS(context);
@@ -266,10 +284,10 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.chessKing,
-                                          color: Colors.white,),
+                                          color: iconColor),
                                         title: new Text(aboutNYSC,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
+                                              color: textColor
                                           ),),
                                         onTap: () {
                                           navigateToAboutNYSCFederalState(context);
@@ -277,10 +295,10 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                                       ),
                                       ListTile(
                                           leading: new Icon(MdiIcons.sortAlphabeticalAscending,
-                                            color: Colors.white,),
+                                            color: iconColor),
                                           title: new Text(acronymMeanings,
                                             style: GoogleFonts.zillaSlab(
-                                                color: Colors.white
+                                                color: textColor
                                             ),),
                                           onTap: () {
                                             navigateToAcronymsMeaningsPage(context);
@@ -288,10 +306,10 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.opacity,
-                                          color: Colors.white,),
+                                          color: iconColor),
                                         title: new Text(aboutApp,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
+                                              color: textColor
                                           ),),
                                         onTap: () {
                                           navigateToAboutAppDetailsPage(context);
@@ -306,7 +324,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                       },
                     ),
                   ],
-                  backgroundColor: Color.fromRGBO(123, 166, 182, 1),
+                  backgroundColor: appBarBackgroundColor,
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,
@@ -314,7 +332,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                       centerTitle: true,
                       title: Text(thrownName,
                           style: GoogleFonts.amaticSC(
-                              color: Colors.white,
+                              color: textColor,
                               fontSize: 26.0,
                               fontWeight: FontWeight.bold
                           )

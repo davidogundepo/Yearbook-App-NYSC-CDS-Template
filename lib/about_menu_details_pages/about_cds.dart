@@ -39,6 +39,7 @@ Color appBarBackgroundColor = Colors.blueGrey[800];
 Color appBarBackgroundTextColor = Colors.blueGrey;
 Color cardBackgroundColor = Colors.black38;
 Color cardTextColor = Colors.blueGrey;
+Color materialColor = Colors.transparent;
 Color materialInkWellColor = Colors.blueGrey;
 Color materialTextColor = Colors.blueGrey;
 Color containerColor = Colors.blueGrey.withAlpha(50);
@@ -46,6 +47,8 @@ Color containerTextColor = Colors.blueGrey[900];
 Color containerColor2 = Colors.blueGrey;
 Color chartBackgroundColor = Colors.blueGrey[200];
 Color chartTextColor = Colors.blueGrey[900].withOpacity(0.9);
+Color firstCdsCorperChartColor = Color.fromRGBO(145, 172, 179, 1).withAlpha(160);
+Color secondCdsCorperChartColor = Color.fromRGBO(184, 186, 181, 1);
 
 class AboutCDS extends StatefulWidget {
 
@@ -307,7 +310,7 @@ class _AboutCDS extends State<AboutCDS> {
               padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
               child: Container(
                 child: Material (
-                  color: Colors.transparent,
+                  color: materialColor,
                   child: InkWell(
                     splashColor: materialInkWellColor,
                     onTap: () {},
@@ -357,7 +360,7 @@ class _AboutCDS extends State<AboutCDS> {
                     borderRadius: new BorderRadius.circular(10)
                 ),
                 child: Material(
-                  color: Colors.transparent,
+                  color: materialColor,
                   child: InkWell(
                     splashColor: materialInkWellColor,
                     onTap: () {},
@@ -499,7 +502,7 @@ bool toggle = false;
 Map<String, double> cdsCorperMap = Map();
 
 List<Color> cdsCorperColorList = [
-  Color.fromRGBO(145, 172, 179, 1).withAlpha(160),
-  Color.fromRGBO(184, 186, 181, 1),
+  firstCdsCorperChartColor,
+  secondCdsCorperChartColor,
 ];
 

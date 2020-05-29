@@ -37,6 +37,23 @@ String aboutApp = "About App";
 String imgAsset = "assets/images/fin_inc_40.jpeg";
 
 
+
+Color backgroundColor = Color.fromRGBO(114, 78, 147, 1);
+Color appBarTextColor = Colors.white;
+Color appBarBackgroundColor = Color.fromRGBO(95, 65, 128, 1);
+Color appBarIconColor = Colors.white;
+Color modalColor = Color.fromRGBO(95, 65, 128, 1);
+Color modalBackgroundColor = Colors.transparent;
+Color materialBackgroundColor = Colors.transparent;
+Color cardBackgroundColor = Colors.white;
+Color splashColor = Colors.purple;
+Color iconColor = Colors.white;
+Color textColor = Colors.white;
+Color textColorTwo = Colors.white70;
+Color dialogBackgroundColor = Color.fromRGBO(114, 78, 147, 1);
+Color borderColor = Colors.black;
+
+
 class MyBatchCStreamTwoPage extends StatefulWidget with NavigationStates {
 
   MyBatchCStreamTwoPage({Key key, this.title}) : super(key: key);
@@ -64,13 +81,13 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),color: Colors.black.withAlpha(50),
+          borderRadius: BorderRadius.circular(10),color: borderColor.withAlpha(50),
         ),
 
         child: Material(
-          color: Colors.transparent,
+          color: materialBackgroundColor,
           child: InkWell(
-            splashColor: Colors.purple,
+            splashColor: splashColor,
             onTap: () {
               batchCStreamTwoNotifier.currentBatchCStreamTwo = batchCStreamTwoNotifier.batchCStreamTwoList[index];
               navigateToBatchCStreamTwoDetailsPage(context);
@@ -110,7 +127,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                               Text(
                                   batchCStreamTwoNotifier.batchCStreamTwoList[index].name,
                                   style: GoogleFonts.tenorSans(
-                                      color: Colors.white,
+                                      color: textColor,
                                       fontSize: 17,
                                       fontWeight: FontWeight.w600
                                   )
@@ -123,7 +140,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                                         SizedBox(width: 10),
                                         Icon (
                                           MdiIcons.checkboxMarkedCircle,
-                                          color: Colors.white,
+                                          color: iconColor,
                                         ),
                                       ],
                                     );
@@ -132,7 +149,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                                     visible: !_isVisible,
                                     child: Icon (
                                       MdiIcons.checkboxMarkedCircle,
-                                      color: Colors.white,
+                                      color: iconColor,
                                     ),
                                   );
                                 }
@@ -148,7 +165,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                                 child: Text(
                                     batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter == batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter ? '@'+batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter : batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter,
                                     style: GoogleFonts.varela(
-                                        color: Colors.white70,
+                                        color: textColorTwo,
                                         fontStyle: FontStyle.italic
                                     )
                                 ),
@@ -160,7 +177,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                                 child: Text(
                                     batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter,
                                     style: GoogleFonts.varela(
-                                        color: Colors.white70,
+                                        color: textColorTwo,
                                         fontStyle: FontStyle.italic
                                     )
                                 ),
@@ -174,7 +191,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                                 child: Text(
                                     batchCStreamTwoNotifier.batchCStreamTwoList[index].twitter,
                                     style: GoogleFonts.varela(
-                                        color: Colors.white70,
+                                        color: textColorTwo,
                                         fontStyle: FontStyle.italic
                                     )
                                 ),
@@ -203,15 +220,15 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
           borderRadius: BorderRadius.all(Radius.circular(8)),
 
         ),
-        backgroundColor: Color.fromRGBO(114, 78, 147, 1),
+          backgroundColor: dialogBackgroundColor,
         title: Text(exitAppTitle,
           style: TextStyle(
-              color: Colors.white
+              color: textColor
           ),
         ),
         content: Text(exitAppSubtitle,
           style: TextStyle(
-              color: Colors.white
+              color: textColor
           ),
         ),
         actions: <Widget>[
@@ -219,7 +236,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
             onPressed: () => Navigator.of(context).pop(false),
             child: Text(exitAppNo,
               style: TextStyle(
-                  color: Colors.white
+                  color: textColor
               ),
             ),
           ),
@@ -228,7 +245,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
             /*Navigator.of(context).pop(true)*/
             child: Text(exitAppYes,
               style: TextStyle(
-                  color: Colors.white
+                  color: textColor
               ),
             ),
           ),
@@ -274,7 +291,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
       onWillPop: _onWillPop,
       child: Scaffold(
         body: Container(
-          color: Color.fromRGBO(114, 78, 147, 1),
+          color: backgroundColor,
 
           child: NestedScrollView(
             headerSliverBuilder: (BuildContext context,
@@ -283,29 +300,29 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                 SliverAppBar(
                   actions: <Widget>[
                     IconButton(
-                      icon: Icon(MdiIcons.bandage, color: Colors.white,),
+                      icon: Icon(MdiIcons.bandage, color: iconColor),
                       onPressed: () {
                         showModalBottomSheet(
-                            backgroundColor: Colors.transparent,
+                            backgroundColor: modalBackgroundColor,
                             context: context,
                             builder: (context) => Container(
                               height: 300,
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(95, 65, 128, 1),
+                                color: modalColor,
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                               ),
                               child: Material(
-                                color: Colors.transparent,
+                                color: materialBackgroundColor,
                                 child: InkWell(
-                                  splashColor: Colors.black87,
+                                  splashColor: splashColor,
                                   child: Wrap(
                                     children: <Widget>[
                                       ListTile(
                                           leading: new Icon(MdiIcons.atom,
-                                            color: Colors.white,),
+                                            color: iconColor),
                                           title: new Text(whoWeAre,
                                             style: GoogleFonts.zillaSlab(
-                                                color: Colors.white
+                                                color: textColor
                                             ),),
                                           onTap: () {
                                             navigateToWhoWeArePage(context);
@@ -313,10 +330,10 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.chessQueen,
-                                          color: Colors.white,),
+                                          color: iconColor),
                                         title: new Text(aboutCDS,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
+                                              color: textColor
                                           ),),
                                         onTap: () {
                                           navigateToAboutCDS(context);
@@ -324,10 +341,10 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.chessKing,
-                                          color: Colors.white,),
+                                          color: iconColor),
                                         title: new Text(aboutNYSC,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
+                                              color: textColor
                                           ),),
                                         onTap: () {
                                           navigateToAboutNYSCFederalState(context);
@@ -335,10 +352,10 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                                       ),
                                       ListTile(
                                           leading: new Icon(MdiIcons.sortAlphabeticalAscending,
-                                            color: Colors.white,),
+                                            color: iconColor),
                                           title: new Text(acronymMeanings,
                                             style: GoogleFonts.zillaSlab(
-                                                color: Colors.white
+                                                color: textColor
                                             ),),
                                           onTap: () {
                                             navigateToAcronymsMeaningsPage(context);
@@ -346,10 +363,10 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.opacity,
-                                          color: Colors.white,),
+                                          color: iconColor),
                                         title: new Text(aboutApp,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
+                                              color: textColor
                                           ),),
                                         onTap: () {
                                           navigateToAboutAppDetailsPage(context);
@@ -364,7 +381,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                       },
                     ),
                   ],
-                  backgroundColor: Color.fromRGBO(95, 65, 128, 1),
+                  backgroundColor: appBarBackgroundColor,
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,
@@ -372,7 +389,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                       centerTitle: true,
                       title: Text(thrownName,
                           style: GoogleFonts.amaticSC(
-                              color: Colors.white,
+                              color: textColor,
                               fontSize: 26.0,
                               fontWeight: FontWeight.bold
                           )

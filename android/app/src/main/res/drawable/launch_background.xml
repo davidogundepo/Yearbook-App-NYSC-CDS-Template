@@ -7,6 +7,6 @@
     <item>
         <bitmap
             android:gravity="clip_horizontal"
-            android:src="@drawable/bvb" />
+            android:src="@drawable/bvd" />
     </item>
 </layer-list>

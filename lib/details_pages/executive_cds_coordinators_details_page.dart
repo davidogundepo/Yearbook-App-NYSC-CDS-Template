@@ -12,6 +12,31 @@ import 'package:provider/provider.dart';
 String nyscBatch = "Nysc Batch\n";
 String positionEnforced = "Position Enforced\n";
 
+Color backgroundColor = Color.fromRGBO(123, 176, 182, 1);
+Color appBarBackgroundColor = Color.fromRGBO(123, 166, 182, 1);
+Color appBarIconColor = Colors.blueGrey;
+Color materialBackgroundColor = Colors.transparent;
+Color shapeDecorationColor = Color.fromRGBO(123, 166, 182, 1);
+Color shapeDecorationTextColor = Colors.white;
+Color shapeDecorationIconColor = Colors.white;
+Color cardBackgroundColor = Colors.blueGrey;
+Color splashColor = Color.fromRGBO(123, 166, 182, 1);
+Color splashColorTwo = Colors.white;
+Color iconTextColor = Colors.white;
+Color textColor = Colors.white;
+Color confettiColorOne = Colors.green;
+Color confettiColorTwo = Colors.blue;
+Color confettiColorThree = Colors.pink;
+Color confettiColorFour = Colors.orange;
+Color confettiColorFive = Colors.purple;
+Color confettiColorSix = Colors.brown;
+Color confettiColorSeven = Colors.white;
+Color confettiColorEight = Colors.blueGrey;
+Color confettiColorNine = Colors.redAccent;
+Color confettiColorTen = Colors.teal;
+Color confettiColorEleven = Colors.indigoAccent;
+Color confettiColorTwelve = Colors.cyan;
+
 
 ExecutiveCDSCoordinatorsNotifier executiveCDSCoordinatorsNotifier;
 
@@ -34,21 +59,21 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
       blastDirectionality: BlastDirectionality.explosive,
       shouldLoop: false,
       colors: [
-        Colors.green,
-        Colors.blue,
-        Colors.pink,
-        Colors.orange,
-        Colors.purple,
-        Colors.brown,
-        Colors.white,
-        Colors.blueGrey,
-        Colors.redAccent,
-        Colors.teal,
-        Colors.indigoAccent,
-        Colors.cyan,
+        confettiColorOne,
+        confettiColorTwo,
+        confettiColorThree,
+        confettiColorFour,
+        confettiColorFive,
+        confettiColorSix,
+        confettiColorSeven,
+        confettiColorEight,
+        confettiColorNine,
+        confettiColorTen,
+        confettiColorEleven,
+        confettiColorTwelve,
       ],
       child: Scaffold(
-        backgroundColor: Color.fromRGBO(123, 176, 182, 1),
+        backgroundColor: backgroundColor,
         appBar: AppBar(
           centerTitle: true,
 //        title: Text(classPrefectsNotifier.currentClassPrefects.name),
@@ -59,10 +84,10 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
           ),
 
           elevation: 10,
-          backgroundColor: Color.fromRGBO(123, 166, 182, 1),
+          backgroundColor: appBarBackgroundColor,
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios,
-              color: Colors.blueGrey,),
+              color: appBarIconColor),
             onPressed: () {
               Navigator.pop(context);
             },
@@ -99,16 +124,16 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                   message: executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.name
               ),
               Material(
-                color: Colors.transparent,
+                color: materialBackgroundColor,
                 child: InkWell(
-                  splashColor: Color.fromRGBO(123, 166, 182, 1).withOpacity(0.20),
+                  splashColor: splashColor.withOpacity(0.20),
                   onTap: () {},
                   child: Card(
-                    color: Colors.blueGrey,
+                    color: cardBackgroundColor,
                     elevation: 4,
                     shape: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color.fromRGBO(123, 166, 182, 1), width: 4.0, style: BorderStyle.solid
+                          color: shapeDecorationColor, width: 4.0, style: BorderStyle.solid
                       ),
                     ),
 
@@ -120,22 +145,25 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                           right: 16.0,
                           bottom: 16.0),
 
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Text(executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.name.toUpperCase(),
-                            style: GoogleFonts.blinker(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.w500
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Text(executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.name.toUpperCase(),
+                              style: GoogleFonts.blinker(
+                                  color: shapeDecorationTextColor,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w500
+                              ),
                             ),
-                          ),
-                          SizedBox(width: 10),
-                          Icon (
-                            MdiIcons.checkboxMarkedCircle,
-                            color: Colors.white,
-                          ),
-                        ],
+                            SizedBox(width: 10),
+                            Icon (
+                              MdiIcons.checkboxMarkedCircle,
+                              color: shapeDecorationIconColor,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -143,7 +171,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
               ),
               Card(
                 elevation: 5,
-                color: Colors.blueGrey,
+                color: cardBackgroundColor,
                 margin: EdgeInsets.all(10),
                 semanticContainer: true,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -158,9 +186,9 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                     children: <Widget>[
                       Container(
                         child: Material(
-                          color: Colors.transparent,
+                          color: materialBackgroundColor,
                           child: InkWell(
-                            splashColor: Colors.white,
+                            splashColor: splashColorTwo,
                             onTap: () {},
                             child: Padding(
                               padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -170,7 +198,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                     TextSpan(
                                         text: nyscBatch,
                                         style: GoogleFonts.aBeeZee(
-                                          color: Colors.white,
+                                          color: textColor,
                                           fontSize: 19,
                                           fontWeight: FontWeight.bold,
                                         )
@@ -178,7 +206,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                     TextSpan(
                                         text: ' '+executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.nyscBatch,
                                         style: GoogleFonts.trykker(
-                                          color: Colors.white,
+                                          color: textColor,
                                           fontSize: 19,
                                           fontWeight: FontWeight.w300,
                                         )
@@ -191,7 +219,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                         ),
 
                         decoration: BoxDecoration(
-                            color: Color.fromRGBO(123, 166, 182, 1).withAlpha(120),
+                            color: shapeDecorationColor.withAlpha(120),
                             borderRadius: new BorderRadius.circular(10)
                         ),
                       ),
@@ -199,9 +227,9 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                         padding: const EdgeInsets.only(top: 20.0),
                         child: Container(
                           child: Material(
-                            color: Colors.transparent,
+                            color: materialBackgroundColor,
                             child: InkWell(
-                              splashColor: Colors.white,
+                              splashColor: splashColorTwo,
                               onTap: () {},
                               child: Padding(
                                 padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
@@ -211,7 +239,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                       TextSpan(
                                           text: positionEnforced,
                                           style: GoogleFonts.aBeeZee(
-                                            color: Colors.white,
+                                            color: textColor,
                                             fontSize: 19,
                                             fontWeight: FontWeight.bold,
                                           )
@@ -219,7 +247,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                                       TextSpan(
                                           text: ' '+executiveCDSCoordinatorsNotifier.currentExecutiveCDSCoordinators.positionEnforced,
                                           style: GoogleFonts.trykker(
-                                            color: Colors.white,
+                                            color: textColor,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w300,
                                           )
@@ -232,7 +260,7 @@ class _ExecutiveCDSCoordinatorsDetailsPageState extends State<ExecutiveCDSCoordi
                           ),
 
                           decoration: BoxDecoration(
-                              color: Color.fromRGBO(123, 166, 182, 1).withAlpha(120),
+                              color: shapeDecorationColor.withAlpha(120),
                               borderRadius: new BorderRadius.circular(10)
                           ),
                         ),

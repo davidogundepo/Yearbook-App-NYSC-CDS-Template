@@ -29,41 +29,42 @@ void main() {
     // ...
   }, onError: Crashlytics.instance.recordError);
 
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(
-        create: (context) => BatchAStreamOneNotifier(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => BatchBStreamOneNotifier(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => BatchBStreamTwoNotifier(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => BatchCStreamOneNotifier(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => BatchCStreamTwoNotifier(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => ExecutiveCDSCoordinatorsNotifier(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => LGOfficialsNotifier(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => AchievementsNotifier(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => FederalAchievementsNotifier(),
-      ),
-      ChangeNotifierProvider(
-        create: (context) => FederalArialNotifier(),
-      ),
+  runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => BatchAStreamOneNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => BatchBStreamOneNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => BatchBStreamTwoNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => BatchCStreamOneNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => BatchCStreamTwoNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => ExecutiveCDSCoordinatorsNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => LGOfficialsNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => AchievementsNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => FederalAchievementsNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => FederalArialNotifier(),
+          ),
 
-    ],
-    child: MyApp(),
+        ],
+        child: MyApp(),
   )
   );
 }

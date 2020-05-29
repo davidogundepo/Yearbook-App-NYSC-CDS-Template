@@ -37,6 +37,24 @@ String aboutApp = "About App";
 String imgAsset = "assets/images/fin_inc_54.jpeg";
 
 
+Color backgroundColor = Color.fromRGBO(64, 96, 93, 1);
+Color appBarTextColor = Colors.white;
+Color appBarBackgroundColor = Color.fromRGBO(64, 91, 93, 1);
+Color appBarIconColor = Colors.white;
+Color modalColor = Color.fromRGBO(64, 91, 93, 1);
+Color modalBackgroundColor = Colors.transparent;
+Color materialBackgroundColor = Colors.transparent;
+Color cardBackgroundColor = Colors.white;
+Color splashColor = Color.fromRGBO(64, 101, 93, 1);
+Color splashColorTwo = Color.fromRGBO(64, 101, 93, 1);
+Color iconColor = Colors.white;
+Color iconColorTwo = Color.fromRGBO(254, 250, 239, 1);
+Color textColor = Colors.white;
+Color textColorTwo = Colors.white70;
+Color textColorThree = Color.fromRGBO(254, 250, 239, 1);
+Color dialogBackgroundColor = Color.fromRGBO(64, 96, 93, 1);
+Color borderColor = Colors.black;
+
 
 class MyBatchCStreamOnePage extends StatefulWidget with NavigationStates {
 
@@ -66,13 +84,13 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),color: Colors.black.withAlpha(50),
+          borderRadius: BorderRadius.circular(10),color: borderColor.withAlpha(50),
         ),
 
         child: Material(
-          color: Colors.transparent,
+          color: materialBackgroundColor,
           child: InkWell(
-            splashColor: Color.fromRGBO(64, 101, 93, 1),
+            splashColor: splashColor,
             onTap: () {
               batchCStreamOneNotifier.currentBatchCStreamOne = batchCStreamOneNotifier.batchCStreamOneList[index];
               navigateToBatchCStreamOneDetailsPage(context);
@@ -109,7 +127,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                               Text(
                                   batchCStreamOneNotifier.batchCStreamOneList[index].name,
                                   style: GoogleFonts.tenorSans(
-                                      color: Colors.white,
+                                      color: textColor,
                                       fontSize: 17,
                                       fontWeight: FontWeight.w600
                                   )
@@ -122,7 +140,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                         SizedBox(width: 10),
                                         Icon (
                                           MdiIcons.checkboxMarkedCircle,
-                                          color: Color.fromRGBO(254, 250, 239, 1),
+                                          color: iconColorTwo,
                                         ),
                                       ],
                                     );
@@ -131,7 +149,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                     visible: !_isVisible,
                                     child: Icon (
                                       MdiIcons.checkboxMarkedCircle,
-                                      color: Color.fromRGBO(254, 250, 239, 1),
+                                      color: iconColorTwo,
                                     ),
                                   );
                                 }
@@ -147,7 +165,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                 child: Text(
                                     batchCStreamOneNotifier.batchCStreamOneList[index].twitter == batchCStreamOneNotifier.batchCStreamOneList[index].twitter ? '@'+batchCStreamOneNotifier.batchCStreamOneList[index].twitter : batchCStreamOneNotifier.batchCStreamOneList[index].twitter,
                                     style: GoogleFonts.varela(
-                                        color: Color.fromRGBO(254, 250, 239, 1),
+                                        color: textColorThree,
                                         fontStyle: FontStyle.italic
                                     )
                                 ),
@@ -159,7 +177,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                 child: Text(
                                     batchCStreamOneNotifier.batchCStreamOneList[index].twitter,
                                     style: GoogleFonts.varela(
-                                        color: Colors.white70,
+                                        color: textColorTwo,
                                         fontStyle: FontStyle.italic
                                     )
                                 ),
@@ -173,7 +191,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                 child: Text(
                                     batchCStreamOneNotifier.batchCStreamOneList[index].twitter,
                                     style: GoogleFonts.varela(
-                                        color: Color.fromRGBO(254, 250, 239, 1),
+                                        color: textColorThree,
                                         fontStyle: FontStyle.italic
                                     )
                                 ),
@@ -202,15 +220,15 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
           borderRadius: BorderRadius.all(Radius.circular(8)),
 
         ),
-        backgroundColor: Color.fromRGBO(64, 96, 93, 1),
+        backgroundColor: dialogBackgroundColor,
         title: Text(exitAppTitle,
           style: TextStyle(
-              color: Colors.white
+              color: textColor
           ),
         ),
         content: Text(exitAppSubtitle,
           style: TextStyle(
-              color: Colors.white
+              color: textColor
           ),
         ),
         actions: <Widget>[
@@ -218,7 +236,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
             onPressed: () => Navigator.of(context).pop(false),
             child: Text(exitAppNo,
               style: TextStyle(
-                  color: Colors.white
+                  color: textColor
               ),
             ),
           ),
@@ -227,7 +245,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
             /*Navigator.of(context).pop(true)*/
             child: Text(exitAppYes,
               style: TextStyle(
-                  color: Colors.white
+                  color: textColor
               ),
             ),
           ),
@@ -274,7 +292,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
       onWillPop: _onWillPop,
       child: Scaffold(
         body: Container(
-          color: Color.fromRGBO(64, 96, 93, 1),
+          color: backgroundColor,
 
           child: NestedScrollView(
             headerSliverBuilder: (BuildContext context,
@@ -283,30 +301,30 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                 SliverAppBar(
                   actions: <Widget>[
                     IconButton(
-                      icon: Icon(MdiIcons.bandage, color: Colors.white,),
+                      icon: Icon(MdiIcons.bandage, color: iconColor),
                       onPressed: () {
                         showModalBottomSheet(
-                            backgroundColor: Colors.transparent,
+                            backgroundColor: modalBackgroundColor,
                             context: context,
                             builder: (context) => Container(
                               height: 300,
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(64, 91, 93, 1),
+                                color: modalColor,
                                 borderRadius: BorderRadius.all(Radius.circular(15)),
                               ),
                               child: Material(
-                                color: Colors.transparent,
+                                color: materialBackgroundColor,
                                 child: InkWell(
-                                  splashColor: Colors.black87,
+                                  splashColor: splashColorTwo,
                                   child: Wrap(
                                     children: <Widget>[
                                       ListTile(
                                           leading: new Icon(MdiIcons.atom,
-                                            color: Colors.white,
+                                            color: iconColor
                                           ),
                                           title: new Text(whoWeAre,
                                             style: GoogleFonts.zillaSlab(
-                                                color: Colors.white
+                                                color: textColor
                                             ),
                                           ),
                                           onTap: () {
@@ -315,11 +333,11 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.chessQueen,
-                                          color: Colors.white,
+                                          color: iconColor
                                         ),
                                         title: new Text(aboutCDS,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
+                                              color: textColor
                                           ),
                                         ),
                                         onTap: () {
@@ -328,11 +346,11 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.chessKing,
-                                          color: Colors.white,
+                                          color: iconColor
                                         ),
                                         title: new Text(aboutNYSC,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
+                                              color: textColor
                                           ),
                                         ),
                                         onTap: () {
@@ -341,11 +359,11 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                       ),
                                       ListTile(
                                           leading: new Icon(MdiIcons.sortAlphabeticalAscending,
-                                            color: Colors.white,
+                                            color: iconColor
                                           ),
                                           title: new Text(acronymMeanings,
                                             style: GoogleFonts.zillaSlab(
-                                                color: Colors.white
+                                                color: textColor
                                             ),
                                           ),
                                           onTap: () {
@@ -354,11 +372,11 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                                       ),
                                       ListTile(
                                         leading: new Icon(MdiIcons.opacity,
-                                          color: Colors.white,
+                                          color: iconColor
                                         ),
                                         title: new Text(aboutApp,
                                           style: GoogleFonts.zillaSlab(
-                                              color: Colors.white
+                                              color: textColor
                                           ),
                                         ),
                                         onTap: () {
@@ -374,7 +392,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                       },
                     ),
                   ],
-                  backgroundColor: Color.fromRGBO(64, 91, 93, 1),
+                  backgroundColor: appBarBackgroundColor,
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,
@@ -382,7 +400,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                     centerTitle: true,
                     title: Text(thrownName,
                         style:  GoogleFonts.amaticSC(
-                            color: Colors.white,
+                            color: textColor,
                             fontSize: 26.0,
                             fontWeight: FontWeight.bold
                         )

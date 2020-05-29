@@ -102,7 +102,9 @@ Color backgroundColor = Color.fromRGBO(25, 59, 111, 1);
 Color appBarBackgroundColor = Color.fromRGBO(25, 49, 111, 1);
 Color appBarBackgroundTextColor = Colors.blueGrey;
 Color cardBackgroundColor = Color.fromRGBO(25, 49, 111, 1);
+Color textColor = Color.fromRGBO(25, 49, 111, 1);
 Color cardTextColor = Colors.blueGrey;
+Color materialColor = Colors.transparent;
 Color materialInkWellColor = Colors.blue.withAlpha(80);
 Color materialTextColor = Colors.blueGrey;
 Color containerColor = Colors.blueGrey.withAlpha(50);
@@ -110,6 +112,12 @@ Color containerTextColor = Colors.white.withAlpha(110);
 Color containerColor2 = Colors.blueGrey;
 Color chartBackgroundColor = Colors.grey[200];
 Color chartTextColor = Colors.white;
+Color chartTextColorTwo = Color.fromRGBO(25, 49, 111, 1);
+Color firstFederalNYSCChartColor = Colors.white.withAlpha(110);
+Color secondFederalNYSCChartColor = Color.fromRGBO(25, 49, 111, 1);
+Color thirdFederalNYSCChartColor = Colors.lightBlue;
+Color firstFederalNYSCCorpMemberChartColor = Color.fromRGBO(25, 49, 111, 1);
+Color secondFederalNYSCCorpMemberChartColor = Color.fromRGBO(184, 186, 181, 1);
 
 class AboutNYSCFederalState extends StatefulWidget {
 
@@ -386,7 +394,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
               padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
               child: Container(
                 child: Material (
-                  color: Colors.transparent,
+                  color: materialColor,
                   child: InkWell(
                     splashColor: materialInkWellColor,
                     onTap: () {},
@@ -436,7 +444,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                     borderRadius: new BorderRadius.circular(10)
                 ),
                 child: Material(
-                  color: Colors.transparent,
+                  color: materialColor,
                   child: InkWell(
                     splashColor: materialInkWellColor,
                     onTap: () {},
@@ -490,7 +498,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
               padding: const EdgeInsets.only(left: 20, right: 20, bottom: 30),
               child: Container(
                 child: Material (
-                  color: Colors.transparent,
+                  color: materialColor,
                   child: InkWell(
                     splashColor: materialInkWellColor,
                     onTap: () {},
@@ -540,7 +548,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                     borderRadius: new BorderRadius.circular(10)
                 ),
                 child: Material(
-                  color: Colors.transparent,
+                  color: materialColor,
                   child: InkWell(
                     splashColor: materialInkWellColor,
                     onTap: () {},
@@ -579,7 +587,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                             showChartValueLabel: true,
                             initialAngle: 0,
                             chartValueStyle: defaultChartValueStyle.copyWith(
-                              color: Color.fromRGBO(25, 49, 111, 1).withAlpha(160),
+                              color: chartTextColorTwo.withAlpha(160),
                             ),
                             chartType: ChartType.ring,
                           ),
@@ -605,7 +613,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
               child: Container(
                 height: 300,
                 child: Material (
-                  color: Colors.transparent,
+                  color: materialColor,
                   child: InkWell(
                     splashColor: materialInkWellColor,
                     onTap: () {},
@@ -931,7 +939,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
               child: Container(
                 height: 300,
                 child: Material (
-                  color: Colors.transparent,
+                  color: materialColor,
                   child: InkWell(
                     splashColor: materialInkWellColor,
                     onTap: () {},
@@ -1080,7 +1088,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                             child: Text(
                               federalArialNotifier.federalArialList[index].toastName,
                               style: TextStyle(
-                                color: Color.fromRGBO(25, 49, 111, 1).withAlpha(190),
+                                color: textColor.withAlpha(190),
                                 fontWeight: FontWeight.w800,
                                 fontSize: 17.0,
                               ),
@@ -1138,7 +1146,7 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                               child: Text(
                                 federalAchievementsNotifier.federalAchievementsList[index].toastName,
                                 style: TextStyle(
-                                  color: Color.fromRGBO(25, 49, 111, 1).withAlpha(190),
+                                  color: textColor.withAlpha(190),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17.0,
                                 ),
@@ -1219,12 +1227,12 @@ Map<String, double> federalNYSCCorpMemberMap = Map();
 
 List<Color> federalNYSCColorList = [
   containerTextColor,
-  Color.fromRGBO(25, 49, 111, 1),
-  Colors.lightBlue,
+  secondFederalNYSCChartColor,
+  thirdFederalNYSCChartColor,
 ];
 
 List<Color> federalNYSCCorpMemberColorList = [
-  Color.fromRGBO(25, 49, 111, 1).withAlpha(160),
-  Color.fromRGBO(184, 186, 181, 1),
+  secondFederalNYSCCorpMemberChartColor.withAlpha(160),
+  secondFederalNYSCCorpMemberChartColor,
 ];
 
