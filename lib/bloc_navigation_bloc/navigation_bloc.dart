@@ -1,6 +1,7 @@
 
 import 'package:bloc/bloc.dart';
 import '../thrown_pages/batch_a_stream_one_thrown_page.dart';
+import '../thrown_pages/batch_a_stream_two_thrown_page.dart';
 import '../thrown_pages/batch_b_stream_one_thrown_page.dart';
 import '../thrown_pages/batch_b_stream_two_thrown_page.dart';
 import '../thrown_pages/batch_c_stream_one_thrown_page.dart';
@@ -10,6 +11,7 @@ import '../thrown_pages/lg_officials_thrown_page.dart';
 
 enum NavigationEvents {
   MyBatchAStreamOnePageClickedEvent,
+  MyBatchAStreamTwoPageClickedEvent,
   MyBatchBStreamOnePageClickedEvent,
   MyBatchBStreamTwoPageClickedEvent,
   MyBatchCStreamOnePageClickedEvent,
@@ -31,6 +33,9 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
     switch (events) {
       case NavigationEvents.MyBatchAStreamOnePageClickedEvent:
         yield MyBatchAStreamOnePage();
+        break;
+      case NavigationEvents.MyBatchAStreamTwoPageClickedEvent:
+        yield MyBatchAStreamTwoPage();
         break;
       case NavigationEvents.MyBatchBStreamOnePageClickedEvent:
         yield MyBatchBStreamOnePage();

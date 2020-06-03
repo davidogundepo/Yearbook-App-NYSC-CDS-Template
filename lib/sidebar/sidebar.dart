@@ -22,6 +22,7 @@ String batchBStreamTwoTitle = "Batch B Stream Two Corpers";
 String batchCStreamOneTitle = "Batch C Stream One Corpers";
 String batchCStreamTwoTitle = "Batch C Stream Two Corpers";
 String batchAStreamOneTitle = "Batch A Stream One Corpers";
+String batchAStreamTwoTitle = "Batch A Stream Two Corpers";
 String executiveCDSCorpersTitle = "Executive CDS Corpers";
 String localGovOfficialsTitle = "Local Government Officials";
 
@@ -320,6 +321,24 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                                 onTap: () {
                                   _onSelected(5);
                                   onIconPressed();
+                                  BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyBatchAStreamTwoPageClickedEvent);
+                                },
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: MenuItem(
+                                    icon: MdiIcons.accountGroup,
+                                    title: batchAStreamTwoTitle,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Material(
+                              color: _currentNAVSelected == 6 ? containerBackgroundColor.withOpacity(0.3) : materialBackgroundColor,
+                              child: InkWell(
+                                splashColor: splashColorTwo,
+                                onTap: () {
+                                  _onSelected(6);
+                                  onIconPressed();
                                   BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyExecutivePageClickedEvent);
                                 },
                                 child: Align(
@@ -332,11 +351,11 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                               ),
                             ),
                             Material(
-                              color: _currentNAVSelected == 6 ? containerBackgroundColor.withOpacity(0.3) : materialBackgroundColor,
+                              color: _currentNAVSelected == 7 ? containerBackgroundColor.withOpacity(0.3) : materialBackgroundColor,
                               child: InkWell(
                                 splashColor: splashColorTwo,
                                 onTap: () {
-                                  _onSelected(6);
+                                  _onSelected(7);
                                   onIconPressed();
                                   BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyLGOfficialsPageClickedEvent);
                                 },

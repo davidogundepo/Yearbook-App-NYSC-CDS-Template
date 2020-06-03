@@ -10,6 +10,7 @@ import 'package:fnancialinclusioncds2020/notifier/federal_arial_notifier.dart';
 import 'package:provider/provider.dart';
 import './notifier/achievement_images_notifier.dart';
 import './notifier/batch_a_stream_one_notifier.dart';
+import './notifier/batch_a_stream_two_notifier.dart';
 import './notifier/batch_b_stream_one_notifier.dart';
 import './notifier/batch_b_stream_two_notifier.dart';
 import './notifier/batch_c_stream_one_notifier.dart';
@@ -34,6 +35,9 @@ void main() {
         providers: [
           ChangeNotifierProvider(
             create: (context) => BatchAStreamOneNotifier(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => BatchAStreamTwoNotifier(),
           ),
           ChangeNotifierProvider(
             create: (context) => BatchBStreamOneNotifier(),
