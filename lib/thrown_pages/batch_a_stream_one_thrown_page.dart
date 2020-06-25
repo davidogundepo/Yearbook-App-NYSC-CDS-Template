@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fnancialinclusioncds2020/about_menu_details_pages/about_nysc_federal.dart';
+import 'package:fnancialinclusioncds2020/thrown_searches/batch_a_stream_one_thrown_search.dart';
 import '../about_menu_details_pages/about_app.dart';
 import '../about_menu_details_pages/about_cds.dart';
 import '../about_menu_details_pages/acronyms_meanings.dart';
@@ -297,7 +298,7 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                 SliverAppBar(
                   actions: <Widget>[
                     IconButton(
-                      icon: Icon(MdiIcons.bandage,
+                      icon: Icon(MdiIcons.formatFloatLeft,
                         color: appBarIconColor),
                       onPressed: () async {
                         showModalBottomSheet(
@@ -375,6 +376,18 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                               ),
                             ));
                       },
+                    ),
+                    IconButton(
+                      icon: Icon(MdiIcons.magnify, color: iconColor),
+                      onPressed: batchAStreamOneNotifier.batchAStreamOneList == null
+                          ? null
+                          : (){
+                        showSearch(
+                          context: context,
+                          delegate: MyBatchAStreamOneSearch(all: batchAStreamOneNotifier.batchAStreamOneList),
+                        );
+                      },
+                      tooltip: "Search",
                     ),
                   ],
                   backgroundColor: appBarBackgroundColor,

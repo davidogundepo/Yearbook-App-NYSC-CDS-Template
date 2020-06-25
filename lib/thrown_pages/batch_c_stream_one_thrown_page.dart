@@ -11,7 +11,9 @@ import 'package:fnancialinclusioncds2020/about_menu_details_pages/who_we_are.dar
 import 'package:fnancialinclusioncds2020/api/batch_c_stream_one_api.dart';
 import 'package:fnancialinclusioncds2020/bloc_navigation_bloc/navigation_bloc.dart';
 import 'package:fnancialinclusioncds2020/details_pages/batch_c_stream_one_details_page.dart';
+import 'package:fnancialinclusioncds2020/details_pages/batch_c_stream_two_details_page.dart';
 import 'package:fnancialinclusioncds2020/notifier/batch_c_stream_one_notifier.dart';
+import 'package:fnancialinclusioncds2020/thrown_searches/batch_c_stream_one_thrown_search.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -301,7 +303,7 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                 SliverAppBar(
                   actions: <Widget>[
                     IconButton(
-                      icon: Icon(MdiIcons.bandage, color: iconColor),
+                      icon: Icon(MdiIcons.formatFloatLeft, color: iconColor),
                       onPressed: () {
                         showModalBottomSheet(
                             backgroundColor: modalBackgroundColor,
@@ -390,6 +392,18 @@ class _MyBatchCStreamOnePageState extends State<MyBatchCStreamOnePage> {
                               ),
                             ));
                       },
+                    ),
+                    IconButton(
+                      icon: Icon(MdiIcons.magnify, color: iconColor),
+                      onPressed: batchCStreamOneNotifier.batchCStreamOneList == null
+                          ? null
+                          : (){
+                        showSearch(
+                          context: context,
+                          delegate: MyBatchCStreamOneSearch(all: batchCStreamOneNotifier.batchCStreamOneList),
+                        );
+                      },
+                      tooltip: "Search",
                     ),
                   ],
                   backgroundColor: appBarBackgroundColor,

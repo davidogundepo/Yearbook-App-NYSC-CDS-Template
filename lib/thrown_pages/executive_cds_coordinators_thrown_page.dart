@@ -12,6 +12,7 @@ import 'package:fnancialinclusioncds2020/api/executive_cds_coordinators_api.dart
 import 'package:fnancialinclusioncds2020/bloc_navigation_bloc/navigation_bloc.dart';
 import 'package:fnancialinclusioncds2020/details_pages/executive_cds_coordinators_details_page.dart';
 import 'package:fnancialinclusioncds2020/notifier/executive_cds_coordinators_notifier.dart';
+import 'package:fnancialinclusioncds2020/thrown_searches/executive_cds_coordinators_thrown_search.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -243,7 +244,7 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                 SliverAppBar(
                   actions: <Widget>[
                     IconButton(
-                      icon: Icon(MdiIcons.bandage, color: iconColor),
+                      icon: Icon(MdiIcons.formatFloatLeft, color: iconColor),
                       onPressed: () {
                         showModalBottomSheet(
                             backgroundColor: modalBackgroundColor,
@@ -322,6 +323,18 @@ class _MyExecutiveCDSCoordinatorsPageState extends State<MyExecutiveCDSCoordinat
                               ),
                             ));
                       },
+                    ),
+                    IconButton(
+                      icon: Icon(MdiIcons.magnify, color: iconColor),
+                      onPressed: executiveCDSCoordinatorsNotifier.executiveCDSCoordinatorsList == null
+                          ? null
+                          : (){
+                        showSearch(
+                          context: context,
+                          delegate: MyExecutiveCDSCoordinatorsSearch(all: executiveCDSCoordinatorsNotifier.executiveCDSCoordinatorsList),
+                        );
+                      },
+                      tooltip: "Search",
                     ),
                   ],
                   backgroundColor: appBarBackgroundColor,

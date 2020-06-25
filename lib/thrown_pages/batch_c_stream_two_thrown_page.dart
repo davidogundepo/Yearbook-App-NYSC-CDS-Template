@@ -11,6 +11,7 @@ import 'package:fnancialinclusioncds2020/about_menu_details_pages/who_we_are.dar
 import 'package:fnancialinclusioncds2020/api/batch_c_stream_two_api.dart';
 import 'package:fnancialinclusioncds2020/details_pages/batch_c_stream_two_details_page.dart';
 import 'package:fnancialinclusioncds2020/notifier/batch_c_stream_two_notifier.dart';
+import 'package:fnancialinclusioncds2020/thrown_searches/batch_c_stream_two_thrown_search.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -300,7 +301,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                 SliverAppBar(
                   actions: <Widget>[
                     IconButton(
-                      icon: Icon(MdiIcons.bandage, color: iconColor),
+                      icon: Icon(MdiIcons.formatFloatLeft, color: iconColor),
                       onPressed: () {
                         showModalBottomSheet(
                             backgroundColor: modalBackgroundColor,
@@ -379,6 +380,18 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                               ),
                             ));
                       },
+                    ),
+                    IconButton(
+                      icon: Icon(MdiIcons.magnify, color: iconColor),
+                      onPressed: batchCStreamTwoNotifier.batchCStreamTwoList == null
+                          ? null
+                          : (){
+                        showSearch(
+                          context: context,
+                          delegate: MyBatchCStreamTwoSearch(all: batchCStreamTwoNotifier.batchCStreamTwoList),
+                        );
+                      },
+                      tooltip: "Search",
                     ),
                   ],
                   backgroundColor: appBarBackgroundColor,

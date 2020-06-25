@@ -12,6 +12,7 @@ import 'package:fnancialinclusioncds2020/api/lg_officials_api.dart';
 import 'package:fnancialinclusioncds2020/bloc_navigation_bloc/navigation_bloc.dart';
 import 'package:fnancialinclusioncds2020/details_pages/lg_officials_details_page.dart';
 import 'package:fnancialinclusioncds2020/notifier/lg_officials_notifier.dart';
+import 'package:fnancialinclusioncds2020/thrown_searches/lg_officials_thrown_search.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -241,7 +242,7 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
                 SliverAppBar(
                   actions: <Widget>[
                     IconButton(
-                      icon: Icon(MdiIcons.bandage, color: iconColor),
+                      icon: Icon(MdiIcons.formatFloatLeft, color: iconColor),
                       onPressed: () {
                         showModalBottomSheet(
                             backgroundColor: modalBackgroundColor,
@@ -330,6 +331,18 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
                               ),
                             ));
                       },
+                    ),
+                    IconButton(
+                      icon: Icon(MdiIcons.magnify, color: iconColor),
+                      onPressed: lgOfficialsNotifier.lGOfficialsList == null
+                          ? null
+                          : (){
+                        showSearch(
+                          context: context,
+                          delegate: MyLGOfficialsSearch(all: lgOfficialsNotifier.lGOfficialsList),
+                        );
+                      },
+                      tooltip: "Search",
                     ),
                   ],
                   backgroundColor: appBarBackgroundColor,

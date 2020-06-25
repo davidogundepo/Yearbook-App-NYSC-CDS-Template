@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fnancialinclusioncds2020/about_menu_details_pages/about_nysc_federal.dart';
+import 'package:fnancialinclusioncds2020/thrown_searches/batch_b_stream_one_thrown_search.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../api/batch_b_stream_one_api.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -53,7 +54,7 @@ Color modalColor = Color.fromRGBO(95, 62, 86, 1);
 Color modalBackgroundColor = Colors.transparent;
 Color materialBackgroundColor = Colors.transparent;
 Color cardBackgroundColor = Colors.white;
-Color splashColor = Colors.pinkAccent;
+Color splashColor = Color.fromRGBO(95, 32, 86, 1);
 Color iconColor = Colors.white;
 Color textColor = Colors.white;
 Color textColorTwo = Colors.white70;
@@ -61,7 +62,10 @@ Color dialogBackgroundColor = Color.fromRGBO(95, 72, 86, 1);
 Color borderColor = Colors.black;
 
 
+var writeSearch = List<String>();
+
 class MyBatchBStreamOnePage extends StatefulWidget with NavigationStates {
+
 
   MyBatchBStreamOnePage({Key key, this.title}) : super(key: key);
 
@@ -330,6 +334,50 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
     super.initState();
   }
 
+//  void filterSearchResults(String query) {
+//    List<String> dummySearchList = List<String>();
+//    dummySearchList.addAll(listItems);
+//    if (query.isNotEmpty) {
+//      List<String> dummyListData = List<String>();
+//      dummySearchList.forEach((item) {
+//        if (item.contains(query)) {
+//          dummyListData.add(item);        }
+//      });
+//      setState(() {
+//        writeSearch.clear();
+//        writeSearch.addAll(dummyListData);
+//      });      return;
+//    } else {
+//      setState(() {
+//        writeSearch.clear();
+//        writeSearch.addAll(listItems);
+//      });
+//    }
+//  }
+
+
+//  List originalItemList = List();
+//  List searchedItemList = List();
+//  search(String query){
+//    if (query.isNotEmpty) {
+//
+//      // search the list for the user `name`
+//      List nameSearch = originalItemList.where((user){
+//        String userName = user[batchBStreamOneNotifier.currentBatchBStreamOne.name];
+//        return userName.toLowerCase().contains(query.toLowerCase());
+//      }).toList();
+//
+//      // set the filtered list to the unfiltered list
+//      setState(() {
+//        searchedItemList = nameSearch;
+//      });
+//    } else {
+//      setState(() {
+//        searchedItemList = originalItemList;
+//      });
+//    }
+//  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -348,7 +396,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                 SliverAppBar(
                   actions: <Widget>[
                     IconButton(
-                      icon: Icon(MdiIcons.bandage, color: iconColor),
+                      icon: Icon(MdiIcons.formatFloatLeft, color: iconColor),
                       onPressed: () {
                         showModalBottomSheet(
                             backgroundColor: modalBackgroundColor,
@@ -427,6 +475,18 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                               ),
                             ));
                       },
+                    ),
+                    IconButton(
+                      icon: Icon(MdiIcons.magnify, color: iconColor),
+                      onPressed: batchBStreamOneNotifier.batchBStreamOneList == null
+                          ? null
+                          : (){
+                        showSearch(
+                          context: context,
+                          delegate: MyBatchBStreamOneSearch(all: batchBStreamOneNotifier.batchBStreamOneList),
+                        );
+                      },
+                      tooltip: "Search",
                     ),
                   ],
                   backgroundColor: appBarBackgroundColor,
