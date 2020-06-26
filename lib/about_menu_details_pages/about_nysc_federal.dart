@@ -14,6 +14,7 @@ import 'package:url_launcher/url_launcher.dart';
 String nyscName = "NYSC";
 String aboutNYSC = "About $nyscName";
 
+String visionSwipe = "Swipe left on 'OUR VISION STATEMENT'  >>>";
 String visionTitle = "OUR VISION STATEMENT";
 String visionStatement = "To develop a sound and result oriented organization that is strongly committed to its set objectives particularly those of national unity and even development. An organization that is well motivated and capable of bringing out the best qualities in our youths and imparting in them the right attitude and values for nation-building. An organization that serves as a catalyst to national development, and a source of pride and fulfillment to its participating graduate youths";
 String missionTitle = "OUR MISSION STATEMENT";
@@ -36,6 +37,7 @@ String corperBody = "Corp Members all over Nigeria\n\n";
 String corperBodyStatement = "We currently have 314,064 corp members serving in $nyscName all over Nigeria, 2019/2020 session through Batch A till Batch C.\n186,541 male corp members and 127,523 female corp members.\n9,377,910 corp members have graduated from $nyscName, since the inception, 22nd May 1973.";
 String corperPopulationChart = "$nyscName 2019/2020 Corp Member Population Chart";
 
+String orientationCampSwipe = "Swipe up for all Orientation Camps";
 String orientationCamp = "Addresses of NYSC Orientation Camps in all states";
 String stateOrientationCamp1 = "1. ABIA State. NYSC Permanent Orientation Camp, Umunna, Bende Local Government Area, Abia State.\n\n";
 String stateOrientationCamp2 = "2. ADAMAWA State. NYSC Permanent Orientation Camp, Lapondo Road, Damare, Girei LGA, Adamawa State.\n\n";
@@ -87,7 +89,9 @@ String someCdsGroups8 = "8. Cultural and Tourism CDS\n";
 String someCdsGroups9 = "9. Medical and Health CDS\n";
 
 
+String nyscArialViewsSwipe = "Swipe left or right for more photos";
 String nyscArialViews = "Some Arial views of $nyscName activities, during Orientation Camping";
+String nyscAchievementsSwipe = "Swipe left or right for more photos";
 String nyscAchievements = "Some corp member achievements during their service year";
 String moreInfoAboutNYSC = "For more information about $nyscName please trust and click me";
 String moreInfoAboutNYSCURL = "https://www.nysc.gov.ng/";
@@ -100,6 +104,7 @@ double staffPopulation = 4054;
 
 Color backgroundColor = Color.fromRGBO(25, 59, 111, 1);
 Color appBarBackgroundColor = Color.fromRGBO(25, 49, 111, 1);
+Color appBarIconColor = Colors.blueGrey;
 Color appBarBackgroundTextColor = Colors.blueGrey;
 Color cardBackgroundColor = Color.fromRGBO(25, 49, 111, 1);
 Color textColor = Color.fromRGBO(25, 49, 111, 1);
@@ -164,6 +169,12 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
         style: TextStyle(
           color: appBarBackgroundTextColor
         ),),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios, color: appBarIconColor),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         elevation: 10,
         backgroundColor: appBarBackgroundColor,
       ),
@@ -171,6 +182,36 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              child: Container(
+                child: Material (
+                  color: materialColor,
+                  child: InkWell(
+                    splashColor: materialInkWellColor,
+                    onTap: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 5, bottom: 5),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Text(visionSwipe,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: containerTextColor,
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    color: containerColor,
+                    borderRadius: new BorderRadius.circular(5)
+                ),
+              ),
+            ),
             Container(
               height: 500,
               child: PageView(
@@ -605,6 +646,36 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                     fontSize: 20,
                     color: containerTextColor,
                     fontWeight: FontWeight.w500
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+              child: Container(
+                child: Material (
+                  color: materialColor,
+                  child: InkWell(
+                    splashColor: materialInkWellColor,
+                    onTap: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 5, bottom: 5),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Text(orientationCampSwipe,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: containerTextColor,
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    color: containerColor,
+                    borderRadius: new BorderRadius.circular(5)
                 ),
               ),
             ),
@@ -1054,8 +1125,36 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                 ),
               ),
             ),
-
-
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+              child: Container(
+                child: Material (
+                  color: materialColor,
+                  child: InkWell(
+                    splashColor: materialInkWellColor,
+                    onTap: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 5, bottom: 5),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Text(nyscArialViewsSwipe,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: containerTextColor,
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    color: containerColor,
+                    borderRadius: new BorderRadius.circular(5)
+                ),
+              ),
+            ),
             Container(
               height: 340,
               child: Swiper(
@@ -1109,6 +1208,36 @@ class _AboutNYSCFederalState extends State<AboutNYSCFederalState> {
                     fontSize: 20,
                     color: containerTextColor,
                     fontWeight: FontWeight.w500
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+              child: Container(
+                child: Material (
+                  color: materialColor,
+                  child: InkWell(
+                    splashColor: materialInkWellColor,
+                    onTap: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 5, bottom: 5),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Text(nyscAchievementsSwipe,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: containerTextColor,
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    color: containerColor,
+                    borderRadius: new BorderRadius.circular(5)
                 ),
               ),
             ),

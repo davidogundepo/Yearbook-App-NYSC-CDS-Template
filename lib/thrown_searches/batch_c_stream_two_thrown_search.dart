@@ -22,6 +22,9 @@ Color textColor = Colors.white;
 Color textColorTwo = Colors.white70;
 Color dialogBackgroundColor = Color.fromRGBO(114, 78, 147, 1);
 Color borderColor = Colors.black;
+Color textHighlightColor = Colors.white;
+
+var queryTech;
 
 
 class MyBatchCStreamTwoSearch extends SearchDelegate {
@@ -38,9 +41,9 @@ class MyBatchCStreamTwoSearch extends SearchDelegate {
         primaryColor: appBarBackgroundColor,
         primaryIconTheme: IconThemeData(color: appBarIconColor),
         primaryColorBrightness: Brightness.light,
-        textTheme: TextTheme(title: TextStyle(color: appBarTextColor)),
+        textTheme: TextTheme(title: TextStyle(color: appBarTextColor, fontSize: 25)),
         inputDecorationTheme: InputDecorationTheme(
-            hintStyle: TextStyle(color: appBarTextColor)
+          hintStyle: TextStyle(color: appBarTextColor.withAlpha(60)),
         ),
         cursorColor: appBarTextColor
     );
@@ -66,7 +69,7 @@ class MyBatchCStreamTwoSearch extends SearchDelegate {
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
-      icon: Icon(Icons.arrow_back),
+      icon: Icon(MdiIcons.chevronTripleLeft),
       onPressed: () {
         close(context, null);
       },
@@ -93,16 +96,16 @@ class MyBatchCStreamTwoSearch extends SearchDelegate {
   Widget buildSuggestions(BuildContext context) {
 
     var query1;
-    var query2 = "";
+    queryTech = "";
     if (query.length != 0) {
       query1 = query.toLowerCase();
-      query2 = query1[0].toUpperCase() + query1.substring(1);
+      queryTech = query1[0].toUpperCase() + query1.substring(1);
     }
 
     var search;
 
-    if(query2.isNotEmpty){
-      search =all.where((batchCStreamTwo) => batchCStreamTwo.name.contains(query2)).toList();
+    if(queryTech.isNotEmpty){
+      search =all.where((batchCStreamTwo) => batchCStreamTwo.name.contains(queryTech)).toList();
 
 
     }else{
@@ -121,7 +124,7 @@ class MyBatchCStreamTwoSearch extends SearchDelegate {
       body: Container(
         color: backgroundColor,
         child: Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16, top: 30),
+          padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
           child: ListView.builder(
               shrinkWrap: true,
               itemCount: search == null ? 0 : search.length,
@@ -173,13 +176,19 @@ class MyBatchCStreamTwoSearch extends SearchDelegate {
                                       padding: const EdgeInsets.only(top: 30),
                                       child: Row(
                                         children: <Widget>[
-                                          Text(
-                                              search[position].name,
-                                              style: GoogleFonts.tenorSans(
-                                                  color: textColor,
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.w600
-                                              )
+                                          RichText(
+                                            text: TextSpan(
+                                                text: search[position].name.substring(0, queryTech.length),
+                                                style: GoogleFonts.tenorSans(
+                                                    color: textColor,
+                                                    fontSize: 13.5,
+                                                    fontWeight: FontWeight.w600
+                                                ),
+                                                children: [
+                                                  TextSpan(
+                                                      text: search[position].name.substring(queryTech.length),
+                                                      style: GoogleFonts.tenorSans(color: textHighlightColor))
+                                                ]),
                                           ),
                                           (() {
                                             if (search[position].cdsExecutive == "Yes") {

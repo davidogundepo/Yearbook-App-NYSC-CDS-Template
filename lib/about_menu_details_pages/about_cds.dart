@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 String cdsName = "Financial Inclusion CDS";
 String aboutCDS = "About $cdsName";
 
+String visionSwipe = "Swipe left on 'OUR VISION STATEMENT'  >>>";
 String visionTitle = "OUR VISION STATEMENT";
 String visionStatement = "Raising the total Nigerian youth through comprehensive education.";
 String missionTitle = "OUR MISSION STATEMENT";
@@ -29,6 +30,7 @@ String cdsBodyStatement = "We currently have 54 corp members in $cdsName, 31 mal
 String cdsPopulationChart = "$cdsName Corp Members Population Chart";
 
 String schoolAchievements = "Some of our achievements";
+String nyscAchievementsSwipe = "Swipe left or right for more photos";
 
 double maleCDSCorperPopulation = 31;
 double femaleCDSCorperPopulation = 22;
@@ -36,6 +38,7 @@ double femaleCDSCorperPopulation = 22;
 
 Color backgroundColor = Colors.blueGrey[900];
 Color appBarBackgroundColor = Colors.blueGrey[800];
+Color appBarIconColor = Colors.blueGrey;
 Color appBarBackgroundTextColor = Colors.blueGrey;
 Color cardBackgroundColor = Colors.black38;
 Color cardTextColor = Colors.blueGrey;
@@ -89,12 +92,48 @@ class _AboutCDS extends State<AboutCDS> {
         style: TextStyle(
           color: appBarBackgroundTextColor)),
         elevation: 10,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios, color: appBarIconColor),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         backgroundColor: appBarBackgroundColor,
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              child: Container(
+                child: Material (
+                  color: materialColor,
+                  child: InkWell(
+                    splashColor: materialInkWellColor,
+                    onTap: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 5, bottom: 5),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Text(visionSwipe,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: materialTextColor,
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    color: containerColor,
+                    borderRadius: new BorderRadius.circular(5)
+                ),
+              ),
+            ),
             Container(
               height: 500,
               child: PageView(
@@ -418,6 +457,36 @@ class _AboutCDS extends State<AboutCDS> {
                     fontSize: 20,
                     color: materialTextColor,
                     fontWeight: FontWeight.w500
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+              child: Container(
+                child: Material (
+                  color: materialColor,
+                  child: InkWell(
+                    splashColor: materialInkWellColor,
+                    onTap: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 5, bottom: 5),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Text(nyscAchievementsSwipe,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: materialTextColor,
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    color: containerColor,
+                    borderRadius: new BorderRadius.circular(5)
                 ),
               ),
             ),

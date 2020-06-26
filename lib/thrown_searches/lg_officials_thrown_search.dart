@@ -21,6 +21,9 @@ Color iconColor = Colors.white;
 Color textColor = Colors.white;
 Color dialogBackgroundColor = Color.fromRGBO(167, 129, 29, 1);
 Color borderColor = Colors.black;
+Color textHighlightColor = Colors.white;
+
+var queryTech;
 
 
 class MyLGOfficialsSearch extends SearchDelegate {
@@ -35,9 +38,9 @@ class MyLGOfficialsSearch extends SearchDelegate {
         primaryColor: appBarBackgroundColor,
         primaryIconTheme: IconThemeData(color: appBarIconColor),
         primaryColorBrightness: Brightness.light,
-        textTheme: TextTheme(title: TextStyle(color: appBarTextColor)),
+        textTheme: TextTheme(title: TextStyle(color: appBarTextColor, fontSize: 25)),
         inputDecorationTheme: InputDecorationTheme(
-            hintStyle: TextStyle(color: appBarTextColor)
+          hintStyle: TextStyle(color: appBarTextColor.withAlpha(60)),
         ),
         cursorColor: appBarTextColor
     );
@@ -63,7 +66,7 @@ class MyLGOfficialsSearch extends SearchDelegate {
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
-      icon: Icon(Icons.arrow_back),
+      icon: Icon(MdiIcons.chevronTripleLeft),
       onPressed: () {
         close(context, null);
       },
@@ -90,16 +93,16 @@ class MyLGOfficialsSearch extends SearchDelegate {
   Widget buildSuggestions(BuildContext context) {
 
     var query1;
-    var query2 = "";
+    queryTech = "";
     if (query.length != 0) {
       query1 = query.toLowerCase();
-      query2 = query1[0].toUpperCase() + query1.substring(1);
+      queryTech = query1[0].toUpperCase() + query1.substring(1);
     }
 
     var search;
 
-    if(query2.isNotEmpty){
-      search =all.where((lgOfficials) => lgOfficials.name.contains(query2)).toList();
+    if(queryTech.isNotEmpty){
+      search =all.where((lgOfficials) => lgOfficials.name.contains(queryTech)).toList();
 
 
     }else{
@@ -118,7 +121,7 @@ class MyLGOfficialsSearch extends SearchDelegate {
       body: Container(
         color: backgroundColor,
         child: Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16, top: 30),
+          padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
           child: ListView.builder(
               shrinkWrap: true,
               itemCount: search == null ? 0 : search.length,
@@ -169,13 +172,19 @@ class MyLGOfficialsSearch extends SearchDelegate {
                                       padding: const EdgeInsets.only(top: 20),
                                       child: Row(
                                         children: <Widget>[
-                                          Text(
-                                              search[position].name,
-                                              style: GoogleFonts.tenorSans(
-                                                  color: textColor,
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.w600
-                                              )
+                                          RichText(
+                                            text: TextSpan(
+                                                text: search[position].name.substring(0, queryTech.length),
+                                                style: GoogleFonts.tenorSans(
+                                                    color: textColor,
+                                                    fontSize: 13.5,
+                                                    fontWeight: FontWeight.w600
+                                                ),
+                                                children: [
+                                                  TextSpan(
+                                                      text: search[position].name.substring(queryTech.length),
+                                                      style: GoogleFonts.tenorSans(color: textHighlightColor))
+                                                ]),
                                           ),
 
                                           SizedBox(width: 10),

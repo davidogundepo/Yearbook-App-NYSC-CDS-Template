@@ -4,6 +4,8 @@ import 'dart:ui' as ui;
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:fnancialinclusioncds2020/model/BatchBStreamOne.dart';
+import 'package:fnancialinclusioncds2020/thrown_pages/batch_b_stream_one_thrown_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:rxdart/rxdart.dart';
@@ -64,6 +66,12 @@ class SideBar extends StatefulWidget {
 
 class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<SideBar> {
 
+  MyBatchBStreamOnePage batchBStreamOne = MyBatchBStreamOnePage();
+
+
+
+  GlobalKey<_SideBarState> _myKey = GlobalKey();
+
   int _currentNAVSelected = 0;
 
   _onSelected(int index) {
@@ -98,9 +106,26 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
     final isAnimationCompleted = animationStatus == AnimationStatus.completed;
 
     if (isAnimationCompleted) {
+//      Visibility(
+//          child: MyBatchBStreamOnePage != null ? null : Text("")
+//      );
+//      MyBatchBStreamOnePage = MyBatchBStreamOnePage.notnull;
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text("Sending Message"),
+      ));
       isSidebarOpenedSink.add(false);
       _animationController.reverse();
     } else {
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text("Sending Letter"),
+      ));
+      AbsorbPointer(
+//        absorbing: true,
+//        ignoringSemantics: true,
+        child: batchBStreamOne(
+          key: _myKey,
+        ),
+      );
       isSidebarOpenedSink.add(true);
       _animationController.forward();
     }
