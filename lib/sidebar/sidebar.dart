@@ -2,14 +2,16 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:fnancialinclusioncds2020/model/BatchBStreamOne.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fnancialinclusioncds2020/notifier/sidebar_provider.dart';
 import 'package:fnancialinclusioncds2020/thrown_pages/batch_b_stream_one_thrown_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shimmer/shimmer.dart';
+
 import '../bloc_navigation_bloc/navigation_bloc.dart';
 import '../sidebar/menu_item.dart';
 
@@ -113,19 +115,14 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
       Scaffold.of(context).showSnackBar(SnackBar(
         content: Text("Sending Message"),
       ));
+      Provider.of<SideBarNotifier>(context, listen: false).setIsOpened(false);
       isSidebarOpenedSink.add(false);
       _animationController.reverse();
     } else {
       Scaffold.of(context).showSnackBar(SnackBar(
         content: Text("Sending Letter"),
       ));
-      AbsorbPointer(
-//        absorbing: true,
-//        ignoringSemantics: true,
-        child: batchBStreamOne(
-          key: _myKey,
-        ),
-      );
+      Provider.of<SideBarNotifier>(context, listen: false).setIsOpened(true);
       isSidebarOpenedSink.add(true);
       _animationController.forward();
     }
