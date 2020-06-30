@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fnancialinclusioncds2020/notifier/federal_achievement_images_notifier.dart';
 import 'package:fnancialinclusioncds2020/notifier/federal_arial_notifier.dart';
-import 'package:fnancialinclusioncds2020/notifier/sidebar_provider.dart';
+import 'package:fnancialinclusioncds2020/notifier/sidebar_notifier.dart';
 import 'package:provider/provider.dart';
 import './notifier/achievement_images_notifier.dart';
 import './notifier/batch_a_stream_one_notifier.dart';

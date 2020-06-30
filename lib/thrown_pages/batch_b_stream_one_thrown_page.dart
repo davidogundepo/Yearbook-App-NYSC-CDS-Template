@@ -324,12 +324,57 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
     }
   }
 
+
+  aboutAppWelcomeDialog() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool firstTime = prefs.getBool('first_time');
+
+//    if (firstTime != null && !firstTime) {
+//      // Not first time
+//    } else {
+//      // First time
+      prefs.setBool(networkSharedPreferencesKey, false);
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8)),
+
+          ),
+          backgroundColor: dialogBackgroundColor,
+          title: Text(networkSharedPreferencesTitle,
+            style: TextStyle(
+                color: textColor
+            ),
+          ),
+          content: Text(networkSharedPreferencesContent,
+            style: TextStyle(
+                color: textColor
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text(networkSharedPreferencesButton,
+                style: TextStyle(
+                    color: textColor
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+//    }
+  }
+
   @override
   void initState() {
     BatchBStreamOneNotifier batchBStreamOneNotifier = Provider.of<BatchBStreamOneNotifier>(context, listen: false);
     getBatchBStreamOne(batchBStreamOneNotifier);
 
     startTime();
+
+    aboutAppWelcomeDialog();
 
     super.initState();
   }
@@ -405,7 +450,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                               height: 300,
                               decoration: BoxDecoration(
                                 color: modalColor,
-                                borderRadius: BorderRadius.all(Radius.circular(15)),
+                                borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
                               ),
                               child: Material(
                                 color: materialBackgroundColor,

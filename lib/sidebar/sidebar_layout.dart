@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:fnancialinclusioncds2020/notifier/sidebar_provider.dart';
+import 'package:fnancialinclusioncds2020/notifier/sidebar_notifier.dart';
 import 'package:provider/provider.dart';
 import '../bloc_navigation_bloc/navigation_bloc.dart';
 

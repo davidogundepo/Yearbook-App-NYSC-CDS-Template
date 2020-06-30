@@ -4,7 +4,8 @@ import '../model/BatchAStreamTwo.dart';
 import '../notifier/batch_a_stream_two_notifier.dart';
 
 getBatchAStreamTwo(BatchAStreamTwoNotifier batchAStreamTwoNotifier) async{
-  QuerySnapshot snapshot = await Firestore.instance.collection('BatchAStreamTwoCorpers').orderBy("name").getDocuments();
+  QuerySnapshot snapshot = await Firestore.instance
+      .collection('BatchAStreamTwoCorpers').orderBy("name").getDocuments();
 
   List<BatchAStreamTwo> _batchAStreamTwoList = [];
 

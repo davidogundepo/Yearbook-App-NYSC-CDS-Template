@@ -4,7 +4,8 @@ import '../model/BatchCStreamOne.dart';
 import '../notifier/batch_c_stream_one_notifier.dart';
 
 getBatchCStreamOne(BatchCStreamOneNotifier batchCStreamOneNotifier) async{
-  QuerySnapshot snapshot = await Firestore.instance.collection('BatchCStreamOneCorpers').orderBy("name").getDocuments();
+  QuerySnapshot snapshot = await Firestore.instance
+      .collection('BatchCStreamOneCorpers').orderBy("name").getDocuments();
 
   List<BatchCStreamOne> _batchCStreamOneList = [];
 

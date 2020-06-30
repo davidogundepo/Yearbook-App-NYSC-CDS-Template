@@ -310,7 +310,7 @@ class _MyBatchCStreamTwoPageState extends State< MyBatchCStreamTwoPage> {
                               height: 300,
                               decoration: BoxDecoration(
                                 color: modalColor,
-                                borderRadius: BorderRadius.all(Radius.circular(15)),
+                                borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
                               ),
                               child: Material(
                                 color: materialBackgroundColor,

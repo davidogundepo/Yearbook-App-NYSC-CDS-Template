@@ -4,7 +4,8 @@ import '../model/LGOfficials.dart';
 import '../notifier/lg_officials_notifier.dart';
 
 getLGOfficials(LGOfficialsNotifier lgOfficialsNotifier) async{
-  QuerySnapshot snapshot = await Firestore.instance.collection('LGOfficials').orderBy("name").getDocuments();
+  QuerySnapshot snapshot = await Firestore.instance
+      .collection('LGOfficials').orderBy("id").getDocuments();
 
   List<LGOfficials> _lGOfficials = [];
 

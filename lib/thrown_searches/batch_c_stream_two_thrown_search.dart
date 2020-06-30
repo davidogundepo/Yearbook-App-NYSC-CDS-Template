@@ -56,14 +56,36 @@ class MyBatchCStreamTwoSearch extends SearchDelegate {
 
   @override
   List<Widget> buildActions(BuildContext context) {
-    return [
-      IconButton(
-        icon: Icon(MdiIcons.closeCircleOutline),
-        onPressed: () {
-          query = '';
-        },
-      ),
-    ];
+    if (query.isNotEmpty) {
+      return [
+        Visibility(
+          visible: true,
+          child: IconButton(
+            icon: Visibility(
+                visible: true,
+                child: Icon(MdiIcons.closeCircleOutline)),
+            onPressed: () {
+              query = '';
+            },
+          ),
+        )
+      ];
+    }
+    else {
+      return [
+        Visibility(
+          visible: false,
+          child: IconButton(
+            icon: Visibility(
+                visible: false,
+                child: Icon(MdiIcons.closeCircleOutline)),
+            onPressed: () {
+              query = '';
+            },
+          ),
+        )
+      ];
+    }
   }
 
   @override
