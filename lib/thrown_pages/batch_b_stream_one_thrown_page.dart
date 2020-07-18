@@ -22,6 +22,9 @@ import '../bloc_navigation_bloc/navigation_bloc.dart';
 
 String nyscName = "NYSC";
 String cdsName = "Financial Inclusion CDS Group";
+String lgaName = "Obia/Akpor LGA";
+String stateName = "Rivers State";
+String countryName = "Nigeria";
 String thrownName = "Batch B Stream One Corpers";
 
 String exitAppStatement = "Exit from App";
@@ -29,7 +32,6 @@ String exitAppTitle = "Come on!";
 String exitAppSubtitle = "Do you really really want to?";
 String exitAppNo = "Oh No";
 String exitAppYes = "I Have To";
-
 
 String whoWeAre = "Who We Are";
 String aboutCDS = "About $cdsName";
@@ -39,11 +41,18 @@ String aboutApp = "About App";
 
 String imgAsset = "assets/images/fin_inc_3.jpg";
 
-
 String networkSharedPreferencesKey = "first_time";
 String networkSharedPreferencesTitle = "Network";
 String networkSharedPreferencesContent = "The internet connection is required for the first time launch, please leave on for few seconds :)";
 String networkSharedPreferencesButton = "Okies";
+
+
+String appOverviewSharedPreferencesKey = "overview_time";
+String appOverviewSharedPreferencesTitle = "APP OVERVIEW";
+String appOverviewSharedPreferencesContentOne = "This Yearbook App was developed for $cdsName, an NYSC CDS Group in $lgaName, $stateName. $countryName.\n";
+String appOverviewSharedPreferencesContentTwo = "Our vision is to raise the total Nigerian youth through comprehensive education.\n";
+String appOverviewSharedPreferencesContentThree = "Welcome to our inventory, do read through and know more!";
+String appOverviewSharedPreferencesButton = "Awesome";
 
 
 Color backgroundColor = Color.fromRGBO(95, 72, 86, 1);
@@ -61,7 +70,6 @@ Color textColorTwo = Colors.white70;
 Color dialogBackgroundColor = Color.fromRGBO(95, 72, 86, 1);
 Color borderColor = Colors.black;
 
-
 var writeSearch = List<String>();
 
 class MyBatchBStreamOnePage extends StatefulWidget with NavigationStates {
@@ -76,7 +84,10 @@ class MyBatchBStreamOnePage extends StatefulWidget with NavigationStates {
 }
 
 class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
+
   bool _isVisible = true;
+
+  bool checkedValue = false;
 
   void showToast() {
     setState(() {
@@ -324,16 +335,16 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
     }
   }
 
-
   aboutAppWelcomeDialog() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool firstTime = prefs.getBool('first_time');
+    SharedPreferences appOverviewPrefs = await SharedPreferences.getInstance();
+    bool appOverviewChecked = appOverviewPrefs.getBool('overview_time');
 
-//    if (firstTime != null && !firstTime) {
-//      // Not first time
-//    } else {
-//      // First time
-      prefs.setBool(networkSharedPreferencesKey, false);
+    if (appOverviewChecked != null && !appOverviewChecked) {
+      // Not first time
+    }
+    else {
+      // First time
+      appOverviewPrefs.setBool(appOverviewSharedPreferencesKey, false);
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -342,20 +353,47 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
 
           ),
           backgroundColor: dialogBackgroundColor,
-          title: Text(networkSharedPreferencesTitle,
+          title: Text(
+            appOverviewSharedPreferencesTitle,
             style: TextStyle(
                 color: textColor
             ),
           ),
-          content: Text(networkSharedPreferencesContent,
-            style: TextStyle(
-                color: textColor
+          content: Container(
+            height: 220,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    appOverviewSharedPreferencesContentOne,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                        color: textColor
+                    ),
+                  ),
+                  Text(
+                    appOverviewSharedPreferencesContentTwo,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                        color: textColor
+                    ),
+                  ),
+                  Text(
+                    appOverviewSharedPreferencesContentThree,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                        color: textColor
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           actions: <Widget>[
             FlatButton(
               onPressed: () => Navigator.of(context).pop(false),
-              child: Text(networkSharedPreferencesButton,
+              child: Text(appOverviewSharedPreferencesButton,
                 style: TextStyle(
                     color: textColor
                 ),
@@ -365,6 +403,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
         ),
       );
 //    }
+    }
   }
 
   @override
@@ -378,50 +417,6 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
 
     super.initState();
   }
-
-//  void filterSearchResults(String query) {
-//    List<String> dummySearchList = List<String>();
-//    dummySearchList.addAll(listItems);
-//    if (query.isNotEmpty) {
-//      List<String> dummyListData = List<String>();
-//      dummySearchList.forEach((item) {
-//        if (item.contains(query)) {
-//          dummyListData.add(item);        }
-//      });
-//      setState(() {
-//        writeSearch.clear();
-//        writeSearch.addAll(dummyListData);
-//      });      return;
-//    } else {
-//      setState(() {
-//        writeSearch.clear();
-//        writeSearch.addAll(listItems);
-//      });
-//    }
-//  }
-
-
-//  List originalItemList = List();
-//  List searchedItemList = List();
-//  search(String query){
-//    if (query.isNotEmpty) {
-//
-//      // search the list for the user `name`
-//      List nameSearch = originalItemList.where((user){
-//        String userName = user[batchBStreamOneNotifier.currentBatchBStreamOne.name];
-//        return userName.toLowerCase().contains(query.toLowerCase());
-//      }).toList();
-//
-//      // set the filtered list to the unfiltered list
-//      setState(() {
-//        searchedItemList = nameSearch;
-//      });
-//    } else {
-//      setState(() {
-//        searchedItemList = originalItemList;
-//      });
-//    }
-//  }
 
   @override
   Widget build(BuildContext context) {
@@ -540,13 +535,17 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
-                    title: Text(thrownName,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.amaticSC(
-                            color: textColor,
-                            fontSize: 26.0,
-                            fontWeight: FontWeight.bold
-                        )
+                    title: Center(
+                      heightFactor: 0.6,
+                      child: Text(
+                          thrownName,
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.amaticSC(
+                              color: textColor,
+                              fontSize: 26.0,
+                              fontWeight: FontWeight.bold
+                          )
+                      ),
                     ),
                     background: Image.asset(imgAsset,
                       alignment: Alignment(0, -1),
@@ -575,4 +574,5 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
       ),
     );
   }
+
 }

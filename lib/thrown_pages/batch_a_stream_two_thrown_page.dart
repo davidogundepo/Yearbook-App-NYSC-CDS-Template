@@ -38,19 +38,19 @@ String aboutApp = "About App";
 String imgAsset = "assets/images/fin_inc_36.jpeg";
 
 
-Color backgroundColor = Color.fromRGBO(189, 170, 176, 1);
+Color backgroundColor = Color.fromRGBO(114, 114, 182, 1);
 Color appBarTextColor = Colors.white;
-Color appBarBackgroundColor = Color.fromRGBO(189, 150, 176, 1);
+Color appBarBackgroundColor = Color.fromRGBO(114, 94, 182, 1);
 Color appBarIconColor = Colors.white;
-Color modalColor = Color.fromRGBO(189, 150, 176, 1);
+Color modalColor = Color.fromRGBO(114, 94, 182, 1);
 Color modalBackgroundColor = Colors.transparent;
 Color materialBackgroundColor = Colors.transparent;
 Color cardBackgroundColor = Colors.white;
-Color splashColor = Color.fromRGBO(189, 150, 176, 1);
+Color splashColor = Color.fromRGBO(114, 94, 182, 1);
 Color iconColor = Colors.white;
 Color textColor = Colors.white;
 Color textColorTwo = Colors.white70;
-Color dialogBackgroundColor = Color.fromRGBO(189, 170, 176, 1);
+Color dialogBackgroundColor = Color.fromRGBO(114, 114, 182, 1);
 Color borderColor = Colors.black;
 
 
@@ -396,12 +396,16 @@ class _MyBatchAStreamTwoPageState extends State<MyBatchAStreamTwoPage> {
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
-                    title: Text(thrownName,
-                        style: GoogleFonts.amaticSC(
-                            color: appBarTextColor,
-                            fontSize: 26.0,
-                            fontWeight: FontWeight.bold
-                        )
+                    title: Center(
+                      heightFactor: 0.6,
+                      child: Text(
+                          thrownName,
+                          style: GoogleFonts.amaticSC(
+                              color: appBarTextColor,
+                              fontSize: 26.0,
+                              fontWeight: FontWeight.bold
+                          )
+                      ),
                     ),
                     background: Image.asset(imgAsset,
                       alignment: Alignment(0, -0.6),

@@ -396,12 +396,16 @@ class _MyBatchAStreamOnePageState extends State<MyBatchAStreamOnePage> {
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
-                    title: Text(thrownName,
-                        style: GoogleFonts.amaticSC(
-                            color: appBarTextColor,
-                            fontSize: 26.0,
-                            fontWeight: FontWeight.bold
-                        )
+                    title: Center(
+                      heightFactor: 0.6,
+                      child: Text(
+                          thrownName,
+                          style: GoogleFonts.amaticSC(
+                              color: appBarTextColor,
+                              fontSize: 26.0,
+                              fontWeight: FontWeight.bold
+                          )
+                      ),
                     ),
                     background: Image.asset(imgAsset,
                       alignment: Alignment(0, -0.6),

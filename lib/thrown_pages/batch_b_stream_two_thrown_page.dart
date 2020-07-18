@@ -392,12 +392,16 @@ class _MyBatchBStreamTwoPageState extends State<MyBatchBStreamTwoPage> {
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
-                    title: Text(thrownName,
-                        style: GoogleFonts.amaticSC(
-                            color: textColor,
-                            fontSize: 26.0,
-                            fontWeight: FontWeight.bold
-                        )
+                    title: Center(
+                      heightFactor: 0.6,
+                      child: Text(
+                          thrownName,
+                          style: GoogleFonts.amaticSC(
+                              color: textColor,
+                              fontSize: 26.0,
+                              fontWeight: FontWeight.bold
+                          )
+                      ),
                     ),
                     background: Image.asset(imgAsset,
                       fit: BoxFit.cover,

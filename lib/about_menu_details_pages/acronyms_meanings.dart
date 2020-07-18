@@ -84,6 +84,7 @@ class _AcronymsMeaningsState extends State<AcronymsMeanings> {
                           child: Padding(
                             padding: const EdgeInsets.only(top: 15, bottom: 15, left: 30, right: 30),
                             child: Text(acronymTitle,
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 25,
                                   fontStyle: FontStyle.italic,

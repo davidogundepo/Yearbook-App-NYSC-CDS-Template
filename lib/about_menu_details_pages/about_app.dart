@@ -10,7 +10,6 @@ String title = "About App";
 String imageAboutApp = "assets/images/fin_inc_cds_wwa.jpg";
 String nyscAlmanac = "$cdsName Almanac, 2020";
 String developerWebsite = "https://davidogundepo.wordpress.com/";
-
 String googlePlayServicesPolicyWebsite = "https://play.google.com/about/privacy-security-deception/";
 String googleAnalyticsFirebasePolicyWebsite = "https://firebase.google.com/policies/analytics/";
 String firebaseCrashlyticsPolicyWebsite = "https://firebase.google.com/support/privacy/";
