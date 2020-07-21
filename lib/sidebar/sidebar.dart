@@ -35,6 +35,8 @@ String exitAppYes = "I Have To";
 
 String imgAsset = "assets/images/fin_inc_17.jpg";
 
+//sense
+
 
 Color gradientColor = Color.fromRGBO(162, 78, 124, 1);
 Color gradientColorTwo = Color.fromRGBO(162, 92, 124, 1);
