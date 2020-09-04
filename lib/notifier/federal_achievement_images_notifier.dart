@@ -2,7 +2,7 @@
 import 'dart:collection';
 
 import 'package:flutter/cupertino.dart';
-import 'package:fnancialinclusioncds2020/model/FederalAchievements.dart';
+import '../model/FederalAchievements.dart';
 
 class FederalAchievementsNotifier with ChangeNotifier {
   List<FederalAchievements> _federalAchievementsList = [];

@@ -2,11 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fnancialinclusioncds2020/notifier/executive_cds_coordinators_notifier.dart';
+import '../notifier/executive_cds_coordinators_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
-
 
 
 String nyscBatch = "Nysc Batch\n";

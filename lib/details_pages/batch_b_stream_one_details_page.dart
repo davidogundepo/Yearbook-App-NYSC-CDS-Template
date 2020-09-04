@@ -3,7 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fnancialinclusioncds2020/notifier/batch_b_stream_one_notifier.dart';
+import '../notifier/batch_b_stream_one_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -52,7 +52,7 @@ String graduationYearTitle = "Graduation Year\n";
 String cdsExecutiveTitle = "CDS Executive\n";
 String cdsExecutivePositionTitle = "CDS Executive Position\n";
 String whatsNextAfterTitle = "What's next after NYSC\n";
-String currentLivingStateTitle = "State of Living\n";
+String currentResidenceStateTitle = "State of Residence\n";
 String stateOfOriginTitle = "State of Origin\n";
 String dobTitle = "Date of Birth\n";
 String nyscBatchTitle = "NYSC Batch\n";
@@ -137,6 +137,7 @@ var _originState;
 var _worstMoment;
 var _nyscBatch;
 var _occupation;
+
 
 
 class BatchBStreamOneDetailsPage extends StatefulWidget {
@@ -2356,7 +2357,7 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
                           TextSpan(
                             children: <TextSpan>[
                               TextSpan(
-                                  text: currentLivingStateTitle,
+                                  text: currentResidenceStateTitle,
                                   style: GoogleFonts.aBeeZee(
                                     color: textColor,
                                     fontSize: 19,
@@ -2398,7 +2399,7 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
                               TextSpan(
                                 children: <TextSpan>[
                                   TextSpan(
-                                      text: currentLivingStateTitle,
+                                      text: currentResidenceStateTitle,
                                       style: GoogleFonts.aBeeZee(
                                         color: textColor,
                                         fontSize: 19,

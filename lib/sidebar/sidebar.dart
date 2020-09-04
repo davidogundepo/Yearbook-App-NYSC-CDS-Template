@@ -4,7 +4,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fnancialinclusioncds2020/notifier/sidebar_notifier.dart';
+import '../notifier/sidebar_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -34,8 +34,6 @@ String exitAppNo = "Oh No";
 String exitAppYes = "I Have To";
 
 String imgAsset = "assets/images/fin_inc_17.jpg";
-
-//sense
 
 
 Color gradientColor = Color.fromRGBO(162, 78, 124, 1);

@@ -2,12 +2,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fnancialinclusioncds2020/notifier/lg_officials_notifier.dart';
+import '../notifier/lg_officials_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+
 
 String callFIRST = "tel:+234";
 String smsFIRST = "sms:+234";
@@ -97,6 +99,7 @@ var _stateOfOrigin;
 var _twitter;
 var _inceptionYear;
 var _positionEnforcing;
+
 
 class LGOfficialsDetailsPage extends StatefulWidget {
   @override

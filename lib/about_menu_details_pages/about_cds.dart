@@ -2,8 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:fnancialinclusioncds2020/api/achievement_images_api.dart';
-import 'package:fnancialinclusioncds2020/notifier/achievement_images_notifier.dart';
+import '../api/achievement_images_api.dart';
+import '../notifier/achievement_images_notifier.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
 
@@ -29,7 +29,7 @@ String cdsBody = "Financial Inclusion CDS Body\n\n";
 String cdsBodyStatement = "We currently have 54 corp members in $cdsName, 31 male corpers and 22 female corpers. 13 corp members have graduated from $cdsName.";
 String cdsPopulationChart = "$cdsName Corp Members Population Chart";
 
-String schoolAchievements = "Some of our achievements";
+String nyscAchievements = "Some of our achievements";
 String nyscAchievementsSwipe = "Swipe left or right for more photos";
 
 double maleCDSCorperPopulation = 31;
@@ -452,7 +452,7 @@ class _AboutCDS extends State<AboutCDS> {
 
             Padding(
               padding: const EdgeInsets.only(left: 20, bottom: 10),
-              child: Text(schoolAchievements,
+              child: Text(nyscAchievements,
                 style: TextStyle(
                     fontSize: 20,
                     color: materialTextColor,
