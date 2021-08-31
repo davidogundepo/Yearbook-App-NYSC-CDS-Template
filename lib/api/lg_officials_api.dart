@@ -4,15 +4,15 @@ import '../model/LGOfficials.dart';
 import '../notifier/lg_officials_notifier.dart';
 
 getLGOfficials(LGOfficialsNotifier lgOfficialsNotifier) async{
-  QuerySnapshot snapshot = await Firestore.instance
-      .collection('LGOfficials').orderBy("id").getDocuments();
+  QuerySnapshot snapshot = await FirebaseFirestore.instance
+      .collection('LGOfficials').orderBy("id").get();
 
-  List<LGOfficials> _lGOfficials = [];
+  List<LGOfficials> _lgOfficials = [];
 
-  snapshot.documents.forEach((document) {
-    LGOfficials lgOfficials = LGOfficials.fromMap(document.data);
-    _lGOfficials.add(lgOfficials);
+  snapshot.docs.forEach((document) {
+    LGOfficials lgOfficials = LGOfficials.fromMap(document.data());
+    _lgOfficials.add(lgOfficials);
   });
 
-  lgOfficialsNotifier.lGOfficialsList = _lGOfficials;
+  lgOfficialsNotifier.lgOfficialsList = _lgOfficials;
 }

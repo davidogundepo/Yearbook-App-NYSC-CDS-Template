@@ -4,12 +4,12 @@ import '../model/FederalArial.dart';
 import '../notifier/federal_arial_notifier.dart';
 
 getFederalArial(FederalArialNotifier federalArialNotifier) async{
-  QuerySnapshot snapshot = await Firestore.instance.collection('FederalArialViews').getDocuments();
+  QuerySnapshot snapshot = await FirebaseFirestore.instance.collection('FederalArialViews').get();
 
   List<FederalArial> _federalArialList = [];
 
-  snapshot.documents.forEach((document) {
-    FederalArial federalArial = FederalArial.fromMap(document.data);
+  snapshot.docs.forEach((document) {
+    FederalArial federalArial = FederalArial.fromMap(document.data());
     _federalArialList.add(federalArial);
   });
 

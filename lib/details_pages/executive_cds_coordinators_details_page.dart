@@ -8,7 +8,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:provider/provider.dart';
 
 
-String nyscBatch = "Nysc Batch\n";
+String nyscBatch = "NYSC Batch\n";
 String positionEnforced = "Position Enforced\n";
 
 Color backgroundColor = Color.fromRGBO(123, 176, 182, 1);

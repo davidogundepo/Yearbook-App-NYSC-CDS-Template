@@ -31,7 +31,7 @@ String exitAppYes = "I Have To";
 
 String whoWeAre = "Who We Are";
 String aboutCDS = "About $cdsName";
-String aboutNYSC = "About $nyscName 2020";
+String aboutNYSC = "About $nyscName 2021";
 String acronymMeanings = "Acronym Meanings";
 String aboutApp = "About App";
 

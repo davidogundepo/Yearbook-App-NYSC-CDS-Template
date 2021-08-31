@@ -4,13 +4,13 @@ import '../model/BatchBStreamTwo.dart';
 import '../notifier/batch_b_stream_two_notifier.dart';
 
 getBatchBStreamTwo(BatchBStreamTwoNotifier batchBStreamTwoNotifier) async{
-  QuerySnapshot snapshot = await Firestore.instance
-      .collection('BatchBStreamTwoCorpers').orderBy("name").getDocuments();
+  QuerySnapshot snapshot = await FirebaseFirestore.instance
+      .collection('BatchBStreamTwoCorpers').orderBy("name").get();
 
   List<BatchBStreamTwo> _batchBStreamTwoList = [];
 
-  snapshot.documents.forEach((document) {
-    BatchBStreamTwo batchBStreamTwo = BatchBStreamTwo.fromMap(document.data);
+  snapshot.docs.forEach((document) {
+    BatchBStreamTwo batchBStreamTwo = BatchBStreamTwo.fromMap(document.data());
     _batchBStreamTwoList.add(batchBStreamTwo);
   });
 

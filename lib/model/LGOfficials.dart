@@ -1,16 +1,15 @@
 class LGOfficials {
 
   String name;
-  String nickname;
   String id;
   String hobbies;
   String phone;
   String twitter;
   String autoBio;
-  String dob;
   String email;
   String image;
   String facebook;
+  String instagram;
   String philosophy;
   String stateOfOrigin;
   String inceptionYear;
@@ -24,12 +23,11 @@ class LGOfficials {
     autoBio = data['autobio'];
     email = data['email'];
     facebook = data['facebook'];
+    instagram = data['instagram'];
     image = data['image'];
     name = data['name'];
-    nickname = data['nickname'];
     phone = data['phone'];
     twitter = data['twitter'];
-    dob = data['d_o_b'];
     hobbies = data['hobbies'];
     positionEnforcing = data['position_enforcing'];
     inceptionYear = data['inception_year'];

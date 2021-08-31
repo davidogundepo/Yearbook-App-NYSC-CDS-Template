@@ -4,12 +4,12 @@ import '../model/FederalAchievements.dart';
 import '../notifier/federal_achievement_images_notifier.dart';
 
 getFederalAchievements(FederalAchievementsNotifier federalAchievementsNotifier) async{
-  QuerySnapshot snapshot = await Firestore.instance.collection('FederalAchievementImages').getDocuments();
+  QuerySnapshot snapshot = await FirebaseFirestore.instance.collection('FederalAchievementImages').get();
 
   List<FederalAchievements> _federalAchievementsList = [];
 
-  snapshot.documents.forEach((document) {
-    FederalAchievements federalAchievements = FederalAchievements.fromMap(document.data);
+  snapshot.docs.forEach((document) {
+    FederalAchievements federalAchievements = FederalAchievements.fromMap(document.data());
     _federalAchievementsList.add(federalAchievements);
   });
 

@@ -1,14 +1,15 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:provider/provider.dart';
 import '../api/federal_achievement_images_api.dart';
 import '../api/federal_arial_images_api.dart';
 import '../notifier/federal_achievement_images_notifier.dart';
 import '../notifier/federal_arial_notifier.dart';
 import 'package:pie_chart/pie_chart.dart';
-import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 String nyscName = "NYSC";
@@ -32,10 +33,10 @@ String whyNYSC = "WHY $nyscName?".toUpperCase();
 String whyNYSCStatement = "$nyscName scheme was created in a bid to reconstruct, reconcile and rebuild the country after the Nigerian Civil war. The unfortunate antecedents in our national history gave impetus to the establishment of the National Youth Service Corps by decree No.24 of 22nd May 1973 which stated that the NYSC is being established with a view to the proper encouragement and development of common ties among the youths of Nigeria and the promotion of national unity.";
 String staffBody = "$nyscName Staff Body all over Nigeria\n\n";
 String staffBodyStatement = "We have 4,054 NYSC Staff all over the states of Nigeria.";
-String populationChart = "$nyscName 2019/2020 Population Chart";
+String populationChart = "$nyscName 2020/2021 Population Chart";
 String corperBody = "Corp Members all over Nigeria\n\n";
-String corperBodyStatement = "We currently have 314,064 corp members serving in $nyscName all over Nigeria, 2019/2020 session through Batch A till Batch C.\n186,541 male corp members and 127,523 female corp members.\n9,377,910 corp members have graduated from $nyscName, since the inception, 22nd May 1973.";
-String corperPopulationChart = "$nyscName 2019/2020 Corp Member Population Chart";
+String corperBodyStatement = "We currently have 314,064 corp members serving in $nyscName all over Nigeria, 2019/2021 session through Batch A till Batch C.\n186,541 male corp members and 127,523 female corp members.\n9,377,910 corp members have graduated from $nyscName, since the inception, 22nd May 1973.";
+String corperPopulationChart = "$nyscName 2020/2021 Corp Member Population Chart";
 
 String orientationCampSwipe = "Swipe up for all Orientation Camps";
 String orientationCamp = "Addresses of NYSC Orientation Camps in all states";
@@ -77,7 +78,7 @@ String stateOrientationCamp35 = "35. TARABA State. NYSC Permanent Orientation Ca
 String stateOrientationCamp36 = "36. YOBE State. College of Administration and Business Studies, Potiskum, Yobe State.\n\n";
 String stateOrientationCamp37 = "37. ZAMFARA State. NYSC Permanent Orientation Camp, Beside FRSC Office, Tsafe Local Government Area, Zamfara State.\n\n";
 
-String cdsGroups = "Some CDS Groups NYSC Provided to it's Corp Members\n\n";
+String cdsGroups = "Some CDS Groups NYSC Provided to its Corp Members\n\n";
 String someCdsGroups1 = "1. Red Cross CDS\n";
 String someCdsGroups2 = "2. Financial Inclusion CDS Group\n";
 String someCdsGroups3 = "3. EFCC CDS\n";

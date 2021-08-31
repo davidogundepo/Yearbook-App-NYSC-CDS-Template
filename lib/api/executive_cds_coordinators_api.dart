@@ -4,13 +4,13 @@ import '../model/ExecutiveCDSCoordinators.dart';
 import '../notifier/executive_cds_coordinators_notifier.dart';
 
 getExecutiveCDSCoordinators(ExecutiveCDSCoordinatorsNotifier executiveCDSCoordinatorsNotifier) async{
-  QuerySnapshot snapshot = await Firestore.instance
-      .collection('ExecutiveCDSCoordinators').orderBy("id").getDocuments();
+  QuerySnapshot snapshot = await FirebaseFirestore.instance
+      .collection('ExecutiveCDSCoordinators').orderBy("id").get();
 
   List<ExecutiveCDSCoordinators> _executiveCDSCoordinators = [];
 
-  snapshot.documents.forEach((document) {
-    ExecutiveCDSCoordinators executiveCDSCoordinators = ExecutiveCDSCoordinators.fromMap(document.data);
+  snapshot.docs.forEach((document) {
+    ExecutiveCDSCoordinators executiveCDSCoordinators = ExecutiveCDSCoordinators.fromMap(document.data());
     _executiveCDSCoordinators.add(executiveCDSCoordinators);
   });
 

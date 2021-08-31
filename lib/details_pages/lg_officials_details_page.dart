@@ -22,8 +22,8 @@ String urlTwitter = "https://twitter.com/";
 String urlFacebook = "https://facebook.com/";
 String urlInstagram = "https://www.instagram.com/";
 
-String reachDetails = "Reach";
-String autoBioDetails = "AutoBio";
+String reachDetails = "Contacts";
+String autoBioDetails = "AutoBiography";
 
 String callButton = "Call";
 String messageButton = "Send a Message";
@@ -31,15 +31,14 @@ String whatsAppButton = "Send a WhatsApp Message";
 String emailButton = "Send an Email";
 String twitterButton = "My Twitter";
 String instagramButton = "My Instagram";
-String linkedInButton = "My LinkedIn";
 String facebookButton = "My Facebook";
+String snapchatButton = "My Snapchat";
+String tikTokButton = "My TikTok";
 
 String autobiographyTitle = "Autobiography\n";
-String nicknameTitle = "My Nickname\n";
 String positionEnforcingTitle = "Position Enforcing\n";
 String yearOfInceptionTitle = "Year of Inception\n";
 String stateOfOriginTitle = "State of Origin\n";
-String dobTitle = "Date of Birth\n";
 String hobbiesTitle = "Hobbies\n";
 String philosophyTitle = "Philosophy about Life\n";
 String academicQualificationTitle = "Academic Qualification\n";
@@ -87,12 +86,11 @@ Map<int, Widget> userBIO;
 
 var _academicQualification;
 var _autoBio;
-var _dob;
 var _email;
 var _facebook;
+var _instagram;
 var _hobbies;
 var _name;
-var _nickname;
 var _philosophy;
 var _phone;
 var _stateOfOrigin;
@@ -151,16 +149,6 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
         backgroundColor: backgroundColor,
         appBar: AppBar(
           centerTitle: true,
-          title: Text(
-            lgOfficialsNotifier.currentLGOfficials.nickname,
-            style: GoogleFonts.sanchez(
-                color: appBarTextColor, fontSize: 25, fontWeight: FontWeight.w400),
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(30),
-            ),
-          ),
           elevation: 10,
           backgroundColor: appBarBackgroundColor,
           leading: IconButton(
@@ -316,15 +304,14 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
 
     _autoBio = lgOfficialsNotifier.currentLGOfficials.autoBio;
     _stateOfOrigin = lgOfficialsNotifier.currentLGOfficials.stateOfOrigin;
-    _dob = lgOfficialsNotifier.currentLGOfficials.dob;
     _academicQualification = lgOfficialsNotifier.currentLGOfficials.academicQualification;
     _email = lgOfficialsNotifier.currentLGOfficials.email;
     _facebook = lgOfficialsNotifier.currentLGOfficials.facebook;
+    _instagram = lgOfficialsNotifier.currentLGOfficials.instagram;
     _hobbies = lgOfficialsNotifier.currentLGOfficials.hobbies;
     _inceptionYear = lgOfficialsNotifier.currentLGOfficials.inceptionYear;
     _positionEnforcing = lgOfficialsNotifier.currentLGOfficials.positionEnforcing;
     _name = lgOfficialsNotifier.currentLGOfficials.name;
-    _nickname = lgOfficialsNotifier.currentLGOfficials.nickname;
     _philosophy = lgOfficialsNotifier.currentLGOfficials.philosophy;
     _phone = lgOfficialsNotifier.currentLGOfficials.phone;
     _twitter = lgOfficialsNotifier.currentLGOfficials.twitter;
@@ -600,7 +587,13 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                               fontSize: 18,
                               fontWeight: FontWeight.w300)),
                       onPressed: () {
-                        launchURL(urlTwitter + _twitter);
+                        if (_twitter.toString().startsWith('@')) {
+                          var most = _twitter.toString().substring(1);
+                          launchURL(urlTwitter + most);
+                        }
+                        else {
+                          launchURL(urlTwitter + _twitter);
+                        }
                       },
                     ),
                   ),
@@ -635,7 +628,68 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
                 );
               }
             }()),
-
+            (() {
+              if (_instagram.toString().isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: InkWell(
+                    splashColor: splashColorTwo,
+                    child: RaisedButton.icon(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 2,
+                      color: buttonColor,
+                      icon: new Icon(
+                        MdiIcons.instagram,
+                        color: iconTextColor,
+                      ),
+                      label: Text(instagramButton,
+                          style: GoogleFonts.abel(
+                              color: iconTextColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300)),
+                      onPressed: () {
+                        if (_instagram.toString().startsWith('@')) {
+                          var most = _instagram.toString().substring(1);
+                          launchURL(urlInstagram + most);
+                        }
+                        else {
+                          launchURL(urlInstagram + _instagram);
+                        }
+                      },
+                    ),
+                  ),
+                );
+              } else {
+                return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      splashColor: splashColorTwo,
+                      child: RaisedButton.icon(
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 2,
+                        color: buttonColor,
+                        icon: new Icon(
+                          MdiIcons.instagram,
+                          color: iconTextColor,
+                        ),
+                        label: Text(instagramButton,
+                            style: GoogleFonts.abel(
+                                color: iconTextColor,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w300)),
+                        onPressed: () {
+                          launchURL(urlInstagram + _instagram);
+                        },
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }()),
             (() {
               if (_facebook.toString().isNotEmpty) {
                 return Padding(
@@ -787,93 +841,6 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
           }()),
 
           (() {
-            if (_nickname.toString().isNotEmpty) {
-              return Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Container(
-                  child: Material(
-                    color: materialBackgroundColor,
-                    child: InkWell(
-                      splashColor: splashColor,
-                      onTap: () {},
-                      child: Padding(
-                        padding:
-                        const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                        child: Text.rich(
-                          TextSpan(
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: nicknameTitle,
-                                  style: GoogleFonts.aBeeZee(
-                                    color: textColor,
-                                    fontSize: 19,
-                                    fontWeight: FontWeight.bold,
-                                  )),
-                              TextSpan(
-                                  text: ' ' + _nickname,
-                                  style: GoogleFonts.trykker(
-                                    color: textColor,
-                                    fontSize: 19,
-                                    fontWeight: FontWeight.w300,
-                                  )),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                      color: shapeDecorationColor.withAlpha(50),
-                      borderRadius: new BorderRadius.circular(10)),
-                ),
-              );
-            } else {
-              return Visibility(
-                  visible: !_isVisible,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
-                    child: Container(
-                      child: Material(
-                        color: materialBackgroundColor,
-                        child: InkWell(
-                          splashColor: splashColor,
-                          onTap: () {},
-                          child: Padding(
-                            padding:
-                            const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                            child: Text.rich(
-                              TextSpan(
-                                children: <TextSpan>[
-                                  TextSpan(
-                                      text: nicknameTitle,
-                                      style: GoogleFonts.aBeeZee(
-                                        color: textColor,
-                                        fontSize: 19,
-                                        fontWeight: FontWeight.bold,
-                                      )),
-                                  TextSpan(
-                                      text: ' ' + _nickname,
-                                      style: GoogleFonts.trykker(
-                                        color: textColor,
-                                        fontSize: 19,
-                                        fontWeight: FontWeight.w300,
-                                      )),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                          color: shapeDecorationColor.withAlpha(50),
-                          borderRadius: new BorderRadius.circular(10)),
-                    ),
-                  )
-              );
-            }
-          }()),
-
-          (() {
             if (_positionEnforcing.toString().isNotEmpty) {
               return Padding(
                 padding: const EdgeInsets.only(top: 20.0),
@@ -959,7 +926,6 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
               );
             }
           }()),
-
 
           (() {
             if (_inceptionYear.toString().isNotEmpty) {
@@ -1048,7 +1014,6 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
               );
             }
           }()),
-
 
           (() {
             if (_academicQualification.toString().isNotEmpty) {
@@ -1235,101 +1200,6 @@ class _LGOfficialsDetailsPageState extends State<LGOfficialsDetailsPage> {
               );
             }
           }()),
-
-
-          (() {
-            if (_dob.toString().isNotEmpty) {
-              return Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Container(
-                  child: Material(
-                    color: materialBackgroundColor,
-                    child: InkWell(
-                      splashColor: splashColor,
-                      onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                        child: Text.rich(
-                          TextSpan(
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: dobTitle,
-                                  style:  GoogleFonts.aBeeZee(
-                                    color: textColor,
-                                    fontSize: 19,
-                                    fontWeight: FontWeight.bold,
-                                  )
-                              ),
-                              TextSpan(
-                                  text: ' '+_dob,
-                                  style: GoogleFonts.trykker(
-                                    color: textColor,
-                                    fontSize: 19,
-                                    fontWeight: FontWeight.w300,
-                                  )
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  decoration: BoxDecoration(
-                      color: shapeDecorationColor.withAlpha(50),
-                      borderRadius: new BorderRadius.circular(10)
-                  ),
-                ),
-              );
-            } else {
-              return Visibility(
-                  visible: !_isVisible,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
-                    child: Container(
-                      child: Material(
-                        color: materialBackgroundColor,
-                        child: InkWell(
-                          splashColor: splashColor,
-                          onTap: () {},
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
-                            child: Text.rich(
-                              TextSpan(
-                                children: <TextSpan>[
-                                  TextSpan(
-                                      text: dobTitle,
-                                      style:  GoogleFonts.aBeeZee(
-                                        color: textColor,
-                                        fontSize: 19,
-                                        fontWeight: FontWeight.bold,
-                                      )
-                                  ),
-                                  TextSpan(
-                                      text: ' '+_dob,
-                                      style: GoogleFonts.trykker(
-                                        color: textColor,
-                                        fontSize: 19,
-                                        fontWeight: FontWeight.w300,
-                                      )
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-
-                      decoration: BoxDecoration(
-                          color: shapeDecorationColor.withAlpha(50),
-                          borderRadius: new BorderRadius.circular(10)
-                      ),
-                    ),
-                  )
-              );
-            }
-          }()),
-
 
           (() {
             if (_hobbies.toString().isNotEmpty) {

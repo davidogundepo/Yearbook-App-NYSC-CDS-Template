@@ -31,7 +31,7 @@ String exitAppYes = "I Have To";
 
 String whoWeAre = "Who We Are";
 String aboutCDS = "About $cdsName";
-String aboutNYSC = "About $nyscName 2020";
+String aboutNYSC = "About $nyscName 2021";
 String acronymMeanings = "Acronym Meanings";
 String aboutApp = "About App";
 
@@ -82,7 +82,7 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
           child: InkWell(
             splashColor: splashColor,
             onTap: () {
-              lgOfficialsNotifier.currentLGOfficials = lgOfficialsNotifier.lGOfficialsList[index];
+              lgOfficialsNotifier.currentLGOfficials = lgOfficialsNotifier.lgOfficialsList[index];
               navigateToLGOfficialsDetailsPage(context);
             },
 
@@ -99,7 +99,7 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
                         image: DecorationImage(
                             alignment: Alignment(0, -1),
                             image: CachedNetworkImageProvider(
-                                lgOfficialsNotifier.lGOfficialsList[index].image
+                                lgOfficialsNotifier.lgOfficialsList[index].image
                             ),
                             fit: BoxFit.cover
                         )
@@ -115,7 +115,7 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
                           child: Row(
                             children: <Widget>[
                               Text(
-                                  lgOfficialsNotifier.lGOfficialsList[index].name,
+                                  lgOfficialsNotifier.lgOfficialsList[index].name,
                                   style: GoogleFonts.tenorSans(
                                       color: textColor,
                                       fontSize: 17,
@@ -134,7 +134,7 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
                         Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Text(
-                              lgOfficialsNotifier.lGOfficialsList[index].positionEnforcing,
+                              lgOfficialsNotifier.lgOfficialsList[index].positionEnforcing,
                               style: GoogleFonts.varela(
                                   color: textColor,
                                   fontStyle: FontStyle.italic
@@ -334,12 +334,12 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
                     ),
                     IconButton(
                       icon: Icon(MdiIcons.magnify, color: iconColor),
-                      onPressed: lgOfficialsNotifier.lGOfficialsList == null
+                      onPressed: lgOfficialsNotifier.lgOfficialsList == null
                           ? null
                           : (){
                         showSearch(
                           context: context,
-                          delegate: MyLGOfficialsSearch(all: lgOfficialsNotifier.lGOfficialsList),
+                          delegate: MyLGOfficialsSearch(all: lgOfficialsNotifier.lgOfficialsList),
                         );
                       },
                       tooltip: "Search",
@@ -379,7 +379,7 @@ class _MyLGOfficialsPageState extends State<MyLGOfficialsPage> {
                 ),
                 child: ListView.builder(
                   itemBuilder: _buildProductItem,
-                  itemCount: lgOfficialsNotifier.lGOfficialsList.length,
+                  itemCount: lgOfficialsNotifier.lgOfficialsList.length,
                 ),
               ),
             ),

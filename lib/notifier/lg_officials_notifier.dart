@@ -6,20 +6,20 @@ import 'package:flutter/cupertino.dart';
 import '../model/LGOfficials.dart';
 
 class LGOfficialsNotifier with ChangeNotifier {
-  List<LGOfficials> _lGOfficialsList = [];
+  List<LGOfficials> _lgOfficialsList = [];
   LGOfficials _currentLGOfficials;
 
-  UnmodifiableListView<LGOfficials> get lGOfficialsList => UnmodifiableListView(_lGOfficialsList);
+  UnmodifiableListView<LGOfficials> get lgOfficialsList => UnmodifiableListView(_lgOfficialsList);
 
   LGOfficials get currentLGOfficials => _currentLGOfficials;
 
-  set lGOfficialsList(List<LGOfficials> lGOfficialsList) {
-    _lGOfficialsList = lGOfficialsList;
+  set lgOfficialsList(List<LGOfficials> lgOfficialsList) {
+    _lgOfficialsList = lgOfficialsList;
     notifyListeners();
   }
 
-  set currentLGOfficials(LGOfficials lGOfficials) {
-    _currentLGOfficials = lGOfficials;
+  set currentLGOfficials(LGOfficials lgOfficials) {
+    _currentLGOfficials = lgOfficials;
     notifyListeners();
   }
 

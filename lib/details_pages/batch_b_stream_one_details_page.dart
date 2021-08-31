@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../notifier/batch_b_stream_one_notifier.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -22,12 +23,14 @@ String urlTwitter = "https://twitter.com/";
 String urlFacebook = "https://facebook.com/";
 String urlInstagram = "https://www.instagram.com/";
 String urlLinkedIn = "https://www.linkedin.com/";
+String urlSnapchat = "https://www.snapchat.com/";
+String urlTikTok = "https://www.tiktok.com/";
 
 
 String cdsName = "Financial Inclusion CDS";
 
-String reachDetails = "Reach";
-String autoBioDetails = "AutoBio";
+String reachDetails = "Contacts";
+String autoBioDetails = "AutoBiography";
 
 String callButton = "Call";
 String messageButton = "Send a Message";
@@ -37,6 +40,8 @@ String twitterButton = "My Twitter";
 String instagramButton = "My Instagram";
 String linkedInButton = "My LinkedIn";
 String facebookButton = "My Facebook";
+String snapchatButton = "My Snapchat";
+String tikTokButton = "My TikTok";
 
 String autobiographyTitle = "Autobiography\n";
 String nicknameTitle = "My Nickname\n";
@@ -49,6 +54,8 @@ String almaMaterTitle = "Alma Mater\n";
 String courseOfStudyTitle = "Course of Study\n";
 String academicQualificationTitle = "Academic Qualification\n";
 String graduationYearTitle = "Graduation Year\n";
+String platoonTitle = "Platoon allocated during Camp\n";
+String campStateTitle = "Camp State\n";
 String cdsExecutiveTitle = "CDS Executive\n";
 String cdsExecutivePositionTitle = "CDS Executive Position\n";
 String whatsNextAfterTitle = "What's next after NYSC\n";
@@ -131,7 +138,12 @@ var _cdsExecutivePosition;
 var _ppaLocation;
 var _ppaName;
 var _twitter;
-//var _whatsNext;
+
+var _snapchat;
+var _tikTok;
+var _whatsNext;
+var _platoon;
+var _campState;
 var _stateLiving;
 var _originState;
 var _worstMoment;
@@ -386,7 +398,11 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
     _ppaLocation = batchBStreamOneNotifier.currentBatchBStreamOne.ppaLocation;
     _ppaName = batchBStreamOneNotifier.currentBatchBStreamOne.ppaName;
     _originState = batchBStreamOneNotifier.currentBatchBStreamOne.stateOfOrigin;
-//    _whatsNext = batchBStreamOneNotifier.currentBatchBStreamOne.whatsNext;
+    _snapchat = batchBStreamOneNotifier.currentBatchBStreamOne.snapchat;
+    _tikTok = batchBStreamOneNotifier.currentBatchBStreamOne.tikTok;
+    _platoon = batchBStreamOneNotifier.currentBatchBStreamOne.stateOfOrigin;
+    _campState = batchBStreamOneNotifier.currentBatchBStreamOne.stateOfOrigin;
+    _whatsNext = batchBStreamOneNotifier.currentBatchBStreamOne.whatsNext;
     _stateLiving = batchBStreamOneNotifier.currentBatchBStreamOne.whereYouLive;
     _bestMoment = batchBStreamOneNotifier.currentBatchBStreamOne.bestMoment;
     _dob = batchBStreamOneNotifier.currentBatchBStreamOne.dob;
@@ -679,7 +695,13 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
                               fontSize: 18,
                               fontWeight: FontWeight.w300)),
                       onPressed: () {
-                        launchURL(urlTwitter + _twitter);
+                        if (_twitter.toString().startsWith('@')) {
+                          var most = _twitter.toString().substring(1);
+                          launchURL(urlTwitter + most);
+                        }
+                        else {
+                          launchURL(urlTwitter + _twitter);
+                        }
                       },
                     ),
                   ),
@@ -735,7 +757,13 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
                               fontSize: 18,
                               fontWeight: FontWeight.w300)),
                       onPressed: () {
-                        launchURL(urlInstagram + _instagram);
+                        if (_instagram.toString().startsWith('@')) {
+                          var most = _instagram.toString().substring(1);
+                          launchURL(urlInstagram + most);
+                        }
+                        else {
+                          launchURL(urlInstagram + _instagram);
+                        }
                       },
                     ),
                   ),
@@ -770,6 +798,133 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
                 );
               }
             }()),
+
+            (() {
+              if (_snapchat.toString().isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: InkWell(
+                    splashColor: splashColorTwo,
+                    child: RaisedButton.icon(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 2,
+                      color: buttonColor,
+                      icon: new Icon(
+                        MdiIcons.snapchat,
+                        color: iconTextColor,
+                      ),
+                      label: Text(snapchatButton,
+                          style: GoogleFonts.abel(
+                              color: iconTextColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300)),
+                      onPressed: () {
+                        if (_snapchat.toString().startsWith('@')) {
+                          var most = _instagram.toString().substring(1);
+                          launchURL(urlSnapchat + most);
+                        }
+                        else {
+                          launchURL(urlSnapchat + _snapchat);
+                        }
+                      },
+                    ),
+                  ),
+                );
+              } else {
+                return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      splashColor: splashColorTwo,
+                      child: RaisedButton.icon(
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 2,
+                        color: buttonColor,
+                        icon: new Icon(
+                          MdiIcons.snapchat,
+                          color: iconTextColor,
+                        ),
+                        label: Text(snapchatButton,
+                            style: GoogleFonts.abel(
+                                color: iconTextColor,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w300)),
+                        onPressed: () {
+                          launchURL(urlSnapchat + _snapchat);
+                        },
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }()),
+
+            (() {
+              if (_tikTok.toString().isNotEmpty) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: InkWell(
+                    splashColor: splashColorTwo,
+                    child: RaisedButton.icon(
+                      shape: BeveledRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      elevation: 2,
+                      color: buttonColor,
+                      icon: new FaIcon(
+                        FontAwesomeIcons.tiktok,
+                        color: iconTextColorTwo,
+                      ),
+                      label: Text(tikTokButton,
+                          style: GoogleFonts.abel(
+                              color: iconTextColorTwo,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300)),
+                      onPressed: () {
+                        if (_tikTok.toString().startsWith('@')) {
+                          var most = _tikTok.toString().substring(1);
+                          launchURL(urlTikTok + most);
+                        }
+                        else {
+                          launchURL(urlTikTok + _tikTok);
+                        }
+                      },
+                    ),
+                  ),
+                );
+              } else {
+                return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: InkWell(
+                      splashColor: splashColorTwo,
+                      child: RaisedButton.icon(
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 2,
+                        color: buttonColor,
+                        icon: new FaIcon(
+                          FontAwesomeIcons.tiktok,
+                          color: iconTextColorTwo,
+                        ),
+                        label: Text(tikTokButton,
+                            style: GoogleFonts.abel(
+                                color: iconTextColorTwo,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w300)),
+                        onPressed: () {
+                          launchURL(urlTikTok + _tikTok);
+                        },
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }()),
+
             (() {
               if (_facebook.toString().isNotEmpty) {
                 return Padding(
@@ -832,6 +987,7 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
                 );
               }
             }()),
+
             (() {
               if (_linkedIn.toString().isNotEmpty) {
                 return Padding(
@@ -1157,7 +1313,6 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
             }
           }()),
 
-
           (() {
             if (_worstMoment.toString().isNotEmpty) {
               return Padding(
@@ -1432,7 +1587,6 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
             }
           }()),
 
-
           (() {
             if (_ppaAssignment.toString().isNotEmpty) {
               return Padding(
@@ -1526,6 +1680,191 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
             }
           }()),
 
+          (() {
+            if (_platoon.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: materialBackgroundColor,
+                    child: InkWell(
+                      splashColor: splashColor,
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
+                          TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: platoonTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: textColor,
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_platoon,
+                                  style: GoogleFonts.trykker(
+                                    color: textColor,
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  decoration: BoxDecoration(
+                      color: shapeDecorationColor.withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: materialBackgroundColor,
+                        child: InkWell(
+                          splashColor: splashColor,
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: platoonTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: textColor,
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_platoon,
+                                      style: GoogleFonts.trykker(
+                                        color: textColor,
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: shapeDecorationColor.withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
+            }
+          }()),
+
+          (() {
+            if (_campState.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: materialBackgroundColor,
+                    child: InkWell(
+                      splashColor: splashColor,
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
+                          TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: campStateTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: textColor,
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_campState,
+                                  style: GoogleFonts.trykker(
+                                    color: textColor,
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  decoration: BoxDecoration(
+                      color: shapeDecorationColor.withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: materialBackgroundColor,
+                        child: InkWell(
+                          splashColor: splashColor,
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: campStateTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: textColor,
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_campState,
+                                      style: GoogleFonts.trykker(
+                                        color: textColor,
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: shapeDecorationColor.withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
+            }
+          }()),
 
           (() {
             if (_almaMater.toString().isNotEmpty) {
@@ -1806,7 +2145,6 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
             }
           }()),
 
-
           (() {
             if (_graduationYear.toString().isNotEmpty) {
               return Padding(
@@ -1899,7 +2237,6 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
               );
             }
           }()),
-
 
           (() {
             if (_cdsExecutive.toString() == "Yes") {
@@ -2077,6 +2414,99 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
                           borderRadius: new BorderRadius.circular(10)),
                     ),
                   ));
+            }
+          }()),
+
+          (() {
+            if (_whatsNext.toString().isNotEmpty) {
+              return Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  child: Material(
+                    color: materialBackgroundColor,
+                    child: InkWell(
+                      splashColor: splashColor,
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                        child: Text.rich(
+                          TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: whatsNextAfterTitle,
+                                  style:  GoogleFonts.aBeeZee(
+                                    color: textColor,
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.bold,
+                                  )
+                              ),
+                              TextSpan(
+                                  text: ' '+_whatsNext,
+                                  style: GoogleFonts.trykker(
+                                    color: textColor,
+                                    fontSize: 19,
+                                    fontWeight: FontWeight.w300,
+                                  )
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  decoration: BoxDecoration(
+                      color: shapeDecorationColor.withAlpha(50),
+                      borderRadius: new BorderRadius.circular(10)
+                  ),
+                ),
+              );
+            } else {
+              return Visibility(
+                  visible: !_isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Material(
+                        color: materialBackgroundColor,
+                        child: InkWell(
+                          splashColor: splashColor,
+                          onTap: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 15, top: 15, left: 25),
+                            child: Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: whatsNextAfterTitle,
+                                      style:  GoogleFonts.aBeeZee(
+                                        color: textColor,
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                      text: ' '+_whatsNext,
+                                      style: GoogleFonts.trykker(
+                                        color: textColor,
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      decoration: BoxDecoration(
+                          color: shapeDecorationColor.withAlpha(50),
+                          borderRadius: new BorderRadius.circular(10)
+                      ),
+                    ),
+                  )
+              );
             }
           }()),
 
