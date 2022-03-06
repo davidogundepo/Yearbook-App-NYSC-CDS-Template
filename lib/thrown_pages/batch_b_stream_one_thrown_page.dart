@@ -464,7 +464,8 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                                             ),
                                           ),
                                           onTap: () {
-                                            navigateToWhoWeArePage(context);
+                                          Navigator.of(context).pop(false);
+                                          navigateToWhoWeArePage(context);
                                           }
                                       ),
                                       ListTile(
@@ -474,6 +475,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                                             color: textColor,
                                           ),),
                                         onTap: () {
+                                          Navigator.of(context).pop(false);
                                           navigateToAboutCDS(context);
                                         },
                                       ),
@@ -484,6 +486,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                                             color: textColor,
                                           ),),
                                         onTap: () {
+                                          Navigator.of(context).pop(false);
                                           navigateToAboutNYSCFederalState(context);
                                         },
                                       ),
@@ -495,7 +498,8 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                                               color: textColor,
                                             ),),
                                           onTap: () {
-                                            navigateToAcronymsMeaningsPage(context);
+                                          Navigator.of(context).pop(false);
+                                          navigateToAcronymsMeaningsPage(context);
                                           }
                                       ),
                                       ListTile(
@@ -505,6 +509,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                                             color: textColor,
                                           ),),
                                         onTap: () {
+                                          Navigator.of(context).pop(false);
                                           navigateToAboutAppDetailsPage(context);
                                         },
                                       ),
@@ -540,7 +545,7 @@ class _MyBatchBStreamOnePageState extends State<MyBatchBStreamOnePage> {
                       child: Text(
                           thrownName,
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.amaticSC(
+                          style: GoogleFonts.abel(
                               color: textColor,
                               fontSize: 26.0,
                               fontWeight: FontWeight.bold

@@ -21,8 +21,8 @@ String urlTwitter = "https://twitter.com/";
 String urlFacebook = "https://facebook.com/";
 String urlInstagram = "https://www.instagram.com/";
 String urlLinkedIn = "https://www.linkedin.com/";
-String urlSnapchat = "https://www.snapchat.com/";
-String urlTikTok = "https://www.tiktok.com/";
+String urlSnapchat = "https://www.snapchat.com/add/";
+String urlTikTok = "https://www.tiktok.com/@";
 
 
 String cdsName = "Financial Inclusion CDS";
@@ -169,7 +169,8 @@ class _BatchAStreamTwoDetailsPageState extends State<BatchAStreamTwoDetailsPage>
     if(await canLaunch(url)) {
       await launch(url);
     } else{
-      print("Can't Launch $url");
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: new Text("The required App not installed")));
     }
   }
 
@@ -684,7 +685,7 @@ class _BatchAStreamTwoDetailsPageState extends State<BatchAStreamTwoDetailsPage>
                       elevation: 2,
                       color: buttonColor,
                       icon: new Icon(
-                        MdiIcons.twitterCircle,
+                        MdiIcons.twitter,
                         color: iconTextColorTwo,
                       ),
                       label: Text(twitterButton,
@@ -717,7 +718,7 @@ class _BatchAStreamTwoDetailsPageState extends State<BatchAStreamTwoDetailsPage>
                         elevation: 2,
                         color: buttonColor,
                         icon: new Icon(
-                          MdiIcons.twitterCircle,
+                          MdiIcons.twitter,
                           color: iconTextColorTwo,
                         ),
                         label: Text(twitterButton,
@@ -811,11 +812,11 @@ class _BatchAStreamTwoDetailsPageState extends State<BatchAStreamTwoDetailsPage>
                       color: buttonColor,
                       icon: new Icon(
                         MdiIcons.snapchat,
-                        color: iconTextColor,
+                        color: iconTextColorTwo,
                       ),
                       label: Text(snapchatButton,
                           style: GoogleFonts.abel(
-                              color: iconTextColor,
+                              color: iconTextColorTwo,
                               fontSize: 18,
                               fontWeight: FontWeight.w300)),
                       onPressed: () {
@@ -999,7 +1000,7 @@ class _BatchAStreamTwoDetailsPageState extends State<BatchAStreamTwoDetailsPage>
                       elevation: 2,
                       color: buttonColor,
                       icon: new Icon(
-                        MdiIcons.linkedinBox,
+                        MdiIcons.linkedin,
                         color: iconTextColorTwo,
                       ),
                       label: Text(
@@ -1030,7 +1031,7 @@ class _BatchAStreamTwoDetailsPageState extends State<BatchAStreamTwoDetailsPage>
                         elevation: 2,
                         color: buttonColor,
                         icon: new Icon(
-                          MdiIcons.linkedinBox,
+                          MdiIcons.linkedin,
                           color: iconTextColorTwo,
                         ),
                         label: Text(

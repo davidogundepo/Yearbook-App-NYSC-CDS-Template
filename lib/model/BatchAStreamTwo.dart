@@ -70,8 +70,8 @@ class BatchAStreamTwo {
     myDropline = data['my_dropline'];
     philosophy = data['philosophy'];
     worstMoment = data['worst_moment'];
-    nyscBatch = data['name'];
-    occupation = data['name'];
+    nyscBatch = data['nysc_batch'];
+    occupation = data['occupation'];
   }
 
 }

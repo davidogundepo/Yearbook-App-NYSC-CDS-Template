@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>150068046033-c34pngfr45evj6krpkbo0r5vgfojd2u0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.150068046033-c34pngfr45evj6krpkbo0r5vgfojd2u0</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>150068046033-3r0uar34f4saicbscmord1vbf3qfuhk8.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAjKiuHhypWD9344mfM3BwJOxWEZLVMJWg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>150068046033</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.icdatinnovations.fnancialinclusioncds2020</string>
+	<key>PROJECT_ID</key>
+	<string>fin-inc-yearbook</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fin-inc-yearbook.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:150068046033:ios:2b462f2e85b8eaa8b17df0</string>
+	<key>DATABASE_URL</key>
+	<string>https://fin-inc-yearbook.firebaseio.com</string>
+</dict>
+</plist>
