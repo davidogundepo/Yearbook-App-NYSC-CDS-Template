@@ -40,11 +40,11 @@ dependencies:
   confetti: ^0.5.5
   firebase_crashlytics: ^2.2.1
   firebase_analytics: ^8.3.2
-  flutter_launcher_icons: ^0.9.2
   flutter_app_name: ^0.1.0
   toast: ^0.1.5
   characters: ^1.1.0
   font_awesome_flutter: ^9.1.0
+  flutter_launcher_icons: ^0.9.2
   flutter_icons: ^1.1.0
   lottie: ^1.1.0
   animated_splash_screen: ^1.1.0
@@ -60,17 +60,18 @@ flutter_native_splash:
 
 
 dev_dependencies:
-  flutter_native_splash: ^1.2.3
+  flutter_native_splash: ^2.1.0
   flutter_test:
     sdk: flutter
 
-flutter_launcher_name:
-  name: "NG NYSC CDS ALMANAC Template"
+flutter_app_name:
+#  name: "NG NYSC CDS ALMANAC Template"
+  name: "NG NYSC CDS"
 
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/nysc.jpg"
+  image_path: "assets/images/nysc_icon_1.png"
 
 #dependency_overrides:
 #  firebase_core: 0.5.3

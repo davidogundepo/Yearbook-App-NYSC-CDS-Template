@@ -399,8 +399,8 @@ class _BatchCStreamOneDetailsPageState extends State<BatchCStreamOneDetailsPage>
     _originState = batchCStreamOneNotifier.currentBatchCStreamOne.stateOfOrigin;
     _snapchat = batchCStreamOneNotifier.currentBatchCStreamOne.snapchat;
     _tikTok = batchCStreamOneNotifier.currentBatchCStreamOne.tikTok;
-    _platoon = batchCStreamOneNotifier.currentBatchCStreamOne.stateOfOrigin;
-    _campState = batchCStreamOneNotifier.currentBatchCStreamOne.stateOfOrigin;
+    _platoon = batchCStreamOneNotifier.currentBatchCStreamOne.platoon;
+    _campState = batchCStreamOneNotifier.currentBatchCStreamOne.campState;
     _whatsNext = batchCStreamOneNotifier.currentBatchCStreamOne.whatsNext;
     _stateLiving = batchCStreamOneNotifier.currentBatchCStreamOne.whereYouLive;
     _bestMoment = batchCStreamOneNotifier.currentBatchCStreamOne.bestMoment;

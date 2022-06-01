@@ -26,7 +26,7 @@ abstract class NavigationStates {}
 
 class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
 
-  NavigationBloc() : super(MyBatchAStreamOnePage());
+  NavigationBloc() : super(MyBatchBStreamOnePage());
 
   @override
   Stream<NavigationStates> mapEventToState(NavigationEvents events) async* {

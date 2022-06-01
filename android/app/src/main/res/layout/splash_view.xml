@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/paper_airplane"
+        app:lottie_rawRes="@raw/skating"
         app:lottie_speed="1.00" />
 
     <TextView
@@ -23,10 +23,9 @@
         android:layout_width="match_parent"
         android:layout_marginBottom="160dp"
         android:layout_height="wrap_content"
-        android:text="ABC NYSC CDS Group 2021/2022"
-        android:textColor="#1A1B1B"
+        android:text="@string/abc_cds_group_2021_2022"
+        android:textColor="#0F716E"
         android:textSize="35sp"
-        android:textAlignment="center"
         android:gravity="center_horizontal|center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

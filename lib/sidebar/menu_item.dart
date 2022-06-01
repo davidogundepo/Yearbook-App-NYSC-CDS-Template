@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-Color iconColor = Colors.white70;
-Color textColor = Colors.white;
+Color iconColor = Color.fromRGBO(39, 114, 113, 1.0);
+Color textColor = Color.fromRGBO(39, 114, 113, 1.0);
 
 class MenuItem extends StatelessWidget {
 

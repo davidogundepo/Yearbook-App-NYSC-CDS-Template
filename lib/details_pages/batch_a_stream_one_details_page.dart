@@ -392,8 +392,8 @@ class _BatchAStreamOneDetailsPageState extends State<BatchAStreamOneDetailsPage>
     _ppaName = batchAStreamOneNotifier.currentBatchAStreamOne.ppaName;
     _snapchat = batchAStreamOneNotifier.currentBatchAStreamOne.snapchat;
     _tikTok = batchAStreamOneNotifier.currentBatchAStreamOne.tikTok;
-    _platoon = batchAStreamOneNotifier.currentBatchAStreamOne.stateOfOrigin;
-    _campState = batchAStreamOneNotifier.currentBatchAStreamOne.stateOfOrigin;
+    _platoon = batchAStreamOneNotifier.currentBatchAStreamOne.platoon;
+    _campState = batchAStreamOneNotifier.currentBatchAStreamOne.campState;
     _whatsNext = batchAStreamOneNotifier.currentBatchAStreamOne.whatsNext;
     _originState = batchAStreamOneNotifier.currentBatchAStreamOne.stateOfOrigin;
     _stateLiving = batchAStreamOneNotifier.currentBatchAStreamOne.whereYouLive;

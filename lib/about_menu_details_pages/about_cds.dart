@@ -36,22 +36,22 @@ double maleCDSCorperPopulation = 31;
 double femaleCDSCorperPopulation = 22;
 
 
-Color backgroundColor = Colors.blueGrey[900];
-Color appBarBackgroundColor = Colors.blueGrey[800];
-Color appBarIconColor = Colors.blueGrey;
-Color appBarBackgroundTextColor = Colors.blueGrey;
-Color cardBackgroundColor = Colors.black38;
-Color cardTextColor = Colors.blueGrey;
+Color backgroundColor = Color.fromRGBO(97, 164, 188, 1);
+Color appBarBackgroundColor = Color.fromRGBO(97, 164, 188, 1);
+Color appBarIconColor = Colors.white70;
+Color appBarBackgroundTextColor = Colors.white70;
+Color cardBackgroundColor = Color.fromRGBO(53, 117, 138, 1.0);
+Color cardTextColor = Colors.white70;
 Color materialColor = Colors.transparent;
-Color materialInkWellColor = Colors.blueGrey;
-Color materialTextColor = Colors.blueGrey;
-Color containerColor = Colors.blueGrey.withAlpha(50);
-Color containerTextColor = Colors.blueGrey[900];
-Color containerColor2 = Colors.blueGrey;
-Color chartBackgroundColor = Colors.blueGrey[200];
-Color chartTextColor = Colors.blueGrey[900].withOpacity(0.9);
-Color firstCdsCorperChartColor = Color.fromRGBO(145, 172, 179, 1).withAlpha(160);
-Color secondCdsCorperChartColor = Color.fromRGBO(184, 186, 181, 1);
+Color materialInkWellColor = Color.fromRGBO(53, 117, 138, 1.0);
+Color materialTextColor = Colors.white70;
+Color containerColor = Color.fromRGBO(53, 117, 138, 1.0).withAlpha(50);
+Color containerTextColor = Colors.white70;
+Color containerColor2 = Color.fromRGBO(53, 117, 138, 1.0);
+Color chartBackgroundColor = Color.fromRGBO(97, 164, 188, 1).withOpacity(0.2);
+Color chartTextColor = Colors.black26;
+Color firstCdsCorperChartColor = Color.fromRGBO(53, 117, 138, 1.0);
+Color secondCdsCorperChartColor = Colors.white70;
 
 class AboutCDS extends StatefulWidget {
 
@@ -500,6 +500,7 @@ class _AboutCDS extends State<AboutCDS> {
             Container(
               height: 340,
               child: Swiper(
+                autoplay: true,
                 viewportFraction: 0.8,
                 scale: 0.9,
                 itemCount: achievementsNotifier.achievementsList.length,

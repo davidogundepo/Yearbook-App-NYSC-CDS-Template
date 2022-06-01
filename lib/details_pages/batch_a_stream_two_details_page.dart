@@ -394,8 +394,8 @@ class _BatchAStreamTwoDetailsPageState extends State<BatchAStreamTwoDetailsPage>
     _originState = batchAStreamTwoNotifier.currentBatchAStreamTwo.stateOfOrigin;
     _snapchat = batchAStreamTwoNotifier.currentBatchAStreamTwo.snapchat;
     _tikTok = batchAStreamTwoNotifier.currentBatchAStreamTwo.tikTok;
-    _platoon = batchAStreamTwoNotifier.currentBatchAStreamTwo.stateOfOrigin;
-    _campState = batchAStreamTwoNotifier.currentBatchAStreamTwo.stateOfOrigin;
+    _platoon = batchAStreamTwoNotifier.currentBatchAStreamTwo.platoon;
+    _campState = batchAStreamTwoNotifier.currentBatchAStreamTwo.campState;
     _whatsNext = batchAStreamTwoNotifier.currentBatchAStreamTwo.whatsNext;
     _stateLiving = batchAStreamTwoNotifier.currentBatchAStreamTwo.whereYouLive;
     _bestMoment = batchAStreamTwoNotifier.currentBatchAStreamTwo.bestMoment;

@@ -83,20 +83,20 @@ String facebookProfileSharedPreferencesButtonTwo = "Lol, No";
 
 
 
-Color backgroundColor = Color.fromRGBO(95, 72, 86, 1);
+Color backgroundColor = Color.fromRGBO(125, 173, 167, 1.0);
 Color appBarTextColor = Colors.white;
-Color appBarBackgroundColor = Color.fromRGBO(95, 62, 86, 1);
+Color appBarBackgroundColor = Color.fromRGBO(125, 173, 167, 1.0);
 Color appBarIconColor = Colors.white;
 Color materialBackgroundColor = Colors.transparent;
-Color shapeDecorationColor = Color.fromRGBO(95, 62, 86, 1);
-Color shapeDecorationTextColor = Color.fromRGBO(95, 62, 86, 1);
+Color shapeDecorationColor = Color.fromRGBO(125, 173, 167, 1.0);
+Color shapeDecorationTextColor = Color.fromRGBO(125, 173, 167, 1.0);
 Color cardBackgroundColor = Colors.white;
-Color splashColor = Color.fromRGBO(95, 62, 86, 1);
-Color splashColorTwo = Color.fromRGBO(95, 62, 86, 1);
-Color iconTextColor = Color.fromRGBO(95, 72, 86, 1);
+Color splashColor = Color.fromRGBO(125, 173, 167, 1.0);
+Color splashColorTwo = Color.fromRGBO(125, 173, 167, 1.0);
+Color iconTextColor = Color.fromRGBO(125, 173, 167, 1.0);
 Color iconTextColorTwo = Colors.white;
-Color buttonColor = Color.fromRGBO(95, 62, 86, 1);
-Color textColor = Color.fromRGBO(95, 62, 86, 1);
+Color buttonColor = Color.fromRGBO(125, 173, 167, 1.0);
+Color textColor = Color.fromRGBO(125, 173, 167, 1.0);
 Color confettiColorOne = Colors.green;
 Color confettiColorTwo = Colors.blue;
 Color confettiColorThree = Colors.pink;
@@ -401,8 +401,8 @@ class _BatchBStreamOneDetailsPageState extends State<BatchBStreamOneDetailsPage>
     _originState = batchBStreamOneNotifier.currentBatchBStreamOne.stateOfOrigin;
     _snapchat = batchBStreamOneNotifier.currentBatchBStreamOne.snapchat;
     _tikTok = batchBStreamOneNotifier.currentBatchBStreamOne.tikTok;
-    _platoon = batchBStreamOneNotifier.currentBatchBStreamOne.stateOfOrigin;
-    _campState = batchBStreamOneNotifier.currentBatchBStreamOne.stateOfOrigin;
+    _platoon = batchBStreamOneNotifier.currentBatchBStreamOne.platoon;
+    _campState = batchBStreamOneNotifier.currentBatchBStreamOne.campState;
     _whatsNext = batchBStreamOneNotifier.currentBatchBStreamOne.whatsNext;
     _stateLiving = batchBStreamOneNotifier.currentBatchBStreamOne.whereYouLive;
     _bestMoment = batchBStreamOneNotifier.currentBatchBStreamOne.bestMoment;
