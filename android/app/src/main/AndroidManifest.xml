@@ -28,7 +28,7 @@
 
     <application
         android:name="${applicationName}"
-        android:label="NG NYSC CDS"
+        android:label="NYSC CDS Group"
         android:icon="@mipmap/ic_launcher"
         android:extractNativeLibs="true"
         android:fullBackupContent="true"
